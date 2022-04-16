@@ -1,0 +1,96 @@
+D:\Projects\Library\Library\bin\Debug\Library.exe.config
+D:\Projects\Library\Library\bin\Debug\Library.exe
+D:\Projects\Library\Library\bin\Debug\Library.pdb
+D:\Projects\Library\Library\bin\Debug\EntityFramework.dll
+D:\Projects\Library\Library\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Library\Library\bin\Debug\Library.Data.dll
+D:\Projects\Library\Library\bin\Debug\Library.Data.pdb
+D:\Projects\Library\Library\bin\Debug\Library.Data.dll.config
+D:\Projects\Library\Library\bin\Debug\EntityFramework.xml
+D:\Projects\Library\Library\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Library\Library\obj\Debug\Library.csprojAssemblyReference.cache
+D:\Projects\Library\Library\obj\Debug\Library.BooksForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.MainForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.Properties.Resources.resources
+D:\Projects\Library\Library\obj\Debug\Library.csproj.GenerateResource.cache
+D:\Projects\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+D:\Projects\Library\Library\obj\Debug\Library.csproj.CopyComplete
+D:\Projects\Library\Library\obj\Debug\Library.exe
+D:\Projects\Library\Library\obj\Debug\Library.pdb
+D:\Projects\Library\Library\obj\Debug\Library.LoginForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.StudentsForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.AddStudentsForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.AddBooksForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.RentalsForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.AddRentalsForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.AddAuthorsForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.OpenStudentsForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.StudentsDashboardForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.StudentsProfileForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.AdministrationsForm.resources
+D:\Projects\Library\Library\obj\Debug\Library.AddEmployerForm.resources
+C:\Projects\Library\Library\bin\Debug\Library.exe.config
+C:\Projects\Library\Library\bin\Debug\Library.exe
+C:\Projects\Library\Library\bin\Debug\Library.pdb
+C:\Projects\Library\Library\bin\Debug\EntityFramework.dll
+C:\Projects\Library\Library\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\Library\Library\bin\Debug\Library.Data.dll
+C:\Projects\Library\Library\bin\Debug\Library.Data.pdb
+C:\Projects\Library\Library\bin\Debug\Library.Data.dll.config
+C:\Projects\Library\Library\bin\Debug\EntityFramework.xml
+C:\Projects\Library\Library\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\Library\Library\obj\Debug\Library.csproj.AssemblyReference.cache
+C:\Projects\Library\Library\obj\Debug\Library.csproj.SuggestedBindingRedirects.cache
+C:\Projects\Library\Library\obj\Debug\Library.AddBooksForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.AddEmployerForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.AddRentalsForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.AddStudentsForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.AddAuthorsForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.AdministrationsForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.BooksForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.LoginForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.MainForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.Properties.Resources.resources
+C:\Projects\Library\Library\obj\Debug\Library.RentalsForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.OpenStudentsForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.StudentsDashboardForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.StudentsForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.StudentsProfileForm.resources
+C:\Projects\Library\Library\obj\Debug\Library.csproj.GenerateResource.cache
+C:\Projects\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Projects\Library\Library\obj\Debug\Library.csproj.CopyComplete
+C:\Projects\Library\Library\obj\Debug\Library.exe
+C:\Projects\Library\Library\obj\Debug\Library.pdb
+C:\Projects\Library\Library\bin\Debug\MaterialSkin.dll
+D:\fakultet\Diplomski rad\Library\Library\bin\Debug\Library.exe.config
+D:\fakultet\Diplomski rad\Library\Library\bin\Debug\Library.exe
+D:\fakultet\Diplomski rad\Library\Library\bin\Debug\Library.pdb
+D:\fakultet\Diplomski rad\Library\Library\bin\Debug\EntityFramework.dll
+D:\fakultet\Diplomski rad\Library\Library\bin\Debug\EntityFramework.SqlServer.dll
+D:\fakultet\Diplomski rad\Library\Library\bin\Debug\Library.Data.dll
+D:\fakultet\Diplomski rad\Library\Library\bin\Debug\MaterialSkin.dll
+D:\fakultet\Diplomski rad\Library\Library\bin\Debug\Library.Data.pdb
+D:\fakultet\Diplomski rad\Library\Library\bin\Debug\Library.Data.dll.config
+D:\fakultet\Diplomski rad\Library\Library\bin\Debug\EntityFramework.xml
+D:\fakultet\Diplomski rad\Library\Library\bin\Debug\EntityFramework.SqlServer.xml
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.csprojAssemblyReference.cache
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.AddBooksForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.AddEmployerForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.AddRentalsForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.AddStudentsForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.AddAuthorsForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.AdministrationsForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.BooksForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.LoginForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.MainForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.Properties.Resources.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.RentalsForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.OpenStudentsForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.StudentsDashboardForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.StudentsForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.StudentsProfileForm.resources
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.csproj.GenerateResource.cache
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.csproj.CopyComplete
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.exe
+D:\fakultet\Diplomski rad\Library\Library\obj\Debug\Library.pdb
