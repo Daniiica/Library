@@ -26,3 +26,17 @@ C:\Projects\Library\Library\Library.Data\obj\Debug\Library.Data.csproj.CoreCompi
 C:\Projects\Library\Library\Library.Data\obj\Debug\Library.Data.csproj.CopyComplete
 C:\Projects\Library\Library\Library.Data\obj\Debug\Library.Data.dll
 C:\Projects\Library\Library\Library.Data\obj\Debug\Library.Data.pdb
+C:\Projects\Library\Library.Data\bin\Debug\Library.Data.dll.config
+C:\Projects\Library\Library.Data\bin\Debug\Library.Data.dll
+C:\Projects\Library\Library.Data\bin\Debug\Library.Data.pdb
+C:\Projects\Library\Library.Data\bin\Debug\EntityFramework.dll
+C:\Projects\Library\Library.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\Library\Library.Data\bin\Debug\EntityFramework.xml
+C:\Projects\Library\Library.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\Library\Library.Data\obj\Debug\Library.Data.csproj.AssemblyReference.cache
+C:\Projects\Library\Library.Data\obj\Debug\Library.Data.Migrations.Initial_Migration.resources
+C:\Projects\Library\Library.Data\obj\Debug\Library.Data.csproj.GenerateResource.cache
+C:\Projects\Library\Library.Data\obj\Debug\Library.Data.csproj.CoreCompileInputs.cache
+C:\Projects\Library\Library.Data\obj\Debug\Library.Data.csproj.CopyComplete
+C:\Projects\Library\Library.Data\obj\Debug\Library.Data.dll
+C:\Projects\Library\Library.Data\obj\Debug\Library.Data.pdb

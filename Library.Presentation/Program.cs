@@ -21,7 +21,7 @@ namespace Library.Presentation
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            Application.Run(new AdminHome());
         }
 
         private static void InitializeMaterialManager() 
