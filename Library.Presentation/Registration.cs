@@ -32,22 +32,28 @@ namespace Library.Presentation
                  loginForm.Show();
             */
             this.Close();
-            th = new Thread(openNewForm);
+            th = new Thread(openLoginForm);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
             
         }
 
-        private void openNewForm(object obj)
+        private void openLoginForm(object obj)
         {
             Application.Run(new Login());
         }
 
         private void materialLabel1_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
-            ChangePassword changePassForm = new ChangePassword();
-            changePassForm.Show();
+          //  this.Close();
+            th = new Thread(openChangePassForm);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+
+        private void openChangePassForm()
+        {
+            Application.Run(new ChangePassword());
         }
     }
 }

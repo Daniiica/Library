@@ -53,7 +53,7 @@
             this.usernameTextBox.TabIndex = 0;
             this.usernameTextBox.Text = "";
             this.usernameTextBox.TrailingIcon = null;
-            this.usernameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.usernameTextBox_Validating);
+         //   this.usernameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.usernameTextBox_Validating);
             // 
             // passwordTextbox
             // 
