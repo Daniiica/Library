@@ -40,3 +40,16 @@ C:\Projects\Library\Library.Data\obj\Debug\Library.Data.csproj.CoreCompileInputs
 C:\Projects\Library\Library.Data\obj\Debug\Library.Data.csproj.CopyComplete
 C:\Projects\Library\Library.Data\obj\Debug\Library.Data.dll
 C:\Projects\Library\Library.Data\obj\Debug\Library.Data.pdb
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\bin\Debug\Library.Data.dll.config
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\bin\Debug\Library.Data.dll
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\bin\Debug\Library.Data.pdb
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\bin\Debug\EntityFramework.dll
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\bin\Debug\EntityFramework.xml
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\obj\Debug\Library.Data.Migrations.Initial_Migration.resources
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\obj\Debug\Library.Data.csproj.GenerateResource.cache
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\obj\Debug\Library.Data.csproj.CoreCompileInputs.cache
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\obj\Debug\Library.Data.csproj.CopyComplete
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\obj\Debug\Library.Data.dll
+D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\obj\Debug\Library.Data.pdb

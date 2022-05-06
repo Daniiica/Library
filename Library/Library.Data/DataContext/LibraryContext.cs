@@ -12,6 +12,8 @@ namespace Library.Data.DataContext
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            Database.SetInitializer<LibraryContext>(null);
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<User> Users { get; set; }

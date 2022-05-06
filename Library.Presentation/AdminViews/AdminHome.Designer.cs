@@ -30,12 +30,12 @@
         {
             this.menu = new MaterialSkin.Controls.MaterialTabControl();
             this.homeTab = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.booksTab = new System.Windows.Forms.TabPage();
             this.studentsTab = new System.Windows.Forms.TabPage();
             this.rentalsTab = new System.Windows.Forms.TabPage();
             this.administrationTab = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.menu.SuspendLayout();
             this.homeTab.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -68,6 +68,32 @@
             this.homeTab.Size = new System.Drawing.Size(1133, 541);
             this.homeTab.TabIndex = 0;
             this.homeTab.Text = "HOME";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.materialTextBox1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1064, 538);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // materialTextBox1
+            // 
+            this.materialTextBox1.AnimateReadOnly = false;
+            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox1.Depth = 0;
+            this.materialTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.LeadingIcon = null;
+            this.materialTextBox1.Location = new System.Drawing.Point(3, 3);
+            this.materialTextBox1.MaxLength = 50;
+            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox1.Multiline = false;
+            this.materialTextBox1.Name = "materialTextBox1";
+            this.materialTextBox1.Size = new System.Drawing.Size(272, 50);
+            this.materialTextBox1.TabIndex = 0;
+            this.materialTextBox1.Text = "";
+            this.materialTextBox1.TrailingIcon = null;
             // 
             // booksTab
             // 
@@ -108,32 +134,6 @@
             this.administrationTab.Size = new System.Drawing.Size(1133, 541);
             this.administrationTab.TabIndex = 4;
             this.administrationTab.Text = "ADMINISTRATION";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.materialTextBox1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1064, 538);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // materialTextBox1
-            // 
-            this.materialTextBox1.AnimateReadOnly = false;
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(3, 3);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(272, 50);
-            this.materialTextBox1.TabIndex = 0;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
             // 
             // AdminHome
             // 

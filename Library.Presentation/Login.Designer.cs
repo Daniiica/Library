@@ -53,6 +53,7 @@
             this.usernameTextBox.TabIndex = 0;
             this.usernameTextBox.Text = "";
             this.usernameTextBox.TrailingIcon = null;
+            this.usernameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.usernameTextBox_Validating);
             // 
             // passwordTextbox
             // 
@@ -101,9 +102,10 @@
             this.loginButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.loginButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.loginButton.Depth = 0;
+            this.loginButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.loginButton.HighEmphasis = true;
             this.loginButton.Icon = null;
-            this.loginButton.Location = new System.Drawing.Point(365, 249);
+            this.loginButton.Location = new System.Drawing.Point(358, 249);
             this.loginButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.loginButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.loginButton.Name = "loginButton";
@@ -114,6 +116,7 @@
             this.loginButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.loginButton.UseAccentColor = false;
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // materialDivider1
             // 
@@ -137,6 +140,7 @@
             this.materialLabel1.Size = new System.Drawing.Size(148, 19);
             this.materialLabel1.TabIndex = 4;
             this.materialLabel1.Text = "Lost your password?";
+            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
             // materialLabel2
             // 
@@ -144,17 +148,20 @@
             this.materialLabel2.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.ForeColor = System.Drawing.Color.White;
             this.materialLabel2.Location = new System.Drawing.Point(371, 325);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(58, 19);
             this.materialLabel2.TabIndex = 5;
             this.materialLabel2.Text = "Register";
+            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(454, 366);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);

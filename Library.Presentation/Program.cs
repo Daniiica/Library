@@ -19,15 +19,16 @@ namespace Library.Presentation
         {
             InitializeMaterialManager();
 
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminHome());
+            Application.Run(new Login());
         }
 
         private static void InitializeMaterialManager() 
         {
             MaterialSkinManager.EnforceBackcolorOnAllComponents = true;
-            MaterialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
+            MaterialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
 
             MaterialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(
             MaterialSkin.Primary.Grey900,
@@ -36,6 +37,7 @@ namespace Library.Presentation
             MaterialSkin.Accent.Red700,
             MaterialSkin.TextShade.WHITE
             );
+          
         }
     }
 }
