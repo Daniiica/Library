@@ -13,7 +13,7 @@ namespace Library.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202205021014500_Initial_Migration"; }
+            get { return "202205141111351_Initial_Migration"; }
         }
         
         string IMigrationMetadata.Source

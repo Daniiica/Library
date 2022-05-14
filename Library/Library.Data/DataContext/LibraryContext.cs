@@ -22,7 +22,10 @@ namespace Library.Data.DataContext
         public DbSet<PublishingHouse> PublishingHouses { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Rentals> Rentals { get; set; }
+        public DbSet<Raiting> Raitings { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<WishBook> WishBooks { get; set; }
+        public DbSet<Reservations> ReservationBooks { get; set; }
     }
 }

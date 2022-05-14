@@ -46,6 +46,9 @@
       <HintPath>packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -106,10 +109,16 @@
     <Compile Include="Business\GenericRepository.cs" />
     <Compile Include="Business\RoleTypes.cs" />
     <Compile Include="Business\UnitOfWork.cs" />
+    <Compile Include="LibraryDBDataSet.cs">
+      <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LibraryDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryDBDataSet1.cs">
+      <DependentUpon>LibraryDBDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="LibraryDBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>

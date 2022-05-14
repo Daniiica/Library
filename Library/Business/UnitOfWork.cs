@@ -17,9 +17,11 @@ namespace Library.Business
         private GenericRepository<PublishingHouse> publishingHouseRepository;
         private GenericRepository<Genre> genreRepository;
         private GenericRepository<Language> languageRepository;
+        private GenericRepository<Raiting> raitingsRepository;
         private GenericRepository<Rentals> rentalsRepository;
         private GenericRepository<Role> roleRepository;
-
+        private GenericRepository<WishBook> wishBookRepository;
+        private GenericRepository<Reservations> reservationBookRepository;
         public GenericRepository<User> UserRepository
         {
             get
@@ -94,6 +96,18 @@ namespace Library.Business
                 return languageRepository;
             }
         }
+        public GenericRepository<Raiting> RaitingsRepository
+        {
+            get
+            {
+
+                if (this.raitingsRepository == null)
+                {
+                    this.raitingsRepository = new GenericRepository<Raiting>(context);
+                }
+                return raitingsRepository;
+            }
+        }
         public GenericRepository<Rentals> RentalsRepository
         {
             get
@@ -118,7 +132,30 @@ namespace Library.Business
                 return roleRepository;
             }
         }
+        public GenericRepository<WishBook> WishBookRepository
+        {
+            get
+            {
 
+                if (this.wishBookRepository == null)
+                {
+                    this.wishBookRepository = new GenericRepository<WishBook>(context);
+                }
+                return wishBookRepository;
+            }
+        }
+        public GenericRepository<Reservations> ReservationsBookRepository
+        {
+            get
+            {
+
+                if (this.reservationBookRepository == null)
+                {
+                    this.reservationBookRepository = new GenericRepository<Reservations>(context);
+                }
+                return reservationBookRepository;
+            }
+        }
         public void Save()
         {
             context.SaveChanges();

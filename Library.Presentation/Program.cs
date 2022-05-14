@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Library.Presentation.Bussiness;
+using System;
 using System.Windows.Forms;
-using Library;
 
 namespace Library.Presentation
 {
     internal static class Program
     {
         public static readonly MaterialSkin.MaterialSkinManager MaterialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
-
+        public static Session Current = new Session();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -22,9 +19,11 @@ namespace Library.Presentation
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            //Application.Run(new Login());
+            var loginFrm = new Login();
+            loginFrm.Show();
+            Application.Run();
         }
-
         private static void InitializeMaterialManager() 
         {
             MaterialSkinManager.EnforceBackcolorOnAllComponents = true;

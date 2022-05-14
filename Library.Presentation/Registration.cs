@@ -1,16 +1,18 @@
-﻿using MaterialSkin.Controls;
+﻿using Library.Business;
+using Library.Data.Domain;
+using MaterialSkin.Controls;
 using System;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Library.Presentation
 {
     public partial class Registration : MaterialForm
     {
-        Thread th;
+        UnitOfWork _unitOfWork;
         public Registration()
         {
             InitializeComponent();
+            _unitOfWork = new UnitOfWork();
         }
 
         private void registrationButton_Click(object sender, EventArgs e)
@@ -22,38 +24,27 @@ namespace Library.Presentation
             var indexNumber = indexNumberTextBox.Text;
             var phone = phoneTextBox.Text;
 
-
+            if(string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)
+                || string.IsNullOrEmpty(indexNumber) || string.IsNullOrEmpty(phone))
+            {
+                MessageBox.Show("Please enter all information!");
+                return;
+            }
+            else
+            {
+                Bussiness.Users.SetUser(firstName, lastName, email, password, indexNumber, phone);
+            }
         }
 
         private void materialLabel2_Click(object sender, EventArgs e)
         {
-            /*     this.Visible = false;
-                 Login loginForm = new Login();
-                 loginForm.Show();
-            */
-            this.Close();
-            th = new Thread(openLoginForm);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-            
-        }
-
-        private void openLoginForm(object obj)
-        {
-            Application.Run(new Login());
+            Helpers.FormManager.OpenLoginForm();
         }
 
         private void materialLabel1_Click(object sender, EventArgs e)
         {
-          //  this.Close();
-            th = new Thread(openChangePassForm);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-        }
-
-        private void openChangePassForm()
-        {
-            Application.Run(new ChangePassword());
+            Helpers.FormManager.OpenChangePassForm();
         }
     }
+       
 }

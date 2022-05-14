@@ -69,6 +69,7 @@ namespace Library.Presentation
             this.NewPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.NewPasswordTextBox.Multiline = false;
             this.NewPasswordTextBox.Name = "NewPasswordTextBox";
+            this.NewPasswordTextBox.Password = true;
             this.NewPasswordTextBox.Size = new System.Drawing.Size(410, 50);
             this.NewPasswordTextBox.TabIndex = 10;
             this.NewPasswordTextBox.Text = "";
@@ -87,6 +88,7 @@ namespace Library.Presentation
             this.ConfirmNewPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.ConfirmNewPasswordTextBox.Multiline = false;
             this.ConfirmNewPasswordTextBox.Name = "ConfirmNewPasswordTextBox";
+            this.ConfirmNewPasswordTextBox.Password = true;
             this.ConfirmNewPasswordTextBox.Size = new System.Drawing.Size(410, 50);
             this.ConfirmNewPasswordTextBox.TabIndex = 9;
             this.ConfirmNewPasswordTextBox.Text = "";
@@ -97,7 +99,7 @@ namespace Library.Presentation
             this.EmailTextBox.AnimateReadOnly = false;
             this.EmailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmailTextBox.Depth = 0;
-            this.EmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmailTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.EmailTextBox.Hint = "Email";
             this.EmailTextBox.LeadingIcon = null;
             this.EmailTextBox.Location = new System.Drawing.Point(20, 87);

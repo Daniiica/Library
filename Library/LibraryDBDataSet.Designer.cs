@@ -965,7 +965,7 @@ namespace Library.LibraryDBDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
+        public global::System.Data.SqlClient.SqlConnection Connection {
             get {
                 if ((this._connection == null)) {
                     this.InitConnection();
@@ -1094,8 +1094,8 @@ SELECT UserID, RoleID, IndexNumber, FirstName, LastName, Email, Phone, Password,
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        UserID, RoleID, IndexNumber, FirstName, LastName, Email, Phone, Pas" +
-                "sword, CAST(InsertDateUtc AS DATE) AS \'InsertDate\'\r\nFROM            Users\r\nWHERE" +
-                "        (DeleteDateUtc IS NULL) AND (RoleID = 3)";
+                "sword, CAST(InsertDateUtc AS DATE) AS \'InsertDate\'\nFROM            Users\nWHERE  " +
+                "      (DeleteDateUtc IS NULL) AND (RoleID = 3)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

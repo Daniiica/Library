@@ -53,3 +53,23 @@ D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\obj
 D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\obj\Debug\Library.Data.csproj.CopyComplete
 D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\obj\Debug\Library.Data.dll
 D:\fakultet\Diplomski rad\Library-master\Library-master\Library\Library.Data\obj\Debug\Library.Data.pdb
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\Library.Data.dll.config
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\Library.Data.dll
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\Library.Data.pdb
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\EntityFramework.dll
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\EntityFramework.xml
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\obj\Debug\Library.Data.csprojAssemblyReference.cache
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\obj\Debug\Library.Data.csproj.CoreCompileInputs.cache
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\obj\Debug\Library.Data.csproj.CopyComplete
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\obj\Debug\Library.Data.dll
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\obj\Debug\Library.Data.pdb
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\MathNet.Numerics.dll
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\System.ValueTuple.dll
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\MathNet.Numerics.xml
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\System.ValueTuple.xml
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\FileHelpers.dll
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\FileHelpers.xml
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\obj\Debug\Library.Data.Migrations.Initial_Migration.resources
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\obj\Debug\Library.Data.csproj.GenerateResource.cache

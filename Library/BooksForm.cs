@@ -1,9 +1,10 @@
 ﻿using Library.Business;
 using Library.Data.Domain;
 using System;
+using System.Data;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
+using static Library.LibraryDBDataSet1;
 
 namespace Library
 {
@@ -14,19 +15,22 @@ namespace Library
         {
             InitializeComponent();
             _unitOfWork = new UnitOfWork();
+
+            
         }
 
         private void BooksForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'libraryDBDataSet1.Books' table. You can move, or remove it, as needed.
             this.booksTableAdapter.Fill(this.libraryDBDataSet1.Books);
+
             List<Genre> genres = new List<Genre>();
             genres = _unitOfWork.GenreRepository.GetAll();
             for (int i = 0; i < genres.Count; i++)
             {
                 GenreCheckListBox.Items.Add(genres[i].Name);
             }
-
+           
 
         }
         int bookId;

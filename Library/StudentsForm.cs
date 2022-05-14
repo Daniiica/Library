@@ -30,6 +30,8 @@ namespace Library
         }
         private void AddStudentButton_Click(object sender, EventArgs e)
         {
+           
+
             AddStudentsForm addStudentsForm = new AddStudentsForm();
            // addStudentsForm.MdiParent = this;
             addStudentsForm.Show();

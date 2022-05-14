@@ -1,0 +1,10 @@
+select  top 5
+	b.Name AS 'Book',
+	a.Name AS 'Author',
+	b.ISBN AS 'ISBN',
+	CAST(AVG(r.Assessment) AS decimal(10,2)) AS 'Srednja ocena'
+FROM Raitings AS r
+INNER JOIN Books AS b ON b.BookID = r.BookID
+INNER JOIN Authors AS a ON a.AuthorID = b.AuthorID
+GROUP BY b.Name,a.Name,b.ISBN
+ORDER BY 'Srednja ocena' DESC

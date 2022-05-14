@@ -40,9 +40,18 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FileHelpers, Version=3.5.1.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <HintPath>..\packages\FileHelpers.3.5.1\lib\net45\FileHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.5.0.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,12 +66,15 @@
     <Compile Include="Domain\Genre.cs" />
     <Compile Include="Domain\Language.cs" />
     <Compile Include="Domain\PublishingHouse.cs" />
+    <Compile Include="Domain\Raiting.cs" />
     <Compile Include="Domain\Rentals.cs" />
+    <Compile Include="Domain\Reservations.cs" />
     <Compile Include="Domain\Role.cs" />
     <Compile Include="Domain\User.cs" />
-    <Compile Include="Migrations\202205021014500_Initial_Migration.cs" />
-    <Compile Include="Migrations\202205021014500_Initial_Migration.designer.cs">
-      <DependentUpon>202205021014500_Initial_Migration.cs</DependentUpon>
+    <Compile Include="Domain\WishBook.cs" />
+    <Compile Include="Migrations\202205141111351_Initial_Migration.cs" />
+    <Compile Include="Migrations\202205141111351_Initial_Migration.designer.cs">
+      <DependentUpon>202205141111351_Initial_Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,8 +84,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205021014500_Initial_Migration.resx">
-      <DependentUpon>202205021014500_Initial_Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205141111351_Initial_Migration.resx">
+      <DependentUpon>202205141111351_Initial_Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

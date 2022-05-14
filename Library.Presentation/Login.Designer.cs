@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.usernameTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.passwordTextbox = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.loginButton = new MaterialSkin.Controls.MaterialButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.passwordTextbox = new MaterialSkin.Controls.MaterialTextBox();
             this.SuspendLayout();
             // 
             // usernameTextBox
@@ -53,49 +53,6 @@
             this.usernameTextBox.TabIndex = 0;
             this.usernameTextBox.Text = "";
             this.usernameTextBox.TrailingIcon = null;
-         //   this.usernameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.usernameTextBox_Validating);
-            // 
-            // passwordTextbox
-            // 
-            this.passwordTextbox.AllowPromptAsInput = true;
-            this.passwordTextbox.AnimateReadOnly = false;
-            this.passwordTextbox.AsciiOnly = false;
-            this.passwordTextbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.passwordTextbox.BeepOnError = false;
-            this.passwordTextbox.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.passwordTextbox.Depth = 0;
-            this.passwordTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.passwordTextbox.HidePromptOnLeave = false;
-            this.passwordTextbox.HideSelection = true;
-            this.passwordTextbox.Hint = "Password";
-            this.passwordTextbox.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.passwordTextbox.LeadingIcon = null;
-            this.passwordTextbox.Location = new System.Drawing.Point(19, 164);
-            this.passwordTextbox.Mask = "";
-            this.passwordTextbox.MaxLength = 32767;
-            this.passwordTextbox.MouseState = MaterialSkin.MouseState.OUT;
-            this.passwordTextbox.Name = "passwordTextbox";
-            this.passwordTextbox.PasswordChar = '\0';
-            this.passwordTextbox.PrefixSuffixText = null;
-            this.passwordTextbox.PromptChar = '_';
-            this.passwordTextbox.ReadOnly = false;
-            this.passwordTextbox.RejectInputOnFirstFailure = false;
-            this.passwordTextbox.ResetOnPrompt = true;
-            this.passwordTextbox.ResetOnSpace = true;
-            this.passwordTextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.passwordTextbox.SelectedText = "";
-            this.passwordTextbox.SelectionLength = 0;
-            this.passwordTextbox.SelectionStart = 0;
-            this.passwordTextbox.ShortcutsEnabled = true;
-            this.passwordTextbox.Size = new System.Drawing.Size(410, 48);
-            this.passwordTextbox.SkipLiterals = true;
-            this.passwordTextbox.TabIndex = 1;
-            this.passwordTextbox.TabStop = false;
-            this.passwordTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.passwordTextbox.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.passwordTextbox.TrailingIcon = null;
-            this.passwordTextbox.UseSystemPasswordChar = false;
-            this.passwordTextbox.ValidatingType = null;
             // 
             // loginButton
             // 
@@ -157,17 +114,36 @@
             this.materialLabel2.Text = "Register";
             this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
             // 
+            // passwordTextbox
+            // 
+            this.passwordTextbox.AnimateReadOnly = false;
+            this.passwordTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passwordTextbox.Depth = 0;
+            this.passwordTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.passwordTextbox.Hint = "Password";
+            this.passwordTextbox.LeadingIcon = null;
+            this.passwordTextbox.Location = new System.Drawing.Point(22, 158);
+            this.passwordTextbox.MaxLength = 50;
+            this.passwordTextbox.MouseState = MaterialSkin.MouseState.OUT;
+            this.passwordTextbox.Multiline = false;
+            this.passwordTextbox.Name = "passwordTextbox";
+            this.passwordTextbox.Password = true;
+            this.passwordTextbox.Size = new System.Drawing.Size(410, 50);
+            this.passwordTextbox.TabIndex = 6;
+            this.passwordTextbox.Text = "";
+            this.passwordTextbox.TrailingIcon = null;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(454, 366);
+            this.Controls.Add(this.passwordTextbox);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.passwordTextbox);
             this.Controls.Add(this.usernameTextBox);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -180,10 +156,10 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialTextBox usernameTextBox;
-        private MaterialSkin.Controls.MaterialMaskedTextBox passwordTextbox;
         private MaterialSkin.Controls.MaterialButton loginButton;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialTextBox passwordTextbox;
     }
 }

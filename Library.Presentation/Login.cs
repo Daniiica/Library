@@ -12,62 +12,69 @@ namespace Library.Presentation
     {
         private UnitOfWork _unitOfWork;
         private ErrorProvider errorProvider1;
-        Thread th;
+
         public Login()
         {
             InitializeComponent();
             _unitOfWork = new UnitOfWork();
-             errorProvider1 = new ErrorProvider();
+            errorProvider1 = new ErrorProvider();
+
+            usernameTextBox.Text = "danica@gmail.com";
+            passwordTextbox.Text = "2305";
+
         }
 
-   /*     private void usernameTextBox_Validating(object sender, CancelEventArgs e)
-        {
-            if (usernameTextBox.Text.Trim() == String.Empty)
-            {
-                errorProvider1.SetError(usernameTextBox, "Username is Required");
-                e.Cancel = true;
-            }
-            else
-                errorProvider1.SetError(usernameTextBox, "");
-        }
+        /*     private void usernameTextBox_Validating(object sender, CancelEventArgs e)
+             {
+                 if (usernameTextBox.Text.Trim() == String.Empty)
+                 {
+                     errorProvider1.SetError(usernameTextBox, "Username is Required");
+                     e.Cancel = true;
+                 }
+                 else
+                     errorProvider1.SetError(usernameTextBox, "");
+             }
 
-        private void passwordTextbox_Validating(object sender, CancelEventArgs e)
-        {
-            if (passwordTextbox.Text.Trim() == String.Empty)
-            {
-                errorProvider1.SetError(passwordTextbox, "Password is Required");
-                e.Cancel = true;
-            }
-            else
-                errorProvider1.SetError(passwordTextbox, "");
-        }
-   */
+             private void passwordTextbox_Validating(object sender, CancelEventArgs e)
+             {
+                 if (passwordTextbox.Text.Trim() == String.Empty)
+                 {
+                     errorProvider1.SetError(passwordTextbox, "Password is Required");
+                     e.Cancel = true;
+                 }
+                 else
+                     errorProvider1.SetError(passwordTextbox, "");
+             }
+        */
         private void loginButton_Click(object sender, EventArgs e)
         {
             string userName = usernameTextBox.Text;
             string password = passwordTextbox.Text;
 
-     /*       if (Validation.hasValidationErrors(Login.ActiveForm.Controls))
+            /*       if (Validation.hasValidationErrors(Login.ActiveForm.Controls))
+                   {
+                       // if we get here the validation passed
+                       MaterialMessageBox.Show("Username or password is empty!");
+                       return;
+                   }
+            */
+            var loginOK = _unitOfWork.UserRepository.Get(user => user.Email == userName && user.Password == password && user.DeleteDateUtc == null).FirstOrDefault();
+            if (loginOK != null)
             {
-                // if we get here the validation passed
-                MaterialMessageBox.Show("Username or password is empty!");
-                return;
-            }
-     */
-            DateTime? nullDateTime = null;
-            var loginOK = _unitOfWork.UserRepository.Get(user => user.Email == userName && user.Password == password && (user.DeleteDateUtc == nullDateTime)).FirstOrDefault();
+                Program.Current.Initialize(new Models.UserModel(loginOK));
+                if (Program.Current.User.Role == RoleTypes.Admin)
+                {
+                    this.Hide();
+                    AdminHome adminForm = new AdminHome();
+                    adminForm.Show();
+                }
+                else if (Program.Current.User.Role == RoleTypes.Student)
+                {
+                    this.Hide();
+                    UserHome studentForm = new UserHome();
+                    studentForm.Show();
+                }
 
-            if (loginOK != null && loginOK.RoleID != 3)
-            {
-                this.Hide();
-                AdminHome adminForm = new AdminHome();
-                adminForm.Show();
-            }
-            else if (loginOK != null && loginOK.RoleID == 3)
-            {
-                this.Hide();
-                UserHome studentForm = new UserHome();
-                studentForm.Show();
             }
             else
             {
@@ -79,30 +86,13 @@ namespace Library.Presentation
 
         private void materialLabel2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Close();
-            th = new Thread(openNewRegistrationForm);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-
+            Helpers.FormManager.OpenRegistrationForm();
         }
 
-        private void openNewRegistrationForm(object obj)
-        {
-            Application.Run(new Registration());
-        }
 
         private void materialLabel1_Click(object sender, EventArgs e)
         {
-         //   this.Close();
-            th = new Thread(openNewChangePassForm);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-        }
-
-        private void openNewChangePassForm()
-        {
-            Application.Run(new ChangePassword());
+            Helpers.FormManager.OpenChangePassForm();
         }
     }
 }
