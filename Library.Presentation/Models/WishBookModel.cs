@@ -17,7 +17,10 @@ namespace Library.Presentation.Models
         }
         public WishBookModel(WishBook wishBook)
         {
-            this.UserID = wishBook.UserID;
+            this.User = wishBook.User;
+            this.UsersFirstName = wishBook.User.FirstName;
+            this.UsersLastName = wishBook.User.LastName;
+            this.UsersIndexNumber = wishBook.User.IndexNumber;
             this.Name = wishBook.Name;
             this.ISBN = wishBook.ISBN;
             this.Author = wishBook.Author;
@@ -27,7 +30,14 @@ namespace Library.Presentation.Models
         [FieldHidden]
         public int WishBookID { get; set; }
         [FieldHidden]
-        public int UserID { get; set; }
+        public User User { get; set; }
+        [FieldCaption("Users First Name")]
+        public string UsersFirstName { get; set; }
+        [FieldCaption("Users Last Name")]
+        public string UsersLastName { get; set; }
+        [FieldCaption("Users Index Number")]
+        public string UsersIndexNumber { get; set; }
+
         [FieldCaption("Book")]
         public string Name { get; set; }
         [FieldCaption("Author")]

@@ -1,4 +1,5 @@
 ﻿
+using Library.Presentation.AdminViews;
 using Library.Presentation.UserViews;
 
 namespace Library.Presentation.Helpers
@@ -34,6 +35,19 @@ namespace Library.Presentation.Helpers
         {
             var reservationDateForm = new ReservationDate();
             reservationDateForm.Show();
+        }
+        public static void OpenBookForm(int bookID)
+        {
+            if (bookID == 0)
+            {
+                var bookForm = new BookForm();
+                bookForm.Show();
+            }
+            else
+            {
+                var bookForm = new BookForm(bookID);
+                bookForm.Show();
+            }
         }
     }
 }

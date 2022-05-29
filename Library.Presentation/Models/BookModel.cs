@@ -25,6 +25,11 @@ namespace Library.Presentation.Models
             this.Name = book.Name;
             this.Description = book.Description;
             this.Amount = book.Amount;
+          /*  this.Publisher = book.Publisher.Name;
+            this.Language = book.Language.Caption;
+            this.Genres = book.Genres
+          */
+
         }
         [FieldHidden]
         public int BookID { get; set; }
@@ -44,6 +49,13 @@ namespace Library.Presentation.Models
         public string Description { get; set; }
         [FieldCaption("Amount")]
         public int Amount { get; set; }
-       
+        /*
+        [FieldCaption("Publisher")]
+        public string Publisher { get; set; }
+        [FieldCaption("Language")]
+        public string Language { get; set; }
+        [FieldCaption("Genres")]
+        public List<string> Genres { get; set; }
+        */
     }
 }

@@ -21,6 +21,7 @@ namespace Library.Presentation.Models
             this.IndexNumber = user.IndexNumber;
             this.Phone = user.Phone;
             this.Role = (RoleTypes)user.RoleID;
+            this.Password = user.Password;
         }
         [FieldHidden]
         public int UserID { get; set; }
@@ -33,6 +34,8 @@ namespace Library.Presentation.Models
 
         [FieldCaption("Email")]
         public string Email { get; set; }
+        [FieldCaption("Password")]
+        public string Password { get; set; }
 
         [FieldCaption("Index Number")]
         public string IndexNumber { get; set; }

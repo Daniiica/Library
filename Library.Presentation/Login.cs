@@ -19,8 +19,8 @@ namespace Library.Presentation
             _unitOfWork = new UnitOfWork();
             errorProvider1 = new ErrorProvider();
 
-            usernameTextBox.Text = "danica@gmail.com";
-            passwordTextbox.Text = "2305";
+            usernameTextBox.Text = "admin@gmail.com";
+            passwordTextbox.Text = "123";
 
         }
 
@@ -65,16 +65,13 @@ namespace Library.Presentation
                 if (Program.Current.User.Role == RoleTypes.Admin)
                 {
                     this.Hide();
-                    AdminHome adminForm = new AdminHome();
-                    adminForm.Show();
+                    Helpers.FormManager.OpenAdminHomeForm();
                 }
                 else if (Program.Current.User.Role == RoleTypes.Student)
                 {
                     this.Hide();
-                    UserHome studentForm = new UserHome();
-                    studentForm.Show();
+                    Helpers.FormManager.OpenUserHomeForm();
                 }
-
             }
             else
             {

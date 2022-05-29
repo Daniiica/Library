@@ -7,15 +7,15 @@ namespace Library.Presentation
 {
     public partial class UserHome : MaterialForm
     {
-        int bookID;
-        bool select_validation;
+            int bookID;
+            bool select_validation = false;
 
         public UserHome()
         {
             InitializeComponent();
             SetValueOnProfile();
             Helpers.DataGridManager.InitializeAllBookDataGrid(BookDataGrid);
-            Helpers.DataGridManager.InitializeWishBookDataGrid(wishBookDataGrid);
+            Helpers.DataGridManager.InitializeMyWishBookDataGrid(wishBookDataGrid);
             Helpers.DataGridManager.InitializeMyReservationDataGrid(myReservationDataGrid);
             Helpers.DataGridManager.InitializeMyRentalsDataGrid(myRentalsDataGrid);
         }
@@ -38,16 +38,12 @@ namespace Library.Presentation
             try
             {
                 Bussiness.Books.RateBook(book, isbn, Program.Current.User.UserID, rating); // message box kad snimam ili nesto nije dobro, i da to stavim na Book formu
-                MessageBox.Show("Succesfull");
+                
             }
             catch (Exception)
             {
                 MessageBox.Show("Error occured");
             }
-        }
-        private void saveToCsvButton_Click(object sender, EventArgs e)
-        {
-            Bussiness.Users.SaveUsersToCsv();
         }
 
         private void rentalsTab_Click(object sender, EventArgs e)
@@ -60,7 +56,7 @@ namespace Library.Presentation
             var wishBookAuthor = wishAuthorTextBox.Text;
             var wishBookIsbn = Convert.ToInt32(wishISBNTextBox.Text);
 
-            Bussiness.Books.AddBookToWishList(wishBook,wishBookAuthor,wishBookIsbn);
+            Bussiness.WishBooks.AddBookToWishList(wishBook,wishBookAuthor,wishBookIsbn);
             Helpers.DataGridManager.InitializeWishBookDataGrid(wishBookDataGrid);
         }
         private void changeProfileButton_Click(object sender, EventArgs e)
@@ -88,47 +84,33 @@ namespace Library.Presentation
                     {
                         DateTime dateTimeFrom = form.dateTimeFrom;
                         DateTime dateTimeTo = form.dateTimeTo;
-                        Bussiness.Books.AddReservation(bookID, dateTimeFrom, dateTimeTo);
+                        Bussiness.Reservation.AddReservation(bookID, dateTimeFrom, dateTimeTo);
                     }
                 }
             }
         }
         private void BookDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indexRow = e.RowIndex;
-            if (indexRow < 0)
-            {
-                return;
-            }
-            DataGridViewRow row = BookDataGrid.Rows[indexRow];
-
-            bookID = (int)row.Cells[0].Value;
+            bookID = Helpers.DataGridManager.SelectRowInDataGrid(sender, e, BookDataGrid);
+          
             select_validation = true;
         }
 
-        private void IndexNumberTextBox_TextChanged(object sender, EventArgs e)
+        private void saveToCsvButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void EmailTextBox_TextChanged(object sender, EventArgs e)
+        private void onlyActiveMyRentalsCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LastNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FirstNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
+            if (onlyActiveMyRentalsCheckBox.Checked)
+            {
+                Helpers.DataGridManager.InitializeOnlyMyActiveRentalsDataGrid(myRentalsDataGrid);
+            }
+            else
+            {
+                Helpers.DataGridManager.InitializeMyRentalsDataGrid(myRentalsDataGrid);
+            }
         }
     }
 }

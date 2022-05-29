@@ -74,16 +74,29 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminViews\BookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminViews\BookForm.Designer.cs">
+      <DependentUpon>BookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bussiness\Authors.cs" />
     <Compile Include="Bussiness\Books.cs" />
+    <Compile Include="Bussiness\Languages.cs" />
+    <Compile Include="Bussiness\Publisher.cs" />
     <Compile Include="Bussiness\Rentals.cs" />
+    <Compile Include="Bussiness\Reservation.cs" />
     <Compile Include="Bussiness\Session.cs" />
     <Compile Include="Bussiness\Users.cs" />
+    <Compile Include="Bussiness\WishBooks.cs" />
     <Compile Include="ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CheckListManager.cs" />
+    <Compile Include="Helpers\ComboBoxManager.cs" />
     <Compile Include="Helpers\DataGridManager.cs" />
     <Compile Include="Helpers\FormManager.cs" />
     <Compile Include="Login.cs">
@@ -111,12 +124,6 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserViews\Book.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserViews\Book.Designer.cs">
-      <DependentUpon>Book.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserViews\ReservationDate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +137,9 @@
       <DependentUpon>UserHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
+    <EmbeddedResource Include="AdminViews\BookForm.resx">
+      <DependentUpon>BookForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,9 +160,6 @@
     </Compile>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserViews\Book.resx">
-      <DependentUpon>Book.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserViews\ReservationDate.resx">
       <DependentUpon>ReservationDate.cs</DependentUpon>

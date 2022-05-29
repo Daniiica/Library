@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.rentalsTab = new System.Windows.Forms.TabPage();
+            this.myRentalsDataGrid = new System.Windows.Forms.DataGridView();
             this.homeTab = new System.Windows.Forms.TabPage();
             this.BookDataGrid = new System.Windows.Forms.DataGridView();
             this.AddReservationButton = new MaterialSkin.Controls.MaterialButton();
@@ -46,15 +47,16 @@
             this.LastNameTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.FirstNameTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.addWishBookTab = new System.Windows.Forms.TabPage();
+            this.wishBookDataGrid = new System.Windows.Forms.DataGridView();
             this.addWishBookButton = new MaterialSkin.Controls.MaterialButton();
             this.wishAuthorTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.wishISBNTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.wishBookTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.wishBookDataGrid = new System.Windows.Forms.DataGridView();
             this.myReservationTab = new System.Windows.Forms.TabPage();
             this.myReservationDataGrid = new System.Windows.Forms.DataGridView();
-            this.myRentalsDataGrid = new System.Windows.Forms.DataGridView();
+            this.onlyActiveMyRentalsCheckBox = new MaterialSkin.Controls.MaterialCheckbox();
             this.rentalsTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.myRentalsDataGrid)).BeginInit();
             this.homeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookDataGrid)).BeginInit();
             this.userMenu.SuspendLayout();
@@ -63,12 +65,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.wishBookDataGrid)).BeginInit();
             this.myReservationTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myReservationDataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myRentalsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // rentalsTab
             // 
-            this.rentalsTab.BackColor = System.Drawing.Color.Black;
+            this.rentalsTab.BackColor = System.Drawing.Color.White;
+            this.rentalsTab.Controls.Add(this.onlyActiveMyRentalsCheckBox);
             this.rentalsTab.Controls.Add(this.myRentalsDataGrid);
             this.rentalsTab.Location = new System.Drawing.Point(4, 25);
             this.rentalsTab.Name = "rentalsTab";
@@ -76,8 +78,15 @@
             this.rentalsTab.Size = new System.Drawing.Size(1133, 541);
             this.rentalsTab.TabIndex = 3;
             this.rentalsTab.Text = "RENTALS";
-            this.rentalsTab.UseVisualStyleBackColor = true;
             this.rentalsTab.Click += new System.EventHandler(this.rentalsTab_Click);
+            // 
+            // myRentalsDataGrid
+            // 
+            this.myRentalsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.myRentalsDataGrid.Location = new System.Drawing.Point(61, 22);
+            this.myRentalsDataGrid.Name = "myRentalsDataGrid";
+            this.myRentalsDataGrid.Size = new System.Drawing.Size(622, 203);
+            this.myRentalsDataGrid.TabIndex = 0;
             // 
             // homeTab
             // 
@@ -238,6 +247,7 @@
             // 
             // profileTab
             // 
+            this.profileTab.BackColor = System.Drawing.Color.White;
             this.profileTab.Controls.Add(this.changeProfileButton);
             this.profileTab.Controls.Add(this.IndexNumberTextBox);
             this.profileTab.Controls.Add(this.EmailTextBox);
@@ -250,7 +260,6 @@
             this.profileTab.Size = new System.Drawing.Size(1133, 541);
             this.profileTab.TabIndex = 4;
             this.profileTab.Text = "PROFILE";
-            this.profileTab.UseVisualStyleBackColor = true;
             // 
             // changeProfileButton
             // 
@@ -289,7 +298,6 @@
             this.IndexNumberTextBox.TabIndex = 4;
             this.IndexNumberTextBox.Text = "";
             this.IndexNumberTextBox.TrailingIcon = null;
-            this.IndexNumberTextBox.TextChanged += new System.EventHandler(this.IndexNumberTextBox_TextChanged);
             // 
             // EmailTextBox
             // 
@@ -308,7 +316,6 @@
             this.EmailTextBox.TabIndex = 3;
             this.EmailTextBox.Text = "";
             this.EmailTextBox.TrailingIcon = null;
-            this.EmailTextBox.TextChanged += new System.EventHandler(this.EmailTextBox_TextChanged);
             // 
             // PhoneTextBox
             // 
@@ -327,7 +334,6 @@
             this.PhoneTextBox.TabIndex = 2;
             this.PhoneTextBox.Text = "";
             this.PhoneTextBox.TrailingIcon = null;
-            this.PhoneTextBox.TextChanged += new System.EventHandler(this.PhoneTextBox_TextChanged);
             // 
             // LastNameTextBox
             // 
@@ -346,7 +352,6 @@
             this.LastNameTextBox.TabIndex = 1;
             this.LastNameTextBox.Text = "";
             this.LastNameTextBox.TrailingIcon = null;
-            this.LastNameTextBox.TextChanged += new System.EventHandler(this.LastNameTextBox_TextChanged);
             // 
             // FirstNameTextBox
             // 
@@ -365,10 +370,10 @@
             this.FirstNameTextBox.TabIndex = 0;
             this.FirstNameTextBox.Text = "";
             this.FirstNameTextBox.TrailingIcon = null;
-            this.FirstNameTextBox.TextChanged += new System.EventHandler(this.FirstNameTextBox_TextChanged);
             // 
             // addWishBookTab
             // 
+            this.addWishBookTab.BackColor = System.Drawing.Color.White;
             this.addWishBookTab.Controls.Add(this.wishBookDataGrid);
             this.addWishBookTab.Controls.Add(this.addWishBookButton);
             this.addWishBookTab.Controls.Add(this.wishAuthorTextBox);
@@ -379,7 +384,14 @@
             this.addWishBookTab.Size = new System.Drawing.Size(1133, 541);
             this.addWishBookTab.TabIndex = 5;
             this.addWishBookTab.Text = "WISH BOOK";
-            this.addWishBookTab.UseVisualStyleBackColor = true;
+            // 
+            // wishBookDataGrid
+            // 
+            this.wishBookDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.wishBookDataGrid.Location = new System.Drawing.Point(269, 122);
+            this.wishBookDataGrid.Name = "wishBookDataGrid";
+            this.wishBookDataGrid.Size = new System.Drawing.Size(630, 195);
+            this.wishBookDataGrid.TabIndex = 4;
             // 
             // addWishBookButton
             // 
@@ -455,14 +467,6 @@
             this.wishBookTextBox.Text = "";
             this.wishBookTextBox.TrailingIcon = null;
             // 
-            // wishBookDataGrid
-            // 
-            this.wishBookDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.wishBookDataGrid.Location = new System.Drawing.Point(269, 122);
-            this.wishBookDataGrid.Name = "wishBookDataGrid";
-            this.wishBookDataGrid.Size = new System.Drawing.Size(630, 195);
-            this.wishBookDataGrid.TabIndex = 4;
-            // 
             // myReservationTab
             // 
             this.myReservationTab.Controls.Add(this.myReservationDataGrid);
@@ -481,13 +485,22 @@
             this.myReservationDataGrid.Size = new System.Drawing.Size(653, 214);
             this.myReservationDataGrid.TabIndex = 0;
             // 
-            // myRentalsDataGrid
+            // onlyActiveMyRentalsCheckBox
             // 
-            this.myRentalsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.myRentalsDataGrid.Location = new System.Drawing.Point(345, 121);
-            this.myRentalsDataGrid.Name = "myRentalsDataGrid";
-            this.myRentalsDataGrid.Size = new System.Drawing.Size(622, 203);
-            this.myRentalsDataGrid.TabIndex = 0;
+            this.onlyActiveMyRentalsCheckBox.AutoSize = true;
+            this.onlyActiveMyRentalsCheckBox.Depth = 0;
+            this.onlyActiveMyRentalsCheckBox.Location = new System.Drawing.Point(61, 253);
+            this.onlyActiveMyRentalsCheckBox.Margin = new System.Windows.Forms.Padding(0);
+            this.onlyActiveMyRentalsCheckBox.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.onlyActiveMyRentalsCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.onlyActiveMyRentalsCheckBox.Name = "onlyActiveMyRentalsCheckBox";
+            this.onlyActiveMyRentalsCheckBox.ReadOnly = false;
+            this.onlyActiveMyRentalsCheckBox.Ripple = true;
+            this.onlyActiveMyRentalsCheckBox.Size = new System.Drawing.Size(165, 37);
+            this.onlyActiveMyRentalsCheckBox.TabIndex = 26;
+            this.onlyActiveMyRentalsCheckBox.Text = "Only active rentals";
+            this.onlyActiveMyRentalsCheckBox.UseVisualStyleBackColor = true;
+            this.onlyActiveMyRentalsCheckBox.CheckedChanged += new System.EventHandler(this.onlyActiveMyRentalsCheckBox_CheckedChanged);
             // 
             // UserHome
             // 
@@ -507,6 +520,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LIBRARY";
             this.rentalsTab.ResumeLayout(false);
+            this.rentalsTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.myRentalsDataGrid)).EndInit();
             this.homeTab.ResumeLayout(false);
             this.homeTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookDataGrid)).EndInit();
@@ -518,7 +533,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.wishBookDataGrid)).EndInit();
             this.myReservationTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.myReservationDataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myRentalsDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -556,5 +570,6 @@
         private System.Windows.Forms.TabPage myReservationTab;
         private System.Windows.Forms.DataGridView myReservationDataGrid;
         private System.Windows.Forms.DataGridView myRentalsDataGrid;
+        private MaterialSkin.Controls.MaterialCheckbox onlyActiveMyRentalsCheckBox;
     }
 }
