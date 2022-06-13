@@ -45,21 +45,22 @@ namespace Library.Presentation.Bussiness
         public static void AddAuthor(string name, string country, string biography, DateTime dateOfBirth, DateTime dateOfDeath)
         {
             UnitOfWork _unitOfWork = new UnitOfWork();
-            Author author = new Author();
-            author.Name = name;
-            author.Country = country;
-            author.Biography = biography;
-            author.DateOfBirth = dateOfBirth;
-            author.DateOfDeath = dateOfDeath;
-            author.DeleteDate = null;
+            Author author = new Author{
+                Name = name,
+                Country = country,
+                Biography = biography,
+                DateOfBirth = dateOfBirth,
+                DateOfDeath = dateOfDeath,
+                DeleteDate = null
+            };
             _unitOfWork.AuthorRepository.Insert(author);
             _unitOfWork.Save();
         }
-        public static Author GetAuthorByName(string authorName)
+        public static int GetAuthorIDByName(string authorName)
         {
             UnitOfWork _unitOfWork = new UnitOfWork();
             var author = _unitOfWork.AuthorRepository.Get(a => a.Name == authorName).FirstOrDefault();
-            return author;
+            return author.AuthorID;
         }
     }
 }

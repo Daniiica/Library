@@ -192,7 +192,7 @@ namespace Library.Presentation
             this.materialLabel2.Size = new System.Drawing.Size(41, 19);
             this.materialLabel2.TabIndex = 10;
             this.materialLabel2.Text = "Login";
-            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
+            this.materialLabel2.Click += new System.EventHandler(this.loginOpenLabel_Click);
             // 
             // materialLabel1
             // 
@@ -206,7 +206,7 @@ namespace Library.Presentation
             this.materialLabel1.Size = new System.Drawing.Size(183, 19);
             this.materialLabel1.TabIndex = 9;
             this.materialLabel1.Text = "Already have an account?";
-            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
+            this.materialLabel1.Click += new System.EventHandler(this.changePassOpenLabel_Click);
             // 
             // Registration
             // 
@@ -224,6 +224,7 @@ namespace Library.Presentation
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.lastNameTextBox);
             this.Controls.Add(this.firstNameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";

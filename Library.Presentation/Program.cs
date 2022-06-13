@@ -1,5 +1,8 @@
-﻿using Library.Presentation.Bussiness;
+﻿using Library.Data.Domain;
+using Library.Presentation.Bussiness;
+using Library.Presentation.UserViews;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Library.Presentation
@@ -20,6 +23,7 @@ namespace Library.Presentation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
+            Bussiness.Reservation.DeleteOldReservation();
             var loginFrm = new Login();
             loginFrm.Show();
             Application.Run();
@@ -36,7 +40,6 @@ namespace Library.Presentation
             MaterialSkin.Accent.Red700,
             MaterialSkin.TextShade.WHITE
             );
-          
         }
     }
 }

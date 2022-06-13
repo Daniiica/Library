@@ -13,7 +13,6 @@ namespace Library.Presentation.Models
     {
         public ReservationsModel()
         {
-
         }
         public ReservationsModel(Reservations reservation)
         {
@@ -39,8 +38,10 @@ namespace Library.Presentation.Models
         public string Author { get; set; }
         [FieldCaption("ISBN")]
         public int ISBN { get; set; }
-    
+        [FieldHidden]
+        public DateTime? DeleteDateReservation { get; set; }
         public DateTime FromDate { get; set; }
         public DateTime ToDate { get; set; }
+        public string Realized { get; set; }
     }
 }

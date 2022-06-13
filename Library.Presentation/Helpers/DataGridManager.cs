@@ -32,6 +32,16 @@ namespace Library.Presentation.Helpers
             userDataGrid.Columns["IndexNumber"].HeaderText = "Index Number";
         }
 
+        public static void InitializeTopRatingBooksDataGrid(DataGridView topRatingBooksDataGrid)
+        {
+            topRatingBooksDataGrid.DataSource = Bussiness.Books.TopRaitingBooks();
+            topRatingBooksDataGrid.Columns["BookID"].Visible = false;
+            topRatingBooksDataGrid.Columns["UserFirstName"].Visible = false;
+            topRatingBooksDataGrid.Columns["UserLastName"].Visible = false;
+            topRatingBooksDataGrid.Columns["UserIndexNumber"].Visible = false;
+            topRatingBooksDataGrid.Columns["RaitingID"].Visible = false;
+        }
+
         public static void InitializeAllEmployedDataGrid(DataGridView employedDataGrid)
         {
             employedDataGrid.DataSource = Bussiness.Users.AllEmployers();
@@ -48,13 +58,17 @@ namespace Library.Presentation.Helpers
             myReservationDataGrid.Columns["ReservationsID"].Visible = false;
             myReservationDataGrid.Columns["BookID"].Visible = false;
             myReservationDataGrid.Columns["UserID"].Visible = false;
+            myReservationDataGrid.Columns["DeleteDateReservation"].Visible = false;
+            myReservationDataGrid.Columns["FromDate"].HeaderText = "From Date";
+            myReservationDataGrid.Columns["ToDate"].HeaderText = "To Date";
+            myReservationDataGrid.Columns["BookName"].HeaderText = "Book";
         }
         public static void InitializeMyWishBookDataGrid(DataGridView wishBookDataGrid)
         {
             wishBookDataGrid.DataSource = Bussiness.WishBooks.MyWishList();
-            wishBookDataGrid.Columns["UsersFirstName"].HeaderText = "Users First Name";
-            wishBookDataGrid.Columns["UsersLastName"].HeaderText = "Users Last Name";
-            wishBookDataGrid.Columns["UsersIndexNumber"].HeaderText = "Users Index Number";
+            wishBookDataGrid.Columns["UsersFirstName"].Visible = false;//HeaderText = "Users First Name";
+            wishBookDataGrid.Columns["UsersLastName"].Visible = false; //HeaderText = "Users Last Name";
+            wishBookDataGrid.Columns["UsersIndexNumber"].Visible = false; // HeaderText = "Users Index Number";
             wishBookDataGrid.Columns["DeleteDate"].HeaderText = "Delete Date";
             wishBookDataGrid.Columns["ApproveDate"].HeaderText = "Approve Date";
             wishBookDataGrid.Columns["WishBookID"].Visible = false;

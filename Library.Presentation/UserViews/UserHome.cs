@@ -1,6 +1,9 @@
 ﻿using Library.Presentation.UserViews;
 using MaterialSkin.Controls;
 using System;
+using System.Drawing;
+using System.Drawing.Text;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace Library.Presentation
@@ -18,6 +21,28 @@ namespace Library.Presentation
             Helpers.DataGridManager.InitializeMyWishBookDataGrid(wishBookDataGrid);
             Helpers.DataGridManager.InitializeMyReservationDataGrid(myReservationDataGrid);
             Helpers.DataGridManager.InitializeMyRentalsDataGrid(myRentalsDataGrid);
+            Helpers.DataGridManager.InitializeTopRatingBooksDataGrid(topRatingBooksDataGrid);
+            Helpers.ComboBoxManager.SetValuesToBooksComboBox(bookAddRatingComboBox);
+            Helpers.ComboBoxManager.SetValuesToISBNComboBox(ISBNAddRatingComboBox);
+            //Helpers.MultilineTextBoxManager.InitializeHomeTabDescription(homeDescriptionMultilineTextBox);
+            // welcomeLabelUserHome.DataBindings.Control.ForeColor = Color.Red;
+            //welcomeLabelUserHome.Font.Bold = true;
+        }
+        //User ---> Home
+        private void AddRaiting_Click(object sender, EventArgs e)
+        {
+            var book = bookAddRatingComboBox.Text;
+            var isbn = Convert.ToInt32(ISBNAddRatingComboBox.Text);
+            var rating = Convert.ToDecimal(assessmentTextBox.Text);
+            try
+            {
+                Bussiness.Books.RateBook(book, isbn, Program.Current.User.UserID, rating); // message box kad snimam ili nesto nije dobro, i da to stavim na Book formu
+
+            }
+            catch (Exception)
+            {
+                MaterialMessageBox.Show("Error occured");
+            }
         }
         public void SetValueOnProfile()
         {
@@ -30,22 +55,6 @@ namespace Library.Presentation
             IndexNumberTextBox.Enabled = false;
             PhoneTextBox.Text = Program.Current.User.Phone;
         }
-        private void AddRaiting_Click(object sender, EventArgs e)
-        {
-            var book = bookTextBox.Text;
-            var isbn = Convert.ToInt32(isbnTextBox.Text);
-            var rating = Convert.ToDecimal(assessmentTextBox.Text);
-            try
-            {
-                Bussiness.Books.RateBook(book, isbn, Program.Current.User.UserID, rating); // message box kad snimam ili nesto nije dobro, i da to stavim na Book formu
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error occured");
-            }
-        }
-
         private void rentalsTab_Click(object sender, EventArgs e)
         {
             var books = Bussiness.Rentals.FindRentals(Program.Current.User);
@@ -96,10 +105,6 @@ namespace Library.Presentation
             select_validation = true;
         }
 
-        private void saveToCsvButton_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void onlyActiveMyRentalsCheckBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -111,6 +116,17 @@ namespace Library.Presentation
             {
                 Helpers.DataGridManager.InitializeMyRentalsDataGrid(myRentalsDataGrid);
             }
+        }
+
+        private void wishBookDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void saveToCsvReservation_Click(object sender, EventArgs e)
+        {
+            Bussiness.Books.SaveBooksToCsv(BookDataGrid);
+            MaterialMessageBox.Show("File was saved");
         }
     }
 }

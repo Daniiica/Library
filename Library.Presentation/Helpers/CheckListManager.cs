@@ -20,16 +20,8 @@ namespace Library.Presentation.Helpers
         public static List<Genre> GetSelectedGenresFromCheckList(MaterialCheckedListBox genreCheckedListBox)
         {
             UnitOfWork _unitOfWork = new UnitOfWork();
-            List<Genre> search_book_genres = new List<Genre>();
-            foreach (var item in genreCheckedListBox.Items)
-            {
-                if (item.Checked)
-                {
-                    search_book_genres.Add(_unitOfWork.GenreRepository.Get(g => g.Name == item.Text).FirstOrDefault());
-                }
-            }
-            return search_book_genres;
-        }
+            return Bussiness.Books.GetSelectedGenresFromCheckList(_unitOfWork, genreCheckedListBox);
+        } 
         public static void SelectGenresInCheckList(List<Genre> genres, MaterialCheckedListBox genresCheckBox)
         {
             foreach(var allgenres in genresCheckBox.Items)

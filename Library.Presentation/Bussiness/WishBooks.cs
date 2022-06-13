@@ -36,6 +36,9 @@ namespace Library.Presentation.Bussiness
                     Name = i.Name,
                     Author = i.Author,
                     User = i.User,
+                    UsersFirstName = i.User.FirstName,
+                    UsersLastName = i.User.LastName,
+                    UsersIndexNumber = i.User.IndexNumber,
                     ApproveDate = i.ApproveDate,
                     DeleteDate = i.DeleteDate,
                     ISBN = i.ISBN

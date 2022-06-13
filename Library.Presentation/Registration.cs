@@ -8,11 +8,9 @@ namespace Library.Presentation
 {
     public partial class Registration : MaterialForm
     {
-        UnitOfWork _unitOfWork;
         public Registration()
         {
             InitializeComponent();
-            _unitOfWork = new UnitOfWork();
         }
 
         private void registrationButton_Click(object sender, EventArgs e)
@@ -27,7 +25,7 @@ namespace Library.Presentation
             if(string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)
                 || string.IsNullOrEmpty(indexNumber) || string.IsNullOrEmpty(phone))
             {
-                MessageBox.Show("Please enter all information!");
+                MaterialMessageBox.Show("Please enter all information!");
                 return;
             }
             else
@@ -36,12 +34,13 @@ namespace Library.Presentation
             }
         }
 
-        private void materialLabel2_Click(object sender, EventArgs e)
+        private void loginOpenLabel_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Helpers.FormManager.OpenLoginForm();
         }
 
-        private void materialLabel1_Click(object sender, EventArgs e)
+        private void changePassOpenLabel_Click(object sender, EventArgs e)
         {
             Helpers.FormManager.OpenChangePassForm();
         }

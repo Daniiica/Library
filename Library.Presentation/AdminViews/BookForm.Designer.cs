@@ -1,5 +1,5 @@
 ﻿
-namespace Library.Presentation.AdminViews
+namespace Library.Presentation
 {
     partial class BookForm
     {
@@ -42,6 +42,7 @@ namespace Library.Presentation.AdminViews
             this.AuthorComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.AmountTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.AuthorTab = new System.Windows.Forms.TabPage();
+            this.resetAuthorButton = new MaterialSkin.Controls.MaterialButton();
             this.UpdateAuthorButton = new MaterialSkin.Controls.MaterialButton();
             this.DeleteAuthorButton = new MaterialSkin.Controls.MaterialButton();
             this.AuthorsDataGrid = new System.Windows.Forms.DataGridView();
@@ -180,6 +181,7 @@ namespace Library.Presentation.AdminViews
             this.cancelButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.cancelButton.UseAccentColor = false;
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click_1);
             // 
             // OKBookButton
             // 
@@ -299,6 +301,7 @@ namespace Library.Presentation.AdminViews
             // AuthorTab
             // 
             this.AuthorTab.BackColor = System.Drawing.Color.White;
+            this.AuthorTab.Controls.Add(this.resetAuthorButton);
             this.AuthorTab.Controls.Add(this.UpdateAuthorButton);
             this.AuthorTab.Controls.Add(this.DeleteAuthorButton);
             this.AuthorTab.Controls.Add(this.AuthorsDataGrid);
@@ -317,6 +320,26 @@ namespace Library.Presentation.AdminViews
             this.AuthorTab.Size = new System.Drawing.Size(791, 357);
             this.AuthorTab.TabIndex = 1;
             this.AuthorTab.Text = "AUTHOR";
+            // 
+            // resetAuthorButton
+            // 
+            this.resetAuthorButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.resetAuthorButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.resetAuthorButton.Depth = 0;
+            this.resetAuthorButton.HighEmphasis = true;
+            this.resetAuthorButton.Icon = null;
+            this.resetAuthorButton.Location = new System.Drawing.Point(680, 290);
+            this.resetAuthorButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.resetAuthorButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.resetAuthorButton.Name = "resetAuthorButton";
+            this.resetAuthorButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.resetAuthorButton.Size = new System.Drawing.Size(65, 36);
+            this.resetAuthorButton.TabIndex = 28;
+            this.resetAuthorButton.Text = "RESET";
+            this.resetAuthorButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.resetAuthorButton.UseAccentColor = false;
+            this.resetAuthorButton.UseVisualStyleBackColor = true;
+            this.resetAuthorButton.Click += new System.EventHandler(this.resetAuthorButton_Click);
             // 
             // UpdateAuthorButton
             // 
@@ -534,5 +557,6 @@ namespace Library.Presentation.AdminViews
         private MaterialSkin.Controls.MaterialButton UpdateAuthorButton;
         private MaterialSkin.Controls.MaterialButton DeleteAuthorButton;
         private System.Windows.Forms.DataGridView AuthorsDataGrid;
+        private MaterialSkin.Controls.MaterialButton resetAuthorButton;
     }
 }

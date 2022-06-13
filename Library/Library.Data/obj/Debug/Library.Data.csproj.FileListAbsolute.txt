@@ -71,5 +71,6 @@ C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\MathNet.Numer
 C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\System.ValueTuple.xml
 C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\FileHelpers.dll
 C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\FileHelpers.xml
+C:\Users\Milan\Source\Repos\Library\Library\Library.Data\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\Milan\Source\Repos\Library\Library\Library.Data\obj\Debug\Library.Data.Migrations.Initial_Migration.resources
 C:\Users\Milan\Source\Repos\Library\Library\Library.Data\obj\Debug\Library.Data.csproj.GenerateResource.cache

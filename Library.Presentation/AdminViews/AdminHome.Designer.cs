@@ -30,24 +30,24 @@
         {
             this.menu = new MaterialSkin.Controls.MaterialTabControl();
             this.homeTab = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.wishBookDataGrid = new System.Windows.Forms.DataGridView();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.ApproveButton = new MaterialSkin.Controls.MaterialButton();
+            this.wishBookDataGrid = new System.Windows.Forms.DataGridView();
             this.DeleteButton = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.expireSoonRentalsDataGrid = new System.Windows.Forms.DataGridView();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.booksTab = new System.Windows.Forms.TabPage();
+            this.searchBooksAuthorComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.searchBooksISBNComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.searchBooksBookComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.saveBookToCSVButton = new MaterialSkin.Controls.MaterialButton();
             this.updateBookButton = new MaterialSkin.Controls.MaterialButton();
             this.deleteBookButton = new MaterialSkin.Controls.MaterialButton();
             this.addBookButton = new MaterialSkin.Controls.MaterialButton();
             this.booksDataGrid = new System.Windows.Forms.DataGridView();
             this.searchBookButton = new MaterialSkin.Controls.MaterialButton();
-            this.genreCheckedListBox = new MaterialSkin.Controls.MaterialCheckedListBox();
-            this.authorTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.isbnTextBox = new MaterialSkin.Controls.MaterialTextBox();
-            this.bookTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.genreSearchCheckedListBox = new MaterialSkin.Controls.MaterialCheckedListBox();
             this.studentsTab = new System.Windows.Forms.TabPage();
             this.resetStudentButton = new MaterialSkin.Controls.MaterialButton();
             this.addStudentPhoneTextBox = new MaterialSkin.Controls.MaterialTextBox2();
@@ -87,26 +87,27 @@
             this.rentalSearchButton = new MaterialSkin.Controls.MaterialButton();
             this.rentalDataGrid = new System.Windows.Forms.DataGridView();
             this.administrationTab = new System.Windows.Forms.TabPage();
-            this.searchEmployeePhoneComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            this.searchEmployeeEmailComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            this.searchEmployeeLastNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            this.searchEmployeeFirstNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            this.employeeDataGrid = new System.Windows.Forms.DataGridView();
-            this.employeeSearchButton = new MaterialSkin.Controls.MaterialButton();
-            this.updateEmployeeButton = new MaterialSkin.Controls.MaterialButton();
-            this.deleteEmployeeButton = new MaterialSkin.Controls.MaterialButton();
-            this.addUpdateEmployeeButton = new MaterialSkin.Controls.MaterialButton();
-            this.employeeSaveToCSVBUtton = new MaterialSkin.Controls.MaterialButton();
-            this.resetEmployeeButton = new MaterialSkin.Controls.MaterialButton();
-            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.addEmployedPhoneTextBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.addEmployedPasswordTextBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.addEmployedEmailTextBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.addEmployeeLastNameTextBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.addEmployeeFirstNameTextBox = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.resetEmployeeButton = new MaterialSkin.Controls.MaterialButton();
+            this.employeeSaveToCSVBUtton = new MaterialSkin.Controls.MaterialButton();
+            this.addUpdateEmployeeButton = new MaterialSkin.Controls.MaterialButton();
+            this.deleteEmployeeButton = new MaterialSkin.Controls.MaterialButton();
+            this.updateEmployeeButton = new MaterialSkin.Controls.MaterialButton();
+            this.employeeSearchButton = new MaterialSkin.Controls.MaterialButton();
+            this.searchEmployeePhoneComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.searchEmployeeEmailComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.searchEmployeeLastNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.searchEmployeeFirstNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.employeeDataGrid = new System.Windows.Forms.DataGridView();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.menu.SuspendLayout();
             this.homeTab.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wishBookDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expireSoonRentalsDataGrid)).BeginInit();
             this.booksTab.SuspendLayout();
@@ -127,61 +128,42 @@
             this.menu.Controls.Add(this.rentalsTab);
             this.menu.Controls.Add(this.administrationTab);
             this.menu.Depth = 0;
-            this.menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.menu.Location = new System.Drawing.Point(0, 64);
             this.menu.MouseState = MaterialSkin.MouseState.HOVER;
             this.menu.Multiline = true;
             this.menu.Name = "menu";
             this.menu.SelectedIndex = 0;
-            this.menu.Size = new System.Drawing.Size(1209, 570);
+            this.menu.Size = new System.Drawing.Size(1500, 800);
             this.menu.TabIndex = 0;
             // 
             // homeTab
             // 
-            this.homeTab.BackColor = System.Drawing.Color.Transparent;
-            this.homeTab.Controls.Add(this.flowLayoutPanel1);
+            this.homeTab.BackColor = System.Drawing.Color.White;
+            this.homeTab.Controls.Add(this.materialLabel8);
+            this.homeTab.Controls.Add(this.materialLabel7);
+            this.homeTab.Controls.Add(this.materialDivider1);
+            this.homeTab.Controls.Add(this.ApproveButton);
+            this.homeTab.Controls.Add(this.wishBookDataGrid);
+            this.homeTab.Controls.Add(this.DeleteButton);
+            this.homeTab.Controls.Add(this.materialLabel2);
+            this.homeTab.Controls.Add(this.expireSoonRentalsDataGrid);
+            this.homeTab.Controls.Add(this.materialLabel1);
             this.homeTab.Location = new System.Drawing.Point(4, 25);
             this.homeTab.Name = "homeTab";
             this.homeTab.Padding = new System.Windows.Forms.Padding(3);
-            this.homeTab.Size = new System.Drawing.Size(1201, 541);
+            this.homeTab.Size = new System.Drawing.Size(1492, 771);
             this.homeTab.TabIndex = 0;
             this.homeTab.Text = "HOME";
             // 
-            // flowLayoutPanel1
+            // materialDivider1
             // 
-            this.flowLayoutPanel1.AllowDrop = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Controls.Add(this.materialLabel1);
-            this.flowLayoutPanel1.Controls.Add(this.wishBookDataGrid);
-            this.flowLayoutPanel1.Controls.Add(this.ApproveButton);
-            this.flowLayoutPanel1.Controls.Add(this.DeleteButton);
-            this.flowLayoutPanel1.Controls.Add(this.materialLabel2);
-            this.flowLayoutPanel1.Controls.Add(this.expireSoonRentalsDataGrid);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1064, 538);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(3, 0);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(103, 19);
-            this.materialLabel1.TabIndex = 2;
-            this.materialLabel1.Text = "All wish books";
-            // 
-            // wishBookDataGrid
-            // 
-            this.wishBookDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.wishBookDataGrid.Location = new System.Drawing.Point(112, 3);
-            this.wishBookDataGrid.Name = "wishBookDataGrid";
-            this.wishBookDataGrid.Size = new System.Drawing.Size(715, 149);
-            this.wishBookDataGrid.TabIndex = 0;
-            this.wishBookDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.wishBookDataGrid_CellClick);
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(96, 458);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(1150, 1);
+            this.materialDivider1.TabIndex = 32;
             // 
             // ApproveButton
             // 
@@ -190,7 +172,7 @@
             this.ApproveButton.Depth = 0;
             this.ApproveButton.HighEmphasis = true;
             this.ApproveButton.Icon = null;
-            this.ApproveButton.Location = new System.Drawing.Point(834, 6);
+            this.ApproveButton.Location = new System.Drawing.Point(991, 43);
             this.ApproveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ApproveButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ApproveButton.Name = "ApproveButton";
@@ -203,6 +185,15 @@
             this.ApproveButton.UseVisualStyleBackColor = true;
             this.ApproveButton.Click += new System.EventHandler(this.ApproveButton_Click);
             // 
+            // wishBookDataGrid
+            // 
+            this.wishBookDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.wishBookDataGrid.Location = new System.Drawing.Point(238, 28);
+            this.wishBookDataGrid.Name = "wishBookDataGrid";
+            this.wishBookDataGrid.Size = new System.Drawing.Size(715, 149);
+            this.wishBookDataGrid.TabIndex = 0;
+            this.wishBookDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.wishBookDataGrid_CellClick);
+            // 
             // DeleteButton
             // 
             this.DeleteButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -210,7 +201,7 @@
             this.DeleteButton.Depth = 0;
             this.DeleteButton.HighEmphasis = true;
             this.DeleteButton.Icon = null;
-            this.DeleteButton.Location = new System.Drawing.Point(929, 6);
+            this.DeleteButton.Location = new System.Drawing.Point(991, 104);
             this.DeleteButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeleteButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteButton.Name = "DeleteButton";
@@ -228,7 +219,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(3, 155);
+            this.materialLabel2.Location = new System.Drawing.Point(80, 198);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(136, 19);
@@ -238,30 +229,110 @@
             // expireSoonRentalsDataGrid
             // 
             this.expireSoonRentalsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.expireSoonRentalsDataGrid.Location = new System.Drawing.Point(145, 158);
+            this.expireSoonRentalsDataGrid.Location = new System.Drawing.Point(238, 198);
             this.expireSoonRentalsDataGrid.Name = "expireSoonRentalsDataGrid";
             this.expireSoonRentalsDataGrid.Size = new System.Drawing.Size(597, 149);
             this.expireSoonRentalsDataGrid.TabIndex = 1;
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(113, 28);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(103, 19);
+            this.materialLabel1.TabIndex = 2;
+            this.materialLabel1.Text = "All wish books";
+            // 
             // booksTab
             // 
             this.booksTab.BackColor = System.Drawing.Color.White;
+            this.booksTab.Controls.Add(this.searchBooksAuthorComboBox);
+            this.booksTab.Controls.Add(this.searchBooksISBNComboBox);
+            this.booksTab.Controls.Add(this.searchBooksBookComboBox);
             this.booksTab.Controls.Add(this.saveBookToCSVButton);
             this.booksTab.Controls.Add(this.updateBookButton);
             this.booksTab.Controls.Add(this.deleteBookButton);
             this.booksTab.Controls.Add(this.addBookButton);
             this.booksTab.Controls.Add(this.booksDataGrid);
             this.booksTab.Controls.Add(this.searchBookButton);
-            this.booksTab.Controls.Add(this.genreCheckedListBox);
-            this.booksTab.Controls.Add(this.authorTextBox);
-            this.booksTab.Controls.Add(this.isbnTextBox);
-            this.booksTab.Controls.Add(this.bookTextBox);
+            this.booksTab.Controls.Add(this.genreSearchCheckedListBox);
             this.booksTab.Location = new System.Drawing.Point(4, 25);
             this.booksTab.Name = "booksTab";
             this.booksTab.Padding = new System.Windows.Forms.Padding(3);
-            this.booksTab.Size = new System.Drawing.Size(1201, 541);
+            this.booksTab.Size = new System.Drawing.Size(1492, 771);
             this.booksTab.TabIndex = 1;
             this.booksTab.Text = "BOOKS";
+            // 
+            // searchBooksAuthorComboBox
+            // 
+            this.searchBooksAuthorComboBox.AutoResize = false;
+            this.searchBooksAuthorComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.searchBooksAuthorComboBox.Depth = 0;
+            this.searchBooksAuthorComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.searchBooksAuthorComboBox.DropDownHeight = 174;
+            this.searchBooksAuthorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchBooksAuthorComboBox.DropDownWidth = 121;
+            this.searchBooksAuthorComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.searchBooksAuthorComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.searchBooksAuthorComboBox.FormattingEnabled = true;
+            this.searchBooksAuthorComboBox.Hint = "Author";
+            this.searchBooksAuthorComboBox.IntegralHeight = false;
+            this.searchBooksAuthorComboBox.ItemHeight = 43;
+            this.searchBooksAuthorComboBox.Location = new System.Drawing.Point(67, 205);
+            this.searchBooksAuthorComboBox.MaxDropDownItems = 4;
+            this.searchBooksAuthorComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.searchBooksAuthorComboBox.Name = "searchBooksAuthorComboBox";
+            this.searchBooksAuthorComboBox.Size = new System.Drawing.Size(181, 49);
+            this.searchBooksAuthorComboBox.StartIndex = 0;
+            this.searchBooksAuthorComboBox.TabIndex = 12;
+            // 
+            // searchBooksISBNComboBox
+            // 
+            this.searchBooksISBNComboBox.AutoResize = false;
+            this.searchBooksISBNComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.searchBooksISBNComboBox.Depth = 0;
+            this.searchBooksISBNComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.searchBooksISBNComboBox.DropDownHeight = 174;
+            this.searchBooksISBNComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchBooksISBNComboBox.DropDownWidth = 121;
+            this.searchBooksISBNComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.searchBooksISBNComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.searchBooksISBNComboBox.FormattingEnabled = true;
+            this.searchBooksISBNComboBox.Hint = "ISBN";
+            this.searchBooksISBNComboBox.IntegralHeight = false;
+            this.searchBooksISBNComboBox.ItemHeight = 43;
+            this.searchBooksISBNComboBox.Location = new System.Drawing.Point(67, 119);
+            this.searchBooksISBNComboBox.MaxDropDownItems = 4;
+            this.searchBooksISBNComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.searchBooksISBNComboBox.Name = "searchBooksISBNComboBox";
+            this.searchBooksISBNComboBox.Size = new System.Drawing.Size(181, 49);
+            this.searchBooksISBNComboBox.StartIndex = 0;
+            this.searchBooksISBNComboBox.TabIndex = 11;
+            // 
+            // searchBooksBookComboBox
+            // 
+            this.searchBooksBookComboBox.AutoResize = false;
+            this.searchBooksBookComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.searchBooksBookComboBox.Depth = 0;
+            this.searchBooksBookComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.searchBooksBookComboBox.DropDownHeight = 174;
+            this.searchBooksBookComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchBooksBookComboBox.DropDownWidth = 121;
+            this.searchBooksBookComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.searchBooksBookComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.searchBooksBookComboBox.FormattingEnabled = true;
+            this.searchBooksBookComboBox.Hint = "Book";
+            this.searchBooksBookComboBox.IntegralHeight = false;
+            this.searchBooksBookComboBox.ItemHeight = 43;
+            this.searchBooksBookComboBox.Location = new System.Drawing.Point(67, 31);
+            this.searchBooksBookComboBox.MaxDropDownItems = 4;
+            this.searchBooksBookComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.searchBooksBookComboBox.Name = "searchBooksBookComboBox";
+            this.searchBooksBookComboBox.Size = new System.Drawing.Size(181, 49);
+            this.searchBooksBookComboBox.StartIndex = 0;
+            this.searchBooksBookComboBox.TabIndex = 10;
             // 
             // saveBookToCSVButton
             // 
@@ -270,7 +341,7 @@
             this.saveBookToCSVButton.Depth = 0;
             this.saveBookToCSVButton.HighEmphasis = true;
             this.saveBookToCSVButton.Icon = null;
-            this.saveBookToCSVButton.Location = new System.Drawing.Point(811, 258);
+            this.saveBookToCSVButton.Location = new System.Drawing.Point(1060, 146);
             this.saveBookToCSVButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.saveBookToCSVButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveBookToCSVButton.Name = "saveBookToCSVButton";
@@ -290,7 +361,7 @@
             this.updateBookButton.Depth = 0;
             this.updateBookButton.HighEmphasis = true;
             this.updateBookButton.Icon = null;
-            this.updateBookButton.Location = new System.Drawing.Point(803, 185);
+            this.updateBookButton.Location = new System.Drawing.Point(833, 249);
             this.updateBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateBookButton.Name = "updateBookButton";
@@ -310,7 +381,7 @@
             this.deleteBookButton.Depth = 0;
             this.deleteBookButton.HighEmphasis = true;
             this.deleteBookButton.Icon = null;
-            this.deleteBookButton.Location = new System.Drawing.Point(652, 185);
+            this.deleteBookButton.Location = new System.Drawing.Point(602, 249);
             this.deleteBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteBookButton.Name = "deleteBookButton";
@@ -330,7 +401,7 @@
             this.addBookButton.Depth = 0;
             this.addBookButton.HighEmphasis = true;
             this.addBookButton.Icon = null;
-            this.addBookButton.Location = new System.Drawing.Point(517, 185);
+            this.addBookButton.Location = new System.Drawing.Point(388, 249);
             this.addBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addBookButton.Name = "addBookButton";
@@ -346,9 +417,9 @@
             // booksDataGrid
             // 
             this.booksDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.booksDataGrid.Location = new System.Drawing.Point(478, 15);
+            this.booksDataGrid.Location = new System.Drawing.Point(273, 31);
             this.booksDataGrid.Name = "booksDataGrid";
-            this.booksDataGrid.Size = new System.Drawing.Size(485, 150);
+            this.booksDataGrid.Size = new System.Drawing.Size(780, 164);
             this.booksDataGrid.TabIndex = 5;
             this.booksDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.booksDataGrid_CellClick);
             // 
@@ -359,7 +430,7 @@
             this.searchBookButton.Depth = 0;
             this.searchBookButton.HighEmphasis = true;
             this.searchBookButton.Icon = null;
-            this.searchBookButton.Location = new System.Drawing.Point(288, 283);
+            this.searchBookButton.Location = new System.Drawing.Point(117, 422);
             this.searchBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.searchBookButton.Name = "searchBookButton";
@@ -372,72 +443,18 @@
             this.searchBookButton.UseVisualStyleBackColor = true;
             this.searchBookButton.Click += new System.EventHandler(this.searchBookButton_Click);
             // 
-            // genreCheckedListBox
+            // genreSearchCheckedListBox
             // 
-            this.genreCheckedListBox.AutoScroll = true;
-            this.genreCheckedListBox.BackColor = System.Drawing.Color.White;
-            this.genreCheckedListBox.Depth = 0;
-            this.genreCheckedListBox.Location = new System.Drawing.Point(251, 174);
-            this.genreCheckedListBox.MouseState = MaterialSkin.MouseState.HOVER;
-            this.genreCheckedListBox.Name = "genreCheckedListBox";
-            this.genreCheckedListBox.Size = new System.Drawing.Size(200, 100);
-            this.genreCheckedListBox.Striped = false;
-            this.genreCheckedListBox.StripeDarkColor = System.Drawing.Color.Empty;
-            this.genreCheckedListBox.TabIndex = 3;
-            // 
-            // authorTextBox
-            // 
-            this.authorTextBox.AnimateReadOnly = false;
-            this.authorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.authorTextBox.Depth = 0;
-            this.authorTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.authorTextBox.Hint = "Author";
-            this.authorTextBox.LeadingIcon = null;
-            this.authorTextBox.Location = new System.Drawing.Point(251, 118);
-            this.authorTextBox.MaxLength = 50;
-            this.authorTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.authorTextBox.Multiline = false;
-            this.authorTextBox.Name = "authorTextBox";
-            this.authorTextBox.Size = new System.Drawing.Size(149, 50);
-            this.authorTextBox.TabIndex = 2;
-            this.authorTextBox.Text = "";
-            this.authorTextBox.TrailingIcon = null;
-            // 
-            // isbnTextBox
-            // 
-            this.isbnTextBox.AnimateReadOnly = false;
-            this.isbnTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.isbnTextBox.Depth = 0;
-            this.isbnTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.isbnTextBox.Hint = "ISBN";
-            this.isbnTextBox.LeadingIcon = null;
-            this.isbnTextBox.Location = new System.Drawing.Point(251, 62);
-            this.isbnTextBox.MaxLength = 50;
-            this.isbnTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.isbnTextBox.Multiline = false;
-            this.isbnTextBox.Name = "isbnTextBox";
-            this.isbnTextBox.Size = new System.Drawing.Size(149, 50);
-            this.isbnTextBox.TabIndex = 1;
-            this.isbnTextBox.Text = "";
-            this.isbnTextBox.TrailingIcon = null;
-            // 
-            // bookTextBox
-            // 
-            this.bookTextBox.AnimateReadOnly = false;
-            this.bookTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bookTextBox.Depth = 0;
-            this.bookTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.bookTextBox.Hint = "Book";
-            this.bookTextBox.LeadingIcon = null;
-            this.bookTextBox.Location = new System.Drawing.Point(251, 6);
-            this.bookTextBox.MaxLength = 50;
-            this.bookTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.bookTextBox.Multiline = false;
-            this.bookTextBox.Name = "bookTextBox";
-            this.bookTextBox.Size = new System.Drawing.Size(149, 50);
-            this.bookTextBox.TabIndex = 0;
-            this.bookTextBox.Text = "";
-            this.bookTextBox.TrailingIcon = null;
+            this.genreSearchCheckedListBox.AutoScroll = true;
+            this.genreSearchCheckedListBox.BackColor = System.Drawing.Color.White;
+            this.genreSearchCheckedListBox.Depth = 0;
+            this.genreSearchCheckedListBox.Location = new System.Drawing.Point(67, 292);
+            this.genreSearchCheckedListBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.genreSearchCheckedListBox.Name = "genreSearchCheckedListBox";
+            this.genreSearchCheckedListBox.Size = new System.Drawing.Size(200, 100);
+            this.genreSearchCheckedListBox.Striped = false;
+            this.genreSearchCheckedListBox.StripeDarkColor = System.Drawing.Color.Empty;
+            this.genreSearchCheckedListBox.TabIndex = 3;
             // 
             // studentsTab
             // 
@@ -463,7 +480,7 @@
             this.studentsTab.Location = new System.Drawing.Point(4, 25);
             this.studentsTab.Name = "studentsTab";
             this.studentsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.studentsTab.Size = new System.Drawing.Size(1201, 541);
+            this.studentsTab.Size = new System.Drawing.Size(1492, 771);
             this.studentsTab.TabIndex = 2;
             this.studentsTab.Text = "STUDENTS";
             // 
@@ -474,7 +491,7 @@
             this.resetStudentButton.Depth = 0;
             this.resetStudentButton.HighEmphasis = true;
             this.resetStudentButton.Icon = null;
-            this.resetStudentButton.Location = new System.Drawing.Point(850, 323);
+            this.resetStudentButton.Location = new System.Drawing.Point(1027, 329);
             this.resetStudentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.resetStudentButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.resetStudentButton.Name = "resetStudentButton";
@@ -497,7 +514,7 @@
             this.addStudentPhoneTextBox.HideSelection = true;
             this.addStudentPhoneTextBox.Hint = "Students Phone Number";
             this.addStudentPhoneTextBox.LeadingIcon = null;
-            this.addStudentPhoneTextBox.Location = new System.Drawing.Point(526, 450);
+            this.addStudentPhoneTextBox.Location = new System.Drawing.Point(753, 356);
             this.addStudentPhoneTextBox.MaxLength = 32767;
             this.addStudentPhoneTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentPhoneTextBox.Name = "addStudentPhoneTextBox";
@@ -526,7 +543,7 @@
             this.addStudentPasswordTextBox.HideSelection = true;
             this.addStudentPasswordTextBox.Hint = "Students password";
             this.addStudentPasswordTextBox.LeadingIcon = null;
-            this.addStudentPasswordTextBox.Location = new System.Drawing.Point(526, 396);
+            this.addStudentPasswordTextBox.Location = new System.Drawing.Point(753, 267);
             this.addStudentPasswordTextBox.MaxLength = 32767;
             this.addStudentPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentPasswordTextBox.Name = "addStudentPasswordTextBox";
@@ -555,7 +572,7 @@
             this.addStudentEmailTextBox.HideSelection = true;
             this.addStudentEmailTextBox.Hint = "Students email";
             this.addStudentEmailTextBox.LeadingIcon = null;
-            this.addStudentEmailTextBox.Location = new System.Drawing.Point(526, 342);
+            this.addStudentEmailTextBox.Location = new System.Drawing.Point(753, 180);
             this.addStudentEmailTextBox.MaxLength = 32767;
             this.addStudentEmailTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentEmailTextBox.Name = "addStudentEmailTextBox";
@@ -584,7 +601,7 @@
             this.addStudentIndexNumberTextBox.HideSelection = true;
             this.addStudentIndexNumberTextBox.Hint = "Students Index Number";
             this.addStudentIndexNumberTextBox.LeadingIcon = null;
-            this.addStudentIndexNumberTextBox.Location = new System.Drawing.Point(526, 288);
+            this.addStudentIndexNumberTextBox.Location = new System.Drawing.Point(478, 356);
             this.addStudentIndexNumberTextBox.MaxLength = 32767;
             this.addStudentIndexNumberTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentIndexNumberTextBox.Name = "addStudentIndexNumberTextBox";
@@ -613,7 +630,7 @@
             this.addStudentLastNameTextBox.HideSelection = true;
             this.addStudentLastNameTextBox.Hint = "Users Last Name";
             this.addStudentLastNameTextBox.LeadingIcon = null;
-            this.addStudentLastNameTextBox.Location = new System.Drawing.Point(526, 234);
+            this.addStudentLastNameTextBox.Location = new System.Drawing.Point(478, 267);
             this.addStudentLastNameTextBox.MaxLength = 32767;
             this.addStudentLastNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentLastNameTextBox.Name = "addStudentLastNameTextBox";
@@ -642,7 +659,7 @@
             this.addStudentFirstNameTextBox.HideSelection = true;
             this.addStudentFirstNameTextBox.Hint = "Users First Name";
             this.addStudentFirstNameTextBox.LeadingIcon = null;
-            this.addStudentFirstNameTextBox.Location = new System.Drawing.Point(526, 180);
+            this.addStudentFirstNameTextBox.Location = new System.Drawing.Point(478, 180);
             this.addStudentFirstNameTextBox.MaxLength = 32767;
             this.addStudentFirstNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentFirstNameTextBox.Name = "addStudentFirstNameTextBox";
@@ -668,7 +685,7 @@
             this.studentsSaveToCSV.Depth = 0;
             this.studentsSaveToCSV.HighEmphasis = true;
             this.studentsSaveToCSV.Icon = null;
-            this.studentsSaveToCSV.Location = new System.Drawing.Point(850, 199);
+            this.studentsSaveToCSV.Location = new System.Drawing.Point(1027, 205);
             this.studentsSaveToCSV.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.studentsSaveToCSV.MouseState = MaterialSkin.MouseState.HOVER;
             this.studentsSaveToCSV.Name = "studentsSaveToCSV";
@@ -700,7 +717,7 @@
             this.addOrUpdateStudentButton.Depth = 0;
             this.addOrUpdateStudentButton.HighEmphasis = true;
             this.addOrUpdateStudentButton.Icon = null;
-            this.addOrUpdateStudentButton.Location = new System.Drawing.Point(850, 261);
+            this.addOrUpdateStudentButton.Location = new System.Drawing.Point(1027, 267);
             this.addOrUpdateStudentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addOrUpdateStudentButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addOrUpdateStudentButton.Name = "addOrUpdateStudentButton";
@@ -769,7 +786,7 @@
             this.userSearchButton.Depth = 0;
             this.userSearchButton.HighEmphasis = true;
             this.userSearchButton.Icon = null;
-            this.userSearchButton.Location = new System.Drawing.Point(118, 261);
+            this.userSearchButton.Location = new System.Drawing.Point(123, 279);
             this.userSearchButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.userSearchButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.userSearchButton.Name = "userSearchButton";
@@ -797,7 +814,7 @@
             this.userSearchIndexNumberComboBox.Hint = "Index Number";
             this.userSearchIndexNumberComboBox.IntegralHeight = false;
             this.userSearchIndexNumberComboBox.ItemHeight = 43;
-            this.userSearchIndexNumberComboBox.Location = new System.Drawing.Point(74, 169);
+            this.userSearchIndexNumberComboBox.Location = new System.Drawing.Point(74, 202);
             this.userSearchIndexNumberComboBox.MaxDropDownItems = 4;
             this.userSearchIndexNumberComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.userSearchIndexNumberComboBox.Name = "userSearchIndexNumberComboBox";
@@ -820,7 +837,7 @@
             this.userSearchLastNameComboBox.Hint = "Last Name";
             this.userSearchLastNameComboBox.IntegralHeight = false;
             this.userSearchLastNameComboBox.ItemHeight = 43;
-            this.userSearchLastNameComboBox.Location = new System.Drawing.Point(74, 99);
+            this.userSearchLastNameComboBox.Location = new System.Drawing.Point(74, 115);
             this.userSearchLastNameComboBox.MaxDropDownItems = 4;
             this.userSearchLastNameComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.userSearchLastNameComboBox.Name = "userSearchLastNameComboBox";
@@ -876,7 +893,7 @@
             this.rentalsTab.Location = new System.Drawing.Point(4, 25);
             this.rentalsTab.Name = "rentalsTab";
             this.rentalsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.rentalsTab.Size = new System.Drawing.Size(1201, 541);
+            this.rentalsTab.Size = new System.Drawing.Size(1492, 771);
             this.rentalsTab.TabIndex = 3;
             this.rentalsTab.Text = "RENTALS";
             // 
@@ -942,7 +959,7 @@
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(537, 214);
+            this.materialLabel4.Location = new System.Drawing.Point(537, 222);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(154, 19);
@@ -954,7 +971,7 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(691, 439);
+            this.materialLabel3.Location = new System.Drawing.Point(604, 439);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(87, 19);
@@ -963,7 +980,7 @@
             // 
             // rentalDatePicker
             // 
-            this.rentalDatePicker.Location = new System.Drawing.Point(694, 480);
+            this.rentalDatePicker.Location = new System.Drawing.Point(711, 434);
             this.rentalDatePicker.Name = "rentalDatePicker";
             this.rentalDatePicker.Size = new System.Drawing.Size(225, 23);
             this.rentalDatePicker.TabIndex = 20;
@@ -978,7 +995,7 @@
             this.rentalBookNameTextBox.HideSelection = true;
             this.rentalBookNameTextBox.Hint = "Book";
             this.rentalBookNameTextBox.LeadingIcon = null;
-            this.rentalBookNameTextBox.Location = new System.Drawing.Point(694, 302);
+            this.rentalBookNameTextBox.Location = new System.Drawing.Point(711, 302);
             this.rentalBookNameTextBox.MaxLength = 32767;
             this.rentalBookNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalBookNameTextBox.Name = "rentalBookNameTextBox";
@@ -1007,7 +1024,7 @@
             this.rentalBookIsbnTextBox.HideSelection = true;
             this.rentalBookIsbnTextBox.Hint = "ISBN";
             this.rentalBookIsbnTextBox.LeadingIcon = null;
-            this.rentalBookIsbnTextBox.Location = new System.Drawing.Point(694, 367);
+            this.rentalBookIsbnTextBox.Location = new System.Drawing.Point(711, 370);
             this.rentalBookIsbnTextBox.MaxLength = 32767;
             this.rentalBookIsbnTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalBookIsbnTextBox.Name = "rentalBookIsbnTextBox";
@@ -1036,7 +1053,7 @@
             this.rentalUserIndexNumberTextBox.HideSelection = true;
             this.rentalUserIndexNumberTextBox.Hint = "User Index Number";
             this.rentalUserIndexNumberTextBox.LeadingIcon = null;
-            this.rentalUserIndexNumberTextBox.Location = new System.Drawing.Point(694, 240);
+            this.rentalUserIndexNumberTextBox.Location = new System.Drawing.Point(711, 222);
             this.rentalUserIndexNumberTextBox.MaxLength = 32767;
             this.rentalUserIndexNumberTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalUserIndexNumberTextBox.Name = "rentalUserIndexNumberTextBox";
@@ -1070,7 +1087,7 @@
             this.rentalUserIndexNumberComboBox.Hint = "User Index Number";
             this.rentalUserIndexNumberComboBox.IntegralHeight = false;
             this.rentalUserIndexNumberComboBox.ItemHeight = 43;
-            this.rentalUserIndexNumberComboBox.Location = new System.Drawing.Point(55, 239);
+            this.rentalUserIndexNumberComboBox.Location = new System.Drawing.Point(55, 279);
             this.rentalUserIndexNumberComboBox.MaxDropDownItems = 4;
             this.rentalUserIndexNumberComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalUserIndexNumberComboBox.Name = "rentalUserIndexNumberComboBox";
@@ -1093,7 +1110,7 @@
             this.rentalUserLastNameComboBox.Hint = "User Last Name";
             this.rentalUserLastNameComboBox.IntegralHeight = false;
             this.rentalUserLastNameComboBox.ItemHeight = 43;
-            this.rentalUserLastNameComboBox.Location = new System.Drawing.Point(55, 169);
+            this.rentalUserLastNameComboBox.Location = new System.Drawing.Point(55, 192);
             this.rentalUserLastNameComboBox.MaxDropDownItems = 4;
             this.rentalUserLastNameComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalUserLastNameComboBox.Name = "rentalUserLastNameComboBox";
@@ -1116,7 +1133,7 @@
             this.rentalUserFirstNameComboBox.Hint = "User First Name";
             this.rentalUserFirstNameComboBox.IntegralHeight = false;
             this.rentalUserFirstNameComboBox.ItemHeight = 43;
-            this.rentalUserFirstNameComboBox.Location = new System.Drawing.Point(55, 98);
+            this.rentalUserFirstNameComboBox.Location = new System.Drawing.Point(55, 105);
             this.rentalUserFirstNameComboBox.MaxDropDownItems = 4;
             this.rentalUserFirstNameComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalUserFirstNameComboBox.Name = "rentalUserFirstNameComboBox";
@@ -1139,7 +1156,7 @@
             this.rentalBookComboBox.Hint = "Book";
             this.rentalBookComboBox.IntegralHeight = false;
             this.rentalBookComboBox.ItemHeight = 43;
-            this.rentalBookComboBox.Location = new System.Drawing.Point(55, 31);
+            this.rentalBookComboBox.Location = new System.Drawing.Point(55, 18);
             this.rentalBookComboBox.MaxDropDownItems = 4;
             this.rentalBookComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalBookComboBox.Name = "rentalBookComboBox";
@@ -1234,7 +1251,7 @@
             this.rentalSearchButton.Depth = 0;
             this.rentalSearchButton.HighEmphasis = true;
             this.rentalSearchButton.Icon = null;
-            this.rentalSearchButton.Location = new System.Drawing.Point(55, 341);
+            this.rentalSearchButton.Location = new System.Drawing.Point(114, 370);
             this.rentalSearchButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.rentalSearchButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.rentalSearchButton.Name = "rentalSearchButton";
@@ -1279,9 +1296,286 @@
             this.administrationTab.Location = new System.Drawing.Point(4, 25);
             this.administrationTab.Name = "administrationTab";
             this.administrationTab.Padding = new System.Windows.Forms.Padding(3);
-            this.administrationTab.Size = new System.Drawing.Size(1201, 541);
+            this.administrationTab.Size = new System.Drawing.Size(1492, 771);
             this.administrationTab.TabIndex = 4;
             this.administrationTab.Text = "ADMINISTRATION";
+            // 
+            // addEmployedPhoneTextBox
+            // 
+            this.addEmployedPhoneTextBox.AnimateReadOnly = false;
+            this.addEmployedPhoneTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addEmployedPhoneTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.addEmployedPhoneTextBox.Depth = 0;
+            this.addEmployedPhoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addEmployedPhoneTextBox.HideSelection = true;
+            this.addEmployedPhoneTextBox.Hint = "Employed Phone Number";
+            this.addEmployedPhoneTextBox.LeadingIcon = null;
+            this.addEmployedPhoneTextBox.Location = new System.Drawing.Point(801, 274);
+            this.addEmployedPhoneTextBox.MaxLength = 32767;
+            this.addEmployedPhoneTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.addEmployedPhoneTextBox.Name = "addEmployedPhoneTextBox";
+            this.addEmployedPhoneTextBox.PasswordChar = '\0';
+            this.addEmployedPhoneTextBox.PrefixSuffixText = null;
+            this.addEmployedPhoneTextBox.ReadOnly = false;
+            this.addEmployedPhoneTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.addEmployedPhoneTextBox.SelectedText = "";
+            this.addEmployedPhoneTextBox.SelectionLength = 0;
+            this.addEmployedPhoneTextBox.SelectionStart = 0;
+            this.addEmployedPhoneTextBox.ShortcutsEnabled = true;
+            this.addEmployedPhoneTextBox.Size = new System.Drawing.Size(250, 48);
+            this.addEmployedPhoneTextBox.TabIndex = 36;
+            this.addEmployedPhoneTextBox.TabStop = false;
+            this.addEmployedPhoneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.addEmployedPhoneTextBox.TrailingIcon = null;
+            this.addEmployedPhoneTextBox.UseSystemPasswordChar = false;
+            // 
+            // addEmployedPasswordTextBox
+            // 
+            this.addEmployedPasswordTextBox.AnimateReadOnly = false;
+            this.addEmployedPasswordTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addEmployedPasswordTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.addEmployedPasswordTextBox.Depth = 0;
+            this.addEmployedPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addEmployedPasswordTextBox.HideSelection = true;
+            this.addEmployedPasswordTextBox.Hint = "Employed password";
+            this.addEmployedPasswordTextBox.LeadingIcon = null;
+            this.addEmployedPasswordTextBox.Location = new System.Drawing.Point(801, 193);
+            this.addEmployedPasswordTextBox.MaxLength = 32767;
+            this.addEmployedPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.addEmployedPasswordTextBox.Name = "addEmployedPasswordTextBox";
+            this.addEmployedPasswordTextBox.PasswordChar = '\0';
+            this.addEmployedPasswordTextBox.PrefixSuffixText = null;
+            this.addEmployedPasswordTextBox.ReadOnly = false;
+            this.addEmployedPasswordTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.addEmployedPasswordTextBox.SelectedText = "";
+            this.addEmployedPasswordTextBox.SelectionLength = 0;
+            this.addEmployedPasswordTextBox.SelectionStart = 0;
+            this.addEmployedPasswordTextBox.ShortcutsEnabled = true;
+            this.addEmployedPasswordTextBox.Size = new System.Drawing.Size(250, 48);
+            this.addEmployedPasswordTextBox.TabIndex = 35;
+            this.addEmployedPasswordTextBox.TabStop = false;
+            this.addEmployedPasswordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.addEmployedPasswordTextBox.TrailingIcon = null;
+            this.addEmployedPasswordTextBox.UseSystemPasswordChar = false;
+            // 
+            // addEmployedEmailTextBox
+            // 
+            this.addEmployedEmailTextBox.AnimateReadOnly = false;
+            this.addEmployedEmailTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addEmployedEmailTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.addEmployedEmailTextBox.Depth = 0;
+            this.addEmployedEmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addEmployedEmailTextBox.HideSelection = true;
+            this.addEmployedEmailTextBox.Hint = "Employed email";
+            this.addEmployedEmailTextBox.LeadingIcon = null;
+            this.addEmployedEmailTextBox.Location = new System.Drawing.Point(535, 356);
+            this.addEmployedEmailTextBox.MaxLength = 32767;
+            this.addEmployedEmailTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.addEmployedEmailTextBox.Name = "addEmployedEmailTextBox";
+            this.addEmployedEmailTextBox.PasswordChar = '\0';
+            this.addEmployedEmailTextBox.PrefixSuffixText = null;
+            this.addEmployedEmailTextBox.ReadOnly = false;
+            this.addEmployedEmailTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.addEmployedEmailTextBox.SelectedText = "";
+            this.addEmployedEmailTextBox.SelectionLength = 0;
+            this.addEmployedEmailTextBox.SelectionStart = 0;
+            this.addEmployedEmailTextBox.ShortcutsEnabled = true;
+            this.addEmployedEmailTextBox.Size = new System.Drawing.Size(250, 48);
+            this.addEmployedEmailTextBox.TabIndex = 34;
+            this.addEmployedEmailTextBox.TabStop = false;
+            this.addEmployedEmailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.addEmployedEmailTextBox.TrailingIcon = null;
+            this.addEmployedEmailTextBox.UseSystemPasswordChar = false;
+            // 
+            // addEmployeeLastNameTextBox
+            // 
+            this.addEmployeeLastNameTextBox.AnimateReadOnly = false;
+            this.addEmployeeLastNameTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addEmployeeLastNameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.addEmployeeLastNameTextBox.Depth = 0;
+            this.addEmployeeLastNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addEmployeeLastNameTextBox.HideSelection = true;
+            this.addEmployeeLastNameTextBox.Hint = "Employed Last Name";
+            this.addEmployeeLastNameTextBox.LeadingIcon = null;
+            this.addEmployeeLastNameTextBox.Location = new System.Drawing.Point(535, 274);
+            this.addEmployeeLastNameTextBox.MaxLength = 32767;
+            this.addEmployeeLastNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.addEmployeeLastNameTextBox.Name = "addEmployeeLastNameTextBox";
+            this.addEmployeeLastNameTextBox.PasswordChar = '\0';
+            this.addEmployeeLastNameTextBox.PrefixSuffixText = null;
+            this.addEmployeeLastNameTextBox.ReadOnly = false;
+            this.addEmployeeLastNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.addEmployeeLastNameTextBox.SelectedText = "";
+            this.addEmployeeLastNameTextBox.SelectionLength = 0;
+            this.addEmployeeLastNameTextBox.SelectionStart = 0;
+            this.addEmployeeLastNameTextBox.ShortcutsEnabled = true;
+            this.addEmployeeLastNameTextBox.Size = new System.Drawing.Size(250, 48);
+            this.addEmployeeLastNameTextBox.TabIndex = 32;
+            this.addEmployeeLastNameTextBox.TabStop = false;
+            this.addEmployeeLastNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.addEmployeeLastNameTextBox.TrailingIcon = null;
+            this.addEmployeeLastNameTextBox.UseSystemPasswordChar = false;
+            // 
+            // addEmployeeFirstNameTextBox
+            // 
+            this.addEmployeeFirstNameTextBox.AnimateReadOnly = false;
+            this.addEmployeeFirstNameTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.addEmployeeFirstNameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.addEmployeeFirstNameTextBox.Depth = 0;
+            this.addEmployeeFirstNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.addEmployeeFirstNameTextBox.HideSelection = true;
+            this.addEmployeeFirstNameTextBox.Hint = "Employed First Name";
+            this.addEmployeeFirstNameTextBox.LeadingIcon = null;
+            this.addEmployeeFirstNameTextBox.Location = new System.Drawing.Point(535, 193);
+            this.addEmployeeFirstNameTextBox.MaxLength = 32767;
+            this.addEmployeeFirstNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.addEmployeeFirstNameTextBox.Name = "addEmployeeFirstNameTextBox";
+            this.addEmployeeFirstNameTextBox.PasswordChar = '\0';
+            this.addEmployeeFirstNameTextBox.PrefixSuffixText = null;
+            this.addEmployeeFirstNameTextBox.ReadOnly = false;
+            this.addEmployeeFirstNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.addEmployeeFirstNameTextBox.SelectedText = "";
+            this.addEmployeeFirstNameTextBox.SelectionLength = 0;
+            this.addEmployeeFirstNameTextBox.SelectionStart = 0;
+            this.addEmployeeFirstNameTextBox.ShortcutsEnabled = true;
+            this.addEmployeeFirstNameTextBox.Size = new System.Drawing.Size(250, 48);
+            this.addEmployeeFirstNameTextBox.TabIndex = 31;
+            this.addEmployeeFirstNameTextBox.TabStop = false;
+            this.addEmployeeFirstNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.addEmployeeFirstNameTextBox.TrailingIcon = null;
+            this.addEmployeeFirstNameTextBox.UseSystemPasswordChar = false;
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel6.Location = new System.Drawing.Point(351, 203);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(178, 19);
+            this.materialLabel6.TabIndex = 28;
+            this.materialLabel6.Text = "Add or Update Employee:";
+            // 
+            // resetEmployeeButton
+            // 
+            this.resetEmployeeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.resetEmployeeButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.resetEmployeeButton.Depth = 0;
+            this.resetEmployeeButton.HighEmphasis = true;
+            this.resetEmployeeButton.Icon = null;
+            this.resetEmployeeButton.Location = new System.Drawing.Point(1066, 314);
+            this.resetEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.resetEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.resetEmployeeButton.Name = "resetEmployeeButton";
+            this.resetEmployeeButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.resetEmployeeButton.Size = new System.Drawing.Size(65, 36);
+            this.resetEmployeeButton.TabIndex = 27;
+            this.resetEmployeeButton.Text = "RESET";
+            this.resetEmployeeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.resetEmployeeButton.UseAccentColor = false;
+            this.resetEmployeeButton.UseVisualStyleBackColor = true;
+            this.resetEmployeeButton.Click += new System.EventHandler(this.resetEmployeeButton_Click);
+            // 
+            // employeeSaveToCSVBUtton
+            // 
+            this.employeeSaveToCSVBUtton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.employeeSaveToCSVBUtton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.employeeSaveToCSVBUtton.Depth = 0;
+            this.employeeSaveToCSVBUtton.HighEmphasis = true;
+            this.employeeSaveToCSVBUtton.Icon = null;
+            this.employeeSaveToCSVBUtton.Location = new System.Drawing.Point(1067, 193);
+            this.employeeSaveToCSVBUtton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.employeeSaveToCSVBUtton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.employeeSaveToCSVBUtton.Name = "employeeSaveToCSVBUtton";
+            this.employeeSaveToCSVBUtton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.employeeSaveToCSVBUtton.Size = new System.Drawing.Size(112, 36);
+            this.employeeSaveToCSVBUtton.TabIndex = 26;
+            this.employeeSaveToCSVBUtton.Text = "SAVE TO CSV";
+            this.employeeSaveToCSVBUtton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.employeeSaveToCSVBUtton.UseAccentColor = false;
+            this.employeeSaveToCSVBUtton.UseVisualStyleBackColor = true;
+            this.employeeSaveToCSVBUtton.Click += new System.EventHandler(this.employeeSaveToCSVBUtton_Click);
+            // 
+            // addUpdateEmployeeButton
+            // 
+            this.addUpdateEmployeeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addUpdateEmployeeButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.addUpdateEmployeeButton.Depth = 0;
+            this.addUpdateEmployeeButton.HighEmphasis = true;
+            this.addUpdateEmployeeButton.Icon = null;
+            this.addUpdateEmployeeButton.Location = new System.Drawing.Point(1067, 252);
+            this.addUpdateEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.addUpdateEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addUpdateEmployeeButton.Name = "addUpdateEmployeeButton";
+            this.addUpdateEmployeeButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.addUpdateEmployeeButton.Size = new System.Drawing.Size(64, 36);
+            this.addUpdateEmployeeButton.TabIndex = 25;
+            this.addUpdateEmployeeButton.Text = "OK";
+            this.addUpdateEmployeeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.addUpdateEmployeeButton.UseAccentColor = false;
+            this.addUpdateEmployeeButton.UseVisualStyleBackColor = true;
+            this.addUpdateEmployeeButton.Click += new System.EventHandler(this.addUpdateEmployeeButton_Click);
+            // 
+            // deleteEmployeeButton
+            // 
+            this.deleteEmployeeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.deleteEmployeeButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.deleteEmployeeButton.Depth = 0;
+            this.deleteEmployeeButton.HighEmphasis = true;
+            this.deleteEmployeeButton.Icon = null;
+            this.deleteEmployeeButton.Location = new System.Drawing.Point(1067, 100);
+            this.deleteEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.deleteEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.deleteEmployeeButton.Name = "deleteEmployeeButton";
+            this.deleteEmployeeButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.deleteEmployeeButton.Size = new System.Drawing.Size(73, 36);
+            this.deleteEmployeeButton.TabIndex = 24;
+            this.deleteEmployeeButton.Text = "DELETE";
+            this.deleteEmployeeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.deleteEmployeeButton.UseAccentColor = false;
+            this.deleteEmployeeButton.UseVisualStyleBackColor = true;
+            this.deleteEmployeeButton.Click += new System.EventHandler(this.deleteEmployeeButton_Click);
+            // 
+            // updateEmployeeButton
+            // 
+            this.updateEmployeeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.updateEmployeeButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.updateEmployeeButton.Depth = 0;
+            this.updateEmployeeButton.HighEmphasis = true;
+            this.updateEmployeeButton.Icon = null;
+            this.updateEmployeeButton.Location = new System.Drawing.Point(1067, 42);
+            this.updateEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.updateEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.updateEmployeeButton.Name = "updateEmployeeButton";
+            this.updateEmployeeButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.updateEmployeeButton.Size = new System.Drawing.Size(77, 36);
+            this.updateEmployeeButton.TabIndex = 23;
+            this.updateEmployeeButton.Text = "UPDATE";
+            this.updateEmployeeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.updateEmployeeButton.UseAccentColor = false;
+            this.updateEmployeeButton.UseVisualStyleBackColor = true;
+            this.updateEmployeeButton.Click += new System.EventHandler(this.updateEmployeeButton_Click);
+            // 
+            // employeeSearchButton
+            // 
+            this.employeeSearchButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.employeeSearchButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.employeeSearchButton.Depth = 0;
+            this.employeeSearchButton.HighEmphasis = true;
+            this.employeeSearchButton.Icon = null;
+            this.employeeSearchButton.Location = new System.Drawing.Point(103, 368);
+            this.employeeSearchButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.employeeSearchButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.employeeSearchButton.Name = "employeeSearchButton";
+            this.employeeSearchButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.employeeSearchButton.Size = new System.Drawing.Size(78, 36);
+            this.employeeSearchButton.TabIndex = 22;
+            this.employeeSearchButton.Text = "SEARCH";
+            this.employeeSearchButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.employeeSearchButton.UseAccentColor = false;
+            this.employeeSearchButton.UseVisualStyleBackColor = true;
+            this.employeeSearchButton.Click += new System.EventHandler(this.employeeSearchButton_Click);
             // 
             // searchEmployeePhoneComboBox
             // 
@@ -1298,7 +1592,7 @@
             this.searchEmployeePhoneComboBox.Hint = "Phone Number";
             this.searchEmployeePhoneComboBox.IntegralHeight = false;
             this.searchEmployeePhoneComboBox.ItemHeight = 43;
-            this.searchEmployeePhoneComboBox.Location = new System.Drawing.Point(71, 239);
+            this.searchEmployeePhoneComboBox.Location = new System.Drawing.Point(71, 290);
             this.searchEmployeePhoneComboBox.MaxDropDownItems = 4;
             this.searchEmployeePhoneComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.searchEmployeePhoneComboBox.Name = "searchEmployeePhoneComboBox";
@@ -1321,7 +1615,7 @@
             this.searchEmployeeEmailComboBox.Hint = "Email";
             this.searchEmployeeEmailComboBox.IntegralHeight = false;
             this.searchEmployeeEmailComboBox.ItemHeight = 43;
-            this.searchEmployeeEmailComboBox.Location = new System.Drawing.Point(71, 170);
+            this.searchEmployeeEmailComboBox.Location = new System.Drawing.Point(71, 203);
             this.searchEmployeeEmailComboBox.MaxDropDownItems = 4;
             this.searchEmployeeEmailComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.searchEmployeeEmailComboBox.Name = "searchEmployeeEmailComboBox";
@@ -1344,7 +1638,7 @@
             this.searchEmployeeLastNameComboBox.Hint = "Last Name";
             this.searchEmployeeLastNameComboBox.IntegralHeight = false;
             this.searchEmployeeLastNameComboBox.ItemHeight = 43;
-            this.searchEmployeeLastNameComboBox.Location = new System.Drawing.Point(71, 100);
+            this.searchEmployeeLastNameComboBox.Location = new System.Drawing.Point(71, 116);
             this.searchEmployeeLastNameComboBox.MaxDropDownItems = 4;
             this.searchEmployeeLastNameComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.searchEmployeeLastNameComboBox.Name = "searchEmployeeLastNameComboBox";
@@ -1384,288 +1678,38 @@
             this.employeeDataGrid.TabIndex = 0;
             this.employeeDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employedDataGrid_CellClick);
             // 
-            // employeeSearchButton
+            // materialLabel7
             // 
-            this.employeeSearchButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.employeeSearchButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.employeeSearchButton.Depth = 0;
-            this.employeeSearchButton.HighEmphasis = true;
-            this.employeeSearchButton.Icon = null;
-            this.employeeSearchButton.Location = new System.Drawing.Point(101, 329);
-            this.employeeSearchButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.employeeSearchButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.employeeSearchButton.Name = "employeeSearchButton";
-            this.employeeSearchButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.employeeSearchButton.Size = new System.Drawing.Size(78, 36);
-            this.employeeSearchButton.TabIndex = 22;
-            this.employeeSearchButton.Text = "SEARCH";
-            this.employeeSearchButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.employeeSearchButton.UseAccentColor = false;
-            this.employeeSearchButton.UseVisualStyleBackColor = true;
-            this.employeeSearchButton.Click += new System.EventHandler(this.employeeSearchButton_Click);
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel7.Location = new System.Drawing.Point(93, 471);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(694, 19);
+            this.materialLabel7.TabIndex = 33;
+            this.materialLabel7.Text = "All wish books is a table that presents all the books that students have requeste" +
+    "d to be purchased. ";
             // 
-            // updateEmployeeButton
+            // materialLabel8
             // 
-            this.updateEmployeeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.updateEmployeeButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.updateEmployeeButton.Depth = 0;
-            this.updateEmployeeButton.HighEmphasis = true;
-            this.updateEmployeeButton.Icon = null;
-            this.updateEmployeeButton.Location = new System.Drawing.Point(1067, 42);
-            this.updateEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.updateEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.updateEmployeeButton.Name = "updateEmployeeButton";
-            this.updateEmployeeButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.updateEmployeeButton.Size = new System.Drawing.Size(77, 36);
-            this.updateEmployeeButton.TabIndex = 23;
-            this.updateEmployeeButton.Text = "UPDATE";
-            this.updateEmployeeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.updateEmployeeButton.UseAccentColor = false;
-            this.updateEmployeeButton.UseVisualStyleBackColor = true;
-            this.updateEmployeeButton.Click += new System.EventHandler(this.updateEmployeeButton_Click);
-            // 
-            // deleteEmployeeButton
-            // 
-            this.deleteEmployeeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.deleteEmployeeButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.deleteEmployeeButton.Depth = 0;
-            this.deleteEmployeeButton.HighEmphasis = true;
-            this.deleteEmployeeButton.Icon = null;
-            this.deleteEmployeeButton.Location = new System.Drawing.Point(1071, 100);
-            this.deleteEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.deleteEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.deleteEmployeeButton.Name = "deleteEmployeeButton";
-            this.deleteEmployeeButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.deleteEmployeeButton.Size = new System.Drawing.Size(73, 36);
-            this.deleteEmployeeButton.TabIndex = 24;
-            this.deleteEmployeeButton.Text = "DELETE";
-            this.deleteEmployeeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.deleteEmployeeButton.UseAccentColor = false;
-            this.deleteEmployeeButton.UseVisualStyleBackColor = true;
-            this.deleteEmployeeButton.Click += new System.EventHandler(this.deleteEmployeeButton_Click);
-            // 
-            // addUpdateEmployeeButton
-            // 
-            this.addUpdateEmployeeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.addUpdateEmployeeButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.addUpdateEmployeeButton.Depth = 0;
-            this.addUpdateEmployeeButton.HighEmphasis = true;
-            this.addUpdateEmployeeButton.Icon = null;
-            this.addUpdateEmployeeButton.Location = new System.Drawing.Point(886, 252);
-            this.addUpdateEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.addUpdateEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.addUpdateEmployeeButton.Name = "addUpdateEmployeeButton";
-            this.addUpdateEmployeeButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.addUpdateEmployeeButton.Size = new System.Drawing.Size(64, 36);
-            this.addUpdateEmployeeButton.TabIndex = 25;
-            this.addUpdateEmployeeButton.Text = "OK";
-            this.addUpdateEmployeeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.addUpdateEmployeeButton.UseAccentColor = false;
-            this.addUpdateEmployeeButton.UseVisualStyleBackColor = true;
-            this.addUpdateEmployeeButton.Click += new System.EventHandler(this.addUpdateEmployeeButton_Click);
-            // 
-            // employeeSaveToCSVBUtton
-            // 
-            this.employeeSaveToCSVBUtton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.employeeSaveToCSVBUtton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.employeeSaveToCSVBUtton.Depth = 0;
-            this.employeeSaveToCSVBUtton.HighEmphasis = true;
-            this.employeeSaveToCSVBUtton.Icon = null;
-            this.employeeSaveToCSVBUtton.Location = new System.Drawing.Point(913, 186);
-            this.employeeSaveToCSVBUtton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.employeeSaveToCSVBUtton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.employeeSaveToCSVBUtton.Name = "employeeSaveToCSVBUtton";
-            this.employeeSaveToCSVBUtton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.employeeSaveToCSVBUtton.Size = new System.Drawing.Size(112, 36);
-            this.employeeSaveToCSVBUtton.TabIndex = 26;
-            this.employeeSaveToCSVBUtton.Text = "SAVE TO CSV";
-            this.employeeSaveToCSVBUtton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.employeeSaveToCSVBUtton.UseAccentColor = false;
-            this.employeeSaveToCSVBUtton.UseVisualStyleBackColor = true;
-            this.employeeSaveToCSVBUtton.Click += new System.EventHandler(this.employeeSaveToCSVBUtton_Click);
-            // 
-            // resetEmployeeButton
-            // 
-            this.resetEmployeeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.resetEmployeeButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.resetEmployeeButton.Depth = 0;
-            this.resetEmployeeButton.HighEmphasis = true;
-            this.resetEmployeeButton.Icon = null;
-            this.resetEmployeeButton.Location = new System.Drawing.Point(886, 314);
-            this.resetEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.resetEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.resetEmployeeButton.Name = "resetEmployeeButton";
-            this.resetEmployeeButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.resetEmployeeButton.Size = new System.Drawing.Size(65, 36);
-            this.resetEmployeeButton.TabIndex = 27;
-            this.resetEmployeeButton.Text = "RESET";
-            this.resetEmployeeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.resetEmployeeButton.UseAccentColor = false;
-            this.resetEmployeeButton.UseVisualStyleBackColor = true;
-            this.resetEmployeeButton.Click += new System.EventHandler(this.resetEmployeeButton_Click);
-            // 
-            // materialLabel6
-            // 
-            this.materialLabel6.AutoSize = true;
-            this.materialLabel6.Depth = 0;
-            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel6.Location = new System.Drawing.Point(351, 203);
-            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(178, 19);
-            this.materialLabel6.TabIndex = 28;
-            this.materialLabel6.Text = "Add or Update Employee:";
-            // 
-            // addEmployedPhoneTextBox
-            // 
-            this.addEmployedPhoneTextBox.AnimateReadOnly = false;
-            this.addEmployedPhoneTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addEmployedPhoneTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.addEmployedPhoneTextBox.Depth = 0;
-            this.addEmployedPhoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.addEmployedPhoneTextBox.HideSelection = true;
-            this.addEmployedPhoneTextBox.Hint = "Employed Phone Number";
-            this.addEmployedPhoneTextBox.LeadingIcon = null;
-            this.addEmployedPhoneTextBox.Location = new System.Drawing.Point(580, 410);
-            this.addEmployedPhoneTextBox.MaxLength = 32767;
-            this.addEmployedPhoneTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.addEmployedPhoneTextBox.Name = "addEmployedPhoneTextBox";
-            this.addEmployedPhoneTextBox.PasswordChar = '\0';
-            this.addEmployedPhoneTextBox.PrefixSuffixText = null;
-            this.addEmployedPhoneTextBox.ReadOnly = false;
-            this.addEmployedPhoneTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.addEmployedPhoneTextBox.SelectedText = "";
-            this.addEmployedPhoneTextBox.SelectionLength = 0;
-            this.addEmployedPhoneTextBox.SelectionStart = 0;
-            this.addEmployedPhoneTextBox.ShortcutsEnabled = true;
-            this.addEmployedPhoneTextBox.Size = new System.Drawing.Size(250, 48);
-            this.addEmployedPhoneTextBox.TabIndex = 36;
-            this.addEmployedPhoneTextBox.TabStop = false;
-            this.addEmployedPhoneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.addEmployedPhoneTextBox.TrailingIcon = null;
-            this.addEmployedPhoneTextBox.UseSystemPasswordChar = false;
-            // 
-            // addEmployedPasswordTextBox
-            // 
-            this.addEmployedPasswordTextBox.AnimateReadOnly = false;
-            this.addEmployedPasswordTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addEmployedPasswordTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.addEmployedPasswordTextBox.Depth = 0;
-            this.addEmployedPasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.addEmployedPasswordTextBox.HideSelection = true;
-            this.addEmployedPasswordTextBox.Hint = "Employed password";
-            this.addEmployedPasswordTextBox.LeadingIcon = null;
-            this.addEmployedPasswordTextBox.Location = new System.Drawing.Point(580, 356);
-            this.addEmployedPasswordTextBox.MaxLength = 32767;
-            this.addEmployedPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.addEmployedPasswordTextBox.Name = "addEmployedPasswordTextBox";
-            this.addEmployedPasswordTextBox.PasswordChar = '\0';
-            this.addEmployedPasswordTextBox.PrefixSuffixText = null;
-            this.addEmployedPasswordTextBox.ReadOnly = false;
-            this.addEmployedPasswordTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.addEmployedPasswordTextBox.SelectedText = "";
-            this.addEmployedPasswordTextBox.SelectionLength = 0;
-            this.addEmployedPasswordTextBox.SelectionStart = 0;
-            this.addEmployedPasswordTextBox.ShortcutsEnabled = true;
-            this.addEmployedPasswordTextBox.Size = new System.Drawing.Size(250, 48);
-            this.addEmployedPasswordTextBox.TabIndex = 35;
-            this.addEmployedPasswordTextBox.TabStop = false;
-            this.addEmployedPasswordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.addEmployedPasswordTextBox.TrailingIcon = null;
-            this.addEmployedPasswordTextBox.UseSystemPasswordChar = false;
-            // 
-            // addEmployedEmailTextBox
-            // 
-            this.addEmployedEmailTextBox.AnimateReadOnly = false;
-            this.addEmployedEmailTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addEmployedEmailTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.addEmployedEmailTextBox.Depth = 0;
-            this.addEmployedEmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.addEmployedEmailTextBox.HideSelection = true;
-            this.addEmployedEmailTextBox.Hint = "Employed email";
-            this.addEmployedEmailTextBox.LeadingIcon = null;
-            this.addEmployedEmailTextBox.Location = new System.Drawing.Point(580, 302);
-            this.addEmployedEmailTextBox.MaxLength = 32767;
-            this.addEmployedEmailTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.addEmployedEmailTextBox.Name = "addEmployedEmailTextBox";
-            this.addEmployedEmailTextBox.PasswordChar = '\0';
-            this.addEmployedEmailTextBox.PrefixSuffixText = null;
-            this.addEmployedEmailTextBox.ReadOnly = false;
-            this.addEmployedEmailTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.addEmployedEmailTextBox.SelectedText = "";
-            this.addEmployedEmailTextBox.SelectionLength = 0;
-            this.addEmployedEmailTextBox.SelectionStart = 0;
-            this.addEmployedEmailTextBox.ShortcutsEnabled = true;
-            this.addEmployedEmailTextBox.Size = new System.Drawing.Size(250, 48);
-            this.addEmployedEmailTextBox.TabIndex = 34;
-            this.addEmployedEmailTextBox.TabStop = false;
-            this.addEmployedEmailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.addEmployedEmailTextBox.TrailingIcon = null;
-            this.addEmployedEmailTextBox.UseSystemPasswordChar = false;
-            // 
-            // addEmployeeLastNameTextBox
-            // 
-            this.addEmployeeLastNameTextBox.AnimateReadOnly = false;
-            this.addEmployeeLastNameTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addEmployeeLastNameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.addEmployeeLastNameTextBox.Depth = 0;
-            this.addEmployeeLastNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.addEmployeeLastNameTextBox.HideSelection = true;
-            this.addEmployeeLastNameTextBox.Hint = "Employed Last Name";
-            this.addEmployeeLastNameTextBox.LeadingIcon = null;
-            this.addEmployeeLastNameTextBox.Location = new System.Drawing.Point(580, 240);
-            this.addEmployeeLastNameTextBox.MaxLength = 32767;
-            this.addEmployeeLastNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.addEmployeeLastNameTextBox.Name = "addEmployeeLastNameTextBox";
-            this.addEmployeeLastNameTextBox.PasswordChar = '\0';
-            this.addEmployeeLastNameTextBox.PrefixSuffixText = null;
-            this.addEmployeeLastNameTextBox.ReadOnly = false;
-            this.addEmployeeLastNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.addEmployeeLastNameTextBox.SelectedText = "";
-            this.addEmployeeLastNameTextBox.SelectionLength = 0;
-            this.addEmployeeLastNameTextBox.SelectionStart = 0;
-            this.addEmployeeLastNameTextBox.ShortcutsEnabled = true;
-            this.addEmployeeLastNameTextBox.Size = new System.Drawing.Size(250, 48);
-            this.addEmployeeLastNameTextBox.TabIndex = 32;
-            this.addEmployeeLastNameTextBox.TabStop = false;
-            this.addEmployeeLastNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.addEmployeeLastNameTextBox.TrailingIcon = null;
-            this.addEmployeeLastNameTextBox.UseSystemPasswordChar = false;
-            // 
-            // addEmployeeFirstNameTextBox
-            // 
-            this.addEmployeeFirstNameTextBox.AnimateReadOnly = false;
-            this.addEmployeeFirstNameTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addEmployeeFirstNameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.addEmployeeFirstNameTextBox.Depth = 0;
-            this.addEmployeeFirstNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.addEmployeeFirstNameTextBox.HideSelection = true;
-            this.addEmployeeFirstNameTextBox.Hint = "Employed First Name";
-            this.addEmployeeFirstNameTextBox.LeadingIcon = null;
-            this.addEmployeeFirstNameTextBox.Location = new System.Drawing.Point(580, 186);
-            this.addEmployeeFirstNameTextBox.MaxLength = 32767;
-            this.addEmployeeFirstNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.addEmployeeFirstNameTextBox.Name = "addEmployeeFirstNameTextBox";
-            this.addEmployeeFirstNameTextBox.PasswordChar = '\0';
-            this.addEmployeeFirstNameTextBox.PrefixSuffixText = null;
-            this.addEmployeeFirstNameTextBox.ReadOnly = false;
-            this.addEmployeeFirstNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.addEmployeeFirstNameTextBox.SelectedText = "";
-            this.addEmployeeFirstNameTextBox.SelectionLength = 0;
-            this.addEmployeeFirstNameTextBox.SelectionStart = 0;
-            this.addEmployeeFirstNameTextBox.ShortcutsEnabled = true;
-            this.addEmployeeFirstNameTextBox.Size = new System.Drawing.Size(250, 48);
-            this.addEmployeeFirstNameTextBox.TabIndex = 31;
-            this.addEmployeeFirstNameTextBox.TabStop = false;
-            this.addEmployeeFirstNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.addEmployeeFirstNameTextBox.TrailingIcon = null;
-            this.addEmployeeFirstNameTextBox.UseSystemPasswordChar = false;
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel8.Location = new System.Drawing.Point(93, 490);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(612, 19);
+            this.materialLabel8.TabIndex = 34;
+            this.materialLabel8.Text = "Soon expire rentals prepresents all rentals that expire in 5 days or have already" +
+    " expired.";
             // 
             // AdminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1231, 638);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1233, 600);
             this.Controls.Add(this.menu);
             this.DrawerAutoHide = false;
             this.DrawerIsOpen = true;
@@ -1673,6 +1717,7 @@
             this.DrawerTabControl = this.menu;
             this.DrawerWidth = 250;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminHome";
             this.Padding = new System.Windows.Forms.Padding(0, 64, 4, 4);
@@ -1680,8 +1725,7 @@
             this.Text = "LIBRARY";
             this.menu.ResumeLayout(false);
             this.homeTab.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.homeTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wishBookDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expireSoonRentalsDataGrid)).EndInit();
             this.booksTab.ResumeLayout(false);
@@ -1703,15 +1747,11 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialTabControl menu;
-        private System.Windows.Forms.TabPage homeTab;
         private System.Windows.Forms.TabPage booksTab;
         private System.Windows.Forms.TabPage studentsTab;
         private System.Windows.Forms.TabPage rentalsTab;
         private System.Windows.Forms.TabPage administrationTab;
-        private MaterialSkin.Controls.MaterialTextBox authorTextBox;
-        private MaterialSkin.Controls.MaterialTextBox isbnTextBox;
-        private MaterialSkin.Controls.MaterialTextBox bookTextBox;
-        private MaterialSkin.Controls.MaterialCheckedListBox genreCheckedListBox;
+        private MaterialSkin.Controls.MaterialCheckedListBox genreSearchCheckedListBox;
         private MaterialSkin.Controls.MaterialButton searchBookButton;
         private MaterialSkin.Controls.MaterialButton saveBookToCSVButton;
         private MaterialSkin.Controls.MaterialButton updateBookButton;
@@ -1720,7 +1760,6 @@
         private System.Windows.Forms.DataGridView booksDataGrid;
         private System.Windows.Forms.DataGridView wishBookDataGrid;
         private System.Windows.Forms.DataGridView expireSoonRentalsDataGrid;
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialButton DeleteButton;
@@ -1778,5 +1817,12 @@
         private MaterialSkin.Controls.MaterialTextBox2 addEmployedEmailTextBox;
         private MaterialSkin.Controls.MaterialTextBox2 addEmployeeLastNameTextBox;
         private MaterialSkin.Controls.MaterialTextBox2 addEmployeeFirstNameTextBox;
+        private MaterialSkin.Controls.MaterialComboBox searchBooksBookComboBox;
+        private MaterialSkin.Controls.MaterialComboBox searchBooksAuthorComboBox;
+        private MaterialSkin.Controls.MaterialComboBox searchBooksISBNComboBox;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        public System.Windows.Forms.TabPage homeTab;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
     }
 }

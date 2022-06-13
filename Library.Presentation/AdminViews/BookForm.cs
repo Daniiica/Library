@@ -3,16 +3,17 @@ using Library.Data.Domain;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace Library.Presentation.AdminViews
+namespace Library.Presentation
 {
     public partial class BookForm : MaterialForm
     {
         int bookID = 0;
         int authorID = 0;
         bool select_validation_author = false;
-        bool update_author = false;
-        bool update_book = false;
+        private bool update_author;
+
         public BookForm()
         {
             InitializeComponent();
@@ -22,11 +23,8 @@ namespace Library.Presentation.AdminViews
         {
             bookID = bookid;
             InitializeComponent();
-            InitializeComponentForUpdateBook(bookID);
             InitializeListBoxs();
-            // AuthorComboBox.SelectedItem = "Novi autor";
-
-
+            InitializeComponentForUpdateBook(bookID);
         }
         private void InitializeListBoxs()
         {
@@ -39,6 +37,7 @@ namespace Library.Presentation.AdminViews
         private void InitializeComponentForUpdateBook(int bookID)
         {
             var book = Bussiness.Books.GetBookById(bookID);
+
             bookNameTextBox.Text = book.Name;
             AuthorComboBox.SelectedItem = book.Author.Name;
             DescriptionMultiLineBox.Text = book.Description;
@@ -46,7 +45,6 @@ namespace Library.Presentation.AdminViews
             ISBNTextBox.Text = Convert.ToString(book.ISBN);
             LanguageComboBox.SelectedItem = book.Language.Caption;
             AmountTextBox.Text = Convert.ToString(book.Amount);
-            Helpers.CheckListManager.InitializeCheckListGenres(GenreCheckBox);
             Helpers.CheckListManager.SelectGenresInCheckList(book.Genres, GenreCheckBox);
         }
         private void InitializeComponentForUpdateAuthor(int authorID)
@@ -58,7 +56,7 @@ namespace Library.Presentation.AdminViews
             DateOfBirthPicker.Value = author.DateOfBirth;
             DateOfDeathPicker.Value = author.DateOfDeath;
         }
-        
+
         private void OKBookButton_Click(object sender, EventArgs e)
         {
             var bookName = bookNameTextBox.Text;
@@ -68,7 +66,7 @@ namespace Library.Presentation.AdminViews
             var isbn = Convert.ToInt32(ISBNTextBox.Text);
             var language = LanguageComboBox.Text;
             var amount = AmountTextBox.Text;
-            var genres = Helpers.CheckListManager.GetSelectedGenresFromCheckList(GenreCheckBox);
+            List<Genre> genres = Helpers.CheckListManager.GetSelectedGenresFromCheckList(GenreCheckBox);
 
             if (string.IsNullOrEmpty(bookName) || string.IsNullOrEmpty(author) || string.IsNullOrEmpty(description)
                 || string.IsNullOrEmpty(publisher) || (isbn == 0) || string.IsNullOrEmpty(language)
@@ -77,19 +75,18 @@ namespace Library.Presentation.AdminViews
                 MaterialMessageBox.Show("Enter all data");
                 return;
             }
-            var bookAuthor = Bussiness.Authors.GetAuthorByName(author);
-            var bookPublisher = Bussiness.Publisher.GetPublisherByName(publisher);
-            var bookLanguage = Bussiness.Languages.GetLanguageByCaption(language);
+            var bookAuthorID = Bussiness.Authors.GetAuthorIDByName(author);
+            var bookPublisherID = Bussiness.Publisher.GetPublisherIDByName(publisher);
+            var bookLanguageID = Bussiness.Languages.GetLanguageIDByCaption(language);
 
             if (bookID == 0)
             {
-                Bussiness.Books.AddNewBook(bookName, bookAuthor.AuthorID, description, bookPublisher.PublishingHouseId, isbn, bookLanguage.LanguageID, amount, genres);
-                MaterialMessageBox.Show("Book added");
+                Bussiness.Books.AddNewBook(bookName, bookAuthorID, description, bookPublisherID, isbn, bookLanguageID, amount, GenreCheckBox);
+
             }
             else
             {
-                Bussiness.Books.UpdateBook(bookID, bookName, bookAuthor.AuthorID, description, bookPublisher.PublishingHouseId, isbn, bookLanguage.LanguageID, amount, genres);
-                MaterialMessageBox.Show("Book updated");
+                Bussiness.Books.UpdateBook(bookID, bookName, bookAuthorID, description, bookPublisherID, isbn, bookLanguageID, amount, GenreCheckBox);
                 bookID = 0;
             }
         }
@@ -98,6 +95,7 @@ namespace Library.Presentation.AdminViews
         {
             this.Hide();
         }
+        //BookForm ---> Author
         private void AuthorsDataGrid_CellClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
         {
             authorID = Helpers.DataGridManager.SelectRowInDataGrid(sender, e, AuthorsDataGrid);
@@ -154,7 +152,7 @@ namespace Library.Presentation.AdminViews
                 MaterialMessageBox.Show("Please select valid Date of Birth and Date Of Death");
                 return;
             }
-            if (update_author == true)
+            if (authorID != 0)
             {
                 Bussiness.Authors.UpdateAuthor(authorID,
                     AuthorNameTextBox.Text,
@@ -179,5 +177,20 @@ namespace Library.Presentation.AdminViews
             }
         }
 
+        private void resetAuthorButton_Click(object sender, EventArgs e)
+        {
+            authorID = 0;
+            AuthorNameTextBox.Text = "";
+            CountryTextBox.Text = "";
+            BiographyMultiLineTextBox.Text = "";
+            DateOfBirthPicker.Value = DateTime.UtcNow;
+            DateOfDeathPicker.Value = DateTime.UtcNow;
+        }
+
+        private void cancelButton_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Helpers.FormManager.OpenAdminHomeForm();
+        }
     }
 }

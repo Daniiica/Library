@@ -91,13 +91,14 @@
             this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.materialLabel1.Location = new System.Drawing.Point(19, 325);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(148, 19);
             this.materialLabel1.TabIndex = 4;
             this.materialLabel1.Text = "Lost your password?";
-            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
+            this.materialLabel1.Click += new System.EventHandler(this.lostPassword_Click);
             // 
             // materialLabel2
             // 
@@ -112,14 +113,14 @@
             this.materialLabel2.Size = new System.Drawing.Size(58, 19);
             this.materialLabel2.TabIndex = 5;
             this.materialLabel2.Text = "Register";
-            this.materialLabel2.Click += new System.EventHandler(this.materialLabel2_Click);
+            this.materialLabel2.Click += new System.EventHandler(this.register_Click);
             // 
             // passwordTextbox
             // 
             this.passwordTextbox.AnimateReadOnly = false;
             this.passwordTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passwordTextbox.Depth = 0;
-            this.passwordTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.passwordTextbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.passwordTextbox.Hint = "Password";
             this.passwordTextbox.LeadingIcon = null;
             this.passwordTextbox.Location = new System.Drawing.Point(22, 158);
@@ -145,6 +146,7 @@
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.usernameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

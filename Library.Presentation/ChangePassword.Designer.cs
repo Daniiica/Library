@@ -54,7 +54,7 @@ namespace Library.Presentation
             this.CANCELButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.CANCELButton.UseAccentColor = false;
             this.CANCELButton.UseVisualStyleBackColor = true;
-            this.CANCELButton.Click += new System.EventHandler(this.registrationButton_Click);
+            this.CANCELButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // NewPasswordTextBox
             // 
@@ -131,7 +131,7 @@ namespace Library.Presentation
             this.OKButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.OKButton.UseAccentColor = false;
             this.OKButton.UseVisualStyleBackColor = true;
-            this.OKButton.Click += new System.EventHandler(this.materialButton1_Click);
+            this.OKButton.Click += new System.EventHandler(this.OKButton1_Click);
             // 
             // ChangePassword
             // 
@@ -143,6 +143,7 @@ namespace Library.Presentation
             this.Controls.Add(this.NewPasswordTextBox);
             this.Controls.Add(this.ConfirmNewPasswordTextBox);
             this.Controls.Add(this.EmailTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ChangePassword";
             this.Text = "Change Password";
             this.ResumeLayout(false);

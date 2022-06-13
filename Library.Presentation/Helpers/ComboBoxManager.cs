@@ -33,13 +33,30 @@ namespace Library.Presentation.Helpers
                 combobox.Items.Add(item.Caption);
             }
         }
+
+        public static void SetValuesToISBNComboBox(MaterialComboBox iSBNAddRatingComboBox)
+        {
+            UnitOfWork _unitOfWork = new UnitOfWork();
+            var books = _unitOfWork.BookRepository.Get(b => b.DeleteDate == null);
+            foreach (var item in books)
+            {
+                if (!iSBNAddRatingComboBox.Items.Contains(item.ISBN))
+                {
+                    iSBNAddRatingComboBox.Items.Add(item.ISBN);
+                }
+            }
+        }
+
         public static void SetValuesToBooksComboBox(MaterialComboBox combobox)
         {
             UnitOfWork _unitOfWork = new UnitOfWork();
-            var books = _unitOfWork.BookRepository.GetAll();
+            var books = _unitOfWork.BookRepository.Get(b => b.DeleteDate == null);
             foreach (var item in books)
             {
-                combobox.Items.Add(item.Name);
+                if (!combobox.Items.Contains(item.Name))
+                {
+                    combobox.Items.Add(item.Name);
+                }
             }
         }
 
@@ -49,8 +66,14 @@ namespace Library.Presentation.Helpers
             var user = _unitOfWork.UserRepository.Get(u => u.RoleID == (int)RoleTypes.Operation && u.DeleteDateUtc == null);
             foreach (var item in user)
             {
-                searchEmployeeFirstNameComboBox.Items.Add(item.FirstName);
-                searchEmployeeLastNameComboBox.Items.Add(item.LastName);
+                if (!searchEmployeeFirstNameComboBox.Items.Contains(item.FirstName))
+                {
+                    searchEmployeeFirstNameComboBox.Items.Add(item.FirstName);
+                }
+                if(!searchEmployeeLastNameComboBox.Items.Contains(item.LastName))
+                {
+                    searchEmployeeLastNameComboBox.Items.Add(item.LastName);
+                }
                 searchEmployeeEmailComboBox.Items.Add(item.Email);
                 searchEmployeePhoneComboBox.Items.Add(item.Phone);
 
@@ -63,10 +86,23 @@ namespace Library.Presentation.Helpers
             var user = _unitOfWork.UserRepository.Get(u => u.RoleID == (int)RoleTypes.Student && u.DeleteDateUtc == null);
             foreach (var item in user)
             {
-                firstNamecombobox.Items.Add(item.FirstName);
-                lastNamecombobox.Items.Add(item.LastName);
+                if(!firstNamecombobox.Items.Contains(item.FirstName))
+                {
+                    firstNamecombobox.Items.Add(item.FirstName);
+                }
+                if(!lastNamecombobox.Items.Contains(item.LastName))
+                {
+                    lastNamecombobox.Items.Add(item.LastName);
+                }
                 indexNumbercombobox.Items.Add(item.IndexNumber);
 
+            }
+        }
+        public static void AddEmptyValueToSearchComboBox(params MaterialComboBox[] comboBoxs)
+        {
+            foreach(var item in comboBoxs)
+            {
+                item.Items.Add("");
             }
         }
     }

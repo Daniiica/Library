@@ -1,7 +1,5 @@
-﻿using Library.Business;
-using MaterialSkin.Controls;
+﻿using MaterialSkin.Controls;
 using System;
-using System.Linq;
 
 namespace Library.Presentation
 {
@@ -12,30 +10,31 @@ namespace Library.Presentation
             InitializeComponent();
         }
 
-        private void registrationButton_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
-            Helpers.FormManager.OpenLoginForm();
+            this.Close();
+            //Helpers.FormManager.OpenLoginForm();
         }
 
-        private void materialButton1_Click(object sender, EventArgs e)
+        private void OKButton1_Click(object sender, EventArgs e)
         {
             var email = EmailTextBox.Text;
             var newPassword = NewPasswordTextBox.Text;
             var confirmNewPassword = ConfirmNewPasswordTextBox.Text;
-            if(string.IsNullOrEmpty(email) || string.IsNullOrEmpty(newPassword) || string.IsNullOrEmpty(confirmNewPassword))
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(newPassword) || string.IsNullOrEmpty(confirmNewPassword))
             {
                 MaterialMessageBox.Show("Please enter all information.");
                 return;
             }
-            if(newPassword == confirmNewPassword)
+            if (newPassword == confirmNewPassword)
             {
                 Bussiness.Users.ChangePass(email, newPassword);
-                MaterialMessageBox.Show("Password changed successfully.");
             }
             else
             {
                 MaterialMessageBox.Show("Please confirm new password.");
             }
+            
         }
     }
 }

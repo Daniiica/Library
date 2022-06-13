@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using Library.Business;
+using MaterialSkin.Controls;
 using System;
 using System.Windows.Forms;
 
@@ -14,22 +15,31 @@ namespace Library.Presentation
         bool select_validation_rental = false;
         bool select_validation_student = false;
         bool select_validation_employee = false;
+
         public AdminHome()
         {
             InitializeComponent();
 
             Helpers.DataGridManager.InitializeAllBookDataGrid(booksDataGrid);
-            Helpers.CheckListManager.InitializeCheckListGenres(genreCheckedListBox);
+            Helpers.CheckListManager.InitializeCheckListGenres(genreSearchCheckedListBox);
             Helpers.DataGridManager.InitializeAllStudentsDataGrid(userDataGrid);
             Helpers.DataGridManager.InitializeWishBookDataGrid(wishBookDataGrid);
             Helpers.DataGridManager.InitializeExpireSoonRentalsDataGrid(expireSoonRentalsDataGrid);
             Helpers.DataGridManager.InitializeAllRentalsDataGrid(rentalDataGrid);
             Helpers.DataGridManager.InitializeAllEmployedDataGrid(employeeDataGrid);
             Helpers.ComboBoxManager.SetValuesToBooksComboBox(rentalBookComboBox);
+            Helpers.ComboBoxManager.SetValuesToBooksComboBox(searchBooksBookComboBox);
+            Helpers.ComboBoxManager.SetValuesToAuthorComboBox(searchBooksAuthorComboBox);
+            Helpers.ComboBoxManager.SetValuesToISBNComboBox(searchBooksISBNComboBox);
             Helpers.ComboBoxManager.SetValuesToUsersComboBox(rentalUserFirstNameComboBox, rentalUserLastNameComboBox, rentalUserIndexNumberComboBox);
             Helpers.ComboBoxManager.SetValuesToUsersComboBox(userSearchFirstNameComboBox, userSearchLastNameComboBox, userSearchIndexNumberComboBox);
             Helpers.ComboBoxManager.SetValuesToEmployeeComboBox(searchEmployeeFirstNameComboBox, searchEmployeeLastNameComboBox, searchEmployeeEmailComboBox, searchEmployeePhoneComboBox);
             activeRentalCheckBox.Checked = false;
+            Helpers.ComboBoxManager.AddEmptyValueToSearchComboBox(searchBooksBookComboBox, searchBooksAuthorComboBox,
+                searchBooksISBNComboBox, rentalBookComboBox, rentalUserFirstNameComboBox,
+                rentalUserLastNameComboBox, rentalUserIndexNumberComboBox, userSearchFirstNameComboBox,
+                userSearchLastNameComboBox, userSearchIndexNumberComboBox, searchEmployeeFirstNameComboBox,
+                searchEmployeeLastNameComboBox, searchEmployeeEmailComboBox, searchEmployeePhoneComboBox);
         }
 
         //Admin ---> Home
@@ -76,10 +86,10 @@ namespace Library.Presentation
         // Admin ---> Book
         private void searchBookButton_Click(object sender, System.EventArgs e)
         {
-            var search_book_name = string.IsNullOrEmpty(bookTextBox.Text) ? null : bookTextBox.Text;
-            var search_book_isbn = Convert.ToInt32(string.IsNullOrEmpty(isbnTextBox.Text) ? null : isbnTextBox.Text);
-            var search_book_author = string.IsNullOrEmpty(authorTextBox.Text) ? null : authorTextBox.Text;
-            var search_book_genres = Helpers.CheckListManager.GetSelectedGenresFromCheckList(genreCheckedListBox);
+            var search_book_name = string.IsNullOrEmpty(searchBooksBookComboBox.Text) ? null : searchBooksBookComboBox.Text;
+            var search_book_isbn = Convert.ToInt32(string.IsNullOrEmpty(searchBooksISBNComboBox.Text) ? null : searchBooksISBNComboBox.Text);
+            var search_book_author = string.IsNullOrEmpty(searchBooksAuthorComboBox.Text) ? null : searchBooksAuthorComboBox.Text;
+            var search_book_genres = Helpers.CheckListManager.GetSelectedGenresFromCheckList(genreSearchCheckedListBox);
             var search_books = Bussiness.Books.GetSearchedBooks(search_book_name, search_book_isbn, search_book_author, search_book_genres);
             Helpers.DataGridManager.InitializeSearchBookDataGrid(booksDataGrid, search_books);
         }
@@ -88,7 +98,8 @@ namespace Library.Presentation
         {
             bookID = 0;
             Helpers.FormManager.OpenBookForm(bookID);
-            Helpers.DataGridManager.InitializeAllBookDataGrid(booksDataGrid);
+            this.Hide();
+            //Helpers.DataGridManager.InitializeAllBookDataGrid(booksDataGrid);
         }
 
         private void updateBookButton_Click(object sender, EventArgs e)
@@ -101,7 +112,8 @@ namespace Library.Presentation
             {
                 Helpers.FormManager.OpenBookForm(bookID);
             }
-            Helpers.DataGridManager.InitializeAllBookDataGrid(booksDataGrid);
+            this.Hide();
+            //Helpers.DataGridManager.InitializeAllBookDataGrid(booksDataGrid);
         }
 
         private void booksDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -115,17 +127,17 @@ namespace Library.Presentation
             {
                 select_validation_book = true;
             }
+
         }
         private void saveBookToCSVButton_Click(object sender, EventArgs e)
         {
             Bussiness.Books.SaveBooksToCsv(booksDataGrid);
-            MaterialMessageBox.Show("File was saved");
         }
         private void deleteBookButton_Click(object sender, EventArgs e)
         {
             if (select_validation_book == false)
             {
-                MaterialMessageBox.Show("Please select book for delete");
+                MaterialMessageBox.Show("Please select book for delete.");
                 return;
             }
             else
@@ -255,7 +267,6 @@ namespace Library.Presentation
         private void studentsSaveToCSV_Click(object sender, EventArgs e)
         {
             Bussiness.Users.SaveUsersToCsv(userDataGrid);
-            MaterialMessageBox.Show("File was saved");
         }
         //Admin ---> Rentals
         private void rentalSearchButton_Click(object sender, EventArgs e)
@@ -320,7 +331,7 @@ namespace Library.Presentation
             else
             {
                 Bussiness.Rentals.ReturnBook(rentalID);
-                
+
             }
             Helpers.DataGridManager.InitializeAllRentalsDataGrid(rentalDataGrid);
             select_validation_rental = false;
@@ -333,21 +344,32 @@ namespace Library.Presentation
             var rentalBookName = rentalBookNameTextBox.Text;
             var rentalDate = rentalDatePicker.Value;
 
-            if (string.IsNullOrEmpty(rentalUserIndexNumber) || 
+            if (string.IsNullOrEmpty(rentalUserIndexNumber) ||
                 (rentalBookISBN == 0) ||
                 string.IsNullOrEmpty(rentalBookName))
             {
                 MaterialMessageBox.Show("Enter all data");
                 return;
             }
-            if(rentalID == 0)
+            var reservation = Bussiness.Reservation.FindReservation(rentalUserIndexNumber.ToString(), rentalBookISBN, rentalBookName);
+            if (reservation != null)
             {
-                Bussiness.Rentals.AddNewRental(rentalUserIndexNumber,rentalBookName,rentalBookISBN, rentalDate);
+                Bussiness.Reservation.SetToRealized(reservation.ReservationsID);
+                Bussiness.Reservation.DeleteReservation(reservation.ReservationsID);
+            }
+            if (!Bussiness.Reservation.CheckReservationForRental(rentalBookISBN, rentalBookName, rentalDate))
+            {
+                MaterialMessageBox.Show("All books already reserved!");
+                return;
+            }
+            if (rentalID == 0)
+            {
+                Bussiness.Rentals.AddNewRental(rentalUserIndexNumber, rentalBookName, rentalBookISBN, rentalDate);
                 RemoveDataFromRentalComponents();
             }
             else
             {
-                Bussiness.Rentals.UpdateRental(rentalID,rentalUserIndexNumber, rentalBookName, rentalBookISBN, rentalDate);
+                Bussiness.Rentals.UpdateRental(rentalID, rentalUserIndexNumber, rentalBookName, rentalBookISBN, rentalDate);
                 RemoveDataFromRentalComponents();
             }
             Helpers.DataGridManager.InitializeAllRentalsDataGrid(rentalDataGrid);
@@ -391,7 +413,6 @@ namespace Library.Presentation
         private void saveRentalToCsvButton_Click(object sender, EventArgs e)
         {
             Bussiness.Rentals.SaveRentalsToCsv(rentalDataGrid);
-            MaterialMessageBox.Show("File was saved");
         }
 
         //Admin ---> Administration
@@ -428,7 +449,6 @@ namespace Library.Presentation
         private void employeeSaveToCSVBUtton_Click(object sender, EventArgs e)
         {
             Bussiness.Users.SaveEmployeeToCsv(employeeDataGrid);
-            MaterialMessageBox.Show("File was saved");
         }
 
         private void updateEmployeeButton_Click(object sender, EventArgs e)

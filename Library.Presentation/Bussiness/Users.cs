@@ -6,18 +6,28 @@ using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Library.Presentation.Bussiness
 {
     public class Users
     {
+        public static User GetUserLogin(string userName, string password)
+        {
+            UnitOfWork _unitOfWork = new UnitOfWork();
+            var user = _unitOfWork.UserRepository.Get(u => u.Email == userName && u.Password == password && u.DeleteDateUtc == null).FirstOrDefault();
+            return user;
+        }
         public static void SetUser(string firstName, string lastName, string email, string password, string indexNumber, string phone)
         {
             UnitOfWork _unitOfWork = new UnitOfWork();
 
+            var existUser = _unitOfWork.UserRepository.Get(u => u.IndexNumber == indexNumber && u.Phone == phone).FirstOrDefault();
+            if(existUser != null)
+            {
+                MaterialMessageBox.Show("User already exists!");
+                return;
+            }
             var user = new User();
             user.RoleID = (int)RoleTypes.Student;
             user.FirstName = firstName;
@@ -31,6 +41,7 @@ namespace Library.Presentation.Bussiness
 
             _unitOfWork.UserRepository.Insert(user);
             _unitOfWork.Save();
+            MaterialMessageBox.Show("Successful added user!");
         }
 
         public static List<UserModel> AllStudents()
@@ -79,6 +90,7 @@ namespace Library.Presentation.Bussiness
             }
             user.Password = newPassword;
             _unitOfWork.Save();
+            MaterialMessageBox.Show("Password changed successfully.");
         }
         public static void SaveUsersToCsv(DataGridView studentsDataGrid)
         {
@@ -112,6 +124,11 @@ namespace Library.Presentation.Bussiness
                 var engine = new FileHelperEngine<UserModel>();
                 engine.HeaderText = engine.GetFileHeader();
                 engine.WriteFile(path, students);
+                MaterialMessageBox.Show("File was saved.");
+            }
+            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                MaterialMessageBox.Show("Problem with saving file.");
             }
         }
 
@@ -334,6 +351,11 @@ namespace Library.Presentation.Bussiness
                 var engine = new FileHelperEngine<UserModel>();
                 engine.HeaderText = engine.GetFileHeader();
                 engine.WriteFile(path, employees);
+                MaterialMessageBox.Show("File was saved.");
+            }
+            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                MaterialMessageBox.Show("Problem with saving file.");
             }
         }
 

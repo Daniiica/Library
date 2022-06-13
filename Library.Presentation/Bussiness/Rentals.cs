@@ -96,6 +96,11 @@ namespace Library.Presentation.Bussiness
                 var engine = new FileHelperEngine<RentalsModel>();
                 engine.HeaderText = engine.GetFileHeader();
                 engine.WriteFile(path, rentals);
+                MaterialMessageBox.Show("File was saved");
+            }
+            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                MaterialMessageBox.Show("Problem with saving file.");
             }
         }
         public static List<RentalsModel> GetSearchRentals(string searchRentalBook, string searchRentalUserFirstName,string stringsearchRentalUserLastName,string stringsearchRentalUserIndexNumber)
@@ -125,8 +130,8 @@ namespace Library.Presentation.Bussiness
         public static List<RentalsModel> ExpireSoonRentals()
         {
             UnitOfWork _unitOfWork = new UnitOfWork();
-            var timeLimitDate = DateTime.Now.AddDays(-5);
-            var expireSoonRentals = _unitOfWork.RentalsRepository.Get(r => r.RentalDate >= timeLimitDate && r.ReturnDate == null)
+            var timeLimitDate = DateTime.Now.AddDays(5);
+            var expireSoonRentals = _unitOfWork.RentalsRepository.Get(r => r.RentalDate <= timeLimitDate && r.ReturnDate == null)
                 .Select(i => new RentalsModel
                 {
                     RentalsID = i.RentalsID,

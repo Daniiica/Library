@@ -25,10 +25,11 @@ namespace Library.Presentation.Models
             this.Name = book.Name;
             this.Description = book.Description;
             this.Amount = book.Amount;
-          /*  this.Publisher = book.Publisher.Name;
-            this.Language = book.Language.Caption;
-            this.Genres = book.Genres
-          */
+            this.Genres = string.Join(", ", from item in book.Genres select item.Name);
+            /*  this.Publisher = book.Publisher.Name;
+              this.Language = book.Language.Caption;
+              this.Genres = book.Genres
+            */
 
         }
         [FieldHidden]
@@ -43,12 +44,19 @@ namespace Library.Presentation.Models
         public string Name { get; set; }
         [FieldCaption("Author")]
         public string Author { get; set; }
+        [FieldCaption("Publisher")]
+        public string Publisher { get; set; }
+        [FieldCaption("Language")]
+        public string Language { get; set; }
         [FieldCaption("ISBN")]
+        
         public int ISBN { get; set; }
         [FieldCaption("Description")]
         public string Description { get; set; }
         [FieldCaption("Amount")]
         public int Amount { get; set; }
+        [FieldCaption("Genres")]
+        public string Genres { get; set; }
         /*
         [FieldCaption("Publisher")]
         public string Publisher { get; set; }
