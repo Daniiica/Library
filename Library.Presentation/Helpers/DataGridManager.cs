@@ -42,6 +42,20 @@ namespace Library.Presentation.Helpers
             topRatingBooksDataGrid.Columns["RaitingID"].Visible = false;
         }
 
+        public static void InitializeAllReservationsDataGrid(DataGridView reservationDataGrid)
+        {
+            reservationDataGrid.DataSource = Bussiness.Reservation.AllReservations();
+            reservationDataGrid.Columns["BookID"].Visible = false;
+            reservationDataGrid.Columns["UserID"].Visible = false;
+            reservationDataGrid.Columns["ReservationsID"].Visible = false;
+            reservationDataGrid.Columns["DeleteDateReservation"].Visible = false;
+            reservationDataGrid.Columns["BookName"].HeaderText = "Book";
+            reservationDataGrid.Columns["UserFirstName"].HeaderText = "First Name";
+            reservationDataGrid.Columns["UserLastName"].HeaderText = "Last Name";
+            reservationDataGrid.Columns["UserIndexNumber"].HeaderText = "Index Number";
+            reservationDataGrid.Columns["FromDate"].HeaderText = "From date";
+            reservationDataGrid.Columns["ToDate"].HeaderText = "To date";
+        }
         public static void InitializeAllEmployedDataGrid(DataGridView employedDataGrid)
         {
             employedDataGrid.DataSource = Bussiness.Users.AllEmployers();
@@ -158,6 +172,20 @@ namespace Library.Presentation.Helpers
             searchRentalsDataGrid.Columns["UserIndexNumber"].HeaderText = "Users Index Number";
             searchRentalsDataGrid.Columns["RentalDate"].HeaderText = "Rental Date";
             searchRentalsDataGrid.Columns["ReturnDate"].HeaderText = "Return Date";
+        }
+        public static void InitializeSearchReservationsDataGrid(DataGridView searchReservationsDataGrid, List<ReservationsModel> searchReservations)
+        {
+            searchReservationsDataGrid.DataSource = searchReservations;
+            searchReservationsDataGrid.Columns["BookID"].Visible = false;
+            searchReservationsDataGrid.Columns["UserID"].Visible = false;
+            searchReservationsDataGrid.Columns["ReservationsID"].Visible = false;
+            searchReservationsDataGrid.Columns["DeleteDateReservation"].Visible = false;
+            searchReservationsDataGrid.Columns["BookName"].HeaderText = "Book";
+            searchReservationsDataGrid.Columns["UserFirstName"].HeaderText = "First Name";
+            searchReservationsDataGrid.Columns["UserLastName"].HeaderText = "Last Name";
+            searchReservationsDataGrid.Columns["UserIndexNumber"].HeaderText = "Index Number";
+            searchReservationsDataGrid.Columns["FromDate"].HeaderText = "From date";
+            searchReservationsDataGrid.Columns["ToDate"].HeaderText = "To date";
         }
         public static void InitializeOnlyActiveRentalsDataGrid(DataGridView rentalsDataGrid)
         {

@@ -10,8 +10,8 @@ namespace Library.Presentation
         public Login()
         {
             InitializeComponent();
-            usernameTextBox.Text = "danica@gmail.com";
-            passwordTextbox.Text = "2305";
+            usernameTextBox.Text = "admin@gmail.com";
+            passwordTextbox.Text = "12";
         }
 
         private void loginButton_Click(object sender, EventArgs e)

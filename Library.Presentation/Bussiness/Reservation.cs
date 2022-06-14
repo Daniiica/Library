@@ -12,6 +12,26 @@ namespace Library.Presentation.Bussiness
 {
     public class Reservation
     {
+        public static List<ReservationsModel> AllReservations()
+        {
+            UnitOfWork _unitOfWork = new UnitOfWork();
+            var myReservation = _unitOfWork.ReservationsBookRepository.Get(r => r.DeleteDateReservation == null)
+            .Select(i => new ReservationsModel   // select prolazi kroz svaki objekat i premapira
+            {
+                BookID = i.BookID,
+                UserFirstName = i.User.FirstName,
+                UserLastName = i.User.LastName,
+                UserIndexNumber = i.User.IndexNumber,
+                BookName = i.Book.Name,
+                Author = i.Book.Author.Name,
+                ISBN = i.Book.ISBN,
+                UserID = i.UserID,
+                FromDate = i.FromDate,
+                ToDate = i.ToDate,
+                Realized = i.Realized ? "YES" : "NO"
+            }).ToList();
+            return myReservation;
+        }
         public static List<ReservationsModel> MyReservationList()
         {
             UnitOfWork _unitOfWork = new UnitOfWork();
@@ -28,6 +48,31 @@ namespace Library.Presentation.Bussiness
                 Realized = i.Realized ? "YES" : "NO"
             }).ToList();
             return myReservation;
+        }
+        public static List<ReservationsModel> GetSearchedReservations(string searchBookName, string searchUserFirstName, string searchUserLastName, string searchUserIndexNumber)
+        {
+            UnitOfWork _unitOfWork = new UnitOfWork();
+            var searchedReservations = _unitOfWork.ReservationsBookRepository.Get().Where(r =>
+            (searchBookName == null || r.Book.Name.Contains(searchBookName)) &&
+            (searchUserFirstName == null || r.User.FirstName.Contains(searchUserFirstName)) &&
+            (searchUserLastName == null || r.User.LastName.Contains(searchUserLastName)) &&
+            (searchUserIndexNumber == null || r.User.IndexNumber.Contains(searchUserIndexNumber)) &&
+            r.DeleteDateReservation == null)
+                .Select(i => new ReservationsModel
+                {
+                    BookID = i.BookID,
+                    UserFirstName = i.User.FirstName,
+                    UserLastName = i.User.LastName,
+                    UserIndexNumber = i.User.IndexNumber,
+                    BookName = i.Book.Name,
+                    Author = i.Book.Author.Name,
+                    ISBN = i.Book.ISBN,
+                    UserID = i.UserID,
+                    FromDate = i.FromDate,
+                    ToDate = i.ToDate,
+                    Realized = i.Realized ? "YES" : "NO"
+                }).ToList();
+            return searchedReservations;
         }
         public static void AddReservation(int bookID, DateTime dateTimeFrom, DateTime dateTimeTo)
         {

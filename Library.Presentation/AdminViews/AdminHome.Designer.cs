@@ -30,6 +30,8 @@
         {
             this.menu = new MaterialSkin.Controls.MaterialTabControl();
             this.homeTab = new System.Windows.Forms.TabPage();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.ApproveButton = new MaterialSkin.Controls.MaterialButton();
             this.wishBookDataGrid = new System.Windows.Forms.DataGridView();
@@ -104,8 +106,24 @@
             this.searchEmployeeLastNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.searchEmployeeFirstNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.employeeDataGrid = new System.Windows.Forms.DataGridView();
-            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.reservationTab = new System.Windows.Forms.TabPage();
+            this.reservationDataGrid = new System.Windows.Forms.DataGridView();
+            this.reservationUserIndexNumberComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.reservationUserLastNameCOmboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.reservatonUserFirstNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.reservationBookComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.reservationSearchButton = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
+            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider4 = new MaterialSkin.Controls.MaterialDivider();
+            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider5 = new MaterialSkin.Controls.MaterialDivider();
+            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider6 = new MaterialSkin.Controls.MaterialDivider();
             this.menu.SuspendLayout();
             this.homeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wishBookDataGrid)).BeginInit();
@@ -118,6 +136,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rentalDataGrid)).BeginInit();
             this.administrationTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).BeginInit();
+            this.reservationTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -126,6 +146,7 @@
             this.menu.Controls.Add(this.booksTab);
             this.menu.Controls.Add(this.studentsTab);
             this.menu.Controls.Add(this.rentalsTab);
+            this.menu.Controls.Add(this.reservationTab);
             this.menu.Controls.Add(this.administrationTab);
             this.menu.Depth = 0;
             this.menu.Location = new System.Drawing.Point(0, 64);
@@ -135,6 +156,7 @@
             this.menu.SelectedIndex = 0;
             this.menu.Size = new System.Drawing.Size(1500, 800);
             this.menu.TabIndex = 0;
+            this.menu.SelectedIndexChanged += new System.EventHandler(this.menu_SelectedIndexChanged);
             // 
             // homeTab
             // 
@@ -155,11 +177,37 @@
             this.homeTab.TabIndex = 0;
             this.homeTab.Text = "HOME";
             // 
+            // materialLabel8
+            // 
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel8.Location = new System.Drawing.Point(93, 515);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(612, 19);
+            this.materialLabel8.TabIndex = 34;
+            this.materialLabel8.Text = "Soon expire rentals prepresents all rentals that expire in 5 days or have already" +
+    " expired.";
+            // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel7.Location = new System.Drawing.Point(93, 496);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(694, 19);
+            this.materialLabel7.TabIndex = 33;
+            this.materialLabel7.Text = "All wish books is a table that presents all the books that students have requeste" +
+    "d to be purchased. ";
+            // 
             // materialDivider1
             // 
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(96, 458);
+            this.materialDivider1.Location = new System.Drawing.Point(96, 483);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
             this.materialDivider1.Size = new System.Drawing.Size(1150, 1);
@@ -172,14 +220,14 @@
             this.ApproveButton.Depth = 0;
             this.ApproveButton.HighEmphasis = true;
             this.ApproveButton.Icon = null;
-            this.ApproveButton.Location = new System.Drawing.Point(991, 43);
+            this.ApproveButton.Location = new System.Drawing.Point(1050, 31);
             this.ApproveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ApproveButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ApproveButton.Name = "ApproveButton";
             this.ApproveButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.ApproveButton.Size = new System.Drawing.Size(87, 36);
+            this.ApproveButton.Size = new System.Drawing.Size(154, 36);
             this.ApproveButton.TabIndex = 5;
-            this.ApproveButton.Text = "APPROVE";
+            this.ApproveButton.Text = "APPROVE REQUEST";
             this.ApproveButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.ApproveButton.UseAccentColor = false;
             this.ApproveButton.UseVisualStyleBackColor = true;
@@ -188,9 +236,9 @@
             // wishBookDataGrid
             // 
             this.wishBookDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.wishBookDataGrid.Location = new System.Drawing.Point(238, 28);
+            this.wishBookDataGrid.Location = new System.Drawing.Point(273, 31);
             this.wishBookDataGrid.Name = "wishBookDataGrid";
-            this.wishBookDataGrid.Size = new System.Drawing.Size(715, 149);
+            this.wishBookDataGrid.Size = new System.Drawing.Size(756, 187);
             this.wishBookDataGrid.TabIndex = 0;
             this.wishBookDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.wishBookDataGrid_CellClick);
             // 
@@ -201,14 +249,14 @@
             this.DeleteButton.Depth = 0;
             this.DeleteButton.HighEmphasis = true;
             this.DeleteButton.Icon = null;
-            this.DeleteButton.Location = new System.Drawing.Point(991, 104);
+            this.DeleteButton.Location = new System.Drawing.Point(1050, 109);
             this.DeleteButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeleteButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.DeleteButton.Size = new System.Drawing.Size(73, 36);
+            this.DeleteButton.Size = new System.Drawing.Size(141, 36);
             this.DeleteButton.TabIndex = 4;
-            this.DeleteButton.Text = "DELETE";
+            this.DeleteButton.Text = "DELETE REQUEST";
             this.DeleteButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.DeleteButton.UseAccentColor = false;
             this.DeleteButton.UseVisualStyleBackColor = true;
@@ -219,7 +267,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(80, 198);
+            this.materialLabel2.Location = new System.Drawing.Point(113, 231);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(136, 19);
@@ -229,16 +277,16 @@
             // expireSoonRentalsDataGrid
             // 
             this.expireSoonRentalsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.expireSoonRentalsDataGrid.Location = new System.Drawing.Point(238, 198);
+            this.expireSoonRentalsDataGrid.Location = new System.Drawing.Point(273, 231);
             this.expireSoonRentalsDataGrid.Name = "expireSoonRentalsDataGrid";
-            this.expireSoonRentalsDataGrid.Size = new System.Drawing.Size(597, 149);
+            this.expireSoonRentalsDataGrid.Size = new System.Drawing.Size(756, 187);
             this.expireSoonRentalsDataGrid.TabIndex = 1;
             // 
             // materialLabel1
             // 
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(113, 28);
+            this.materialLabel1.Location = new System.Drawing.Point(146, 31);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(103, 19);
@@ -248,6 +296,8 @@
             // booksTab
             // 
             this.booksTab.BackColor = System.Drawing.Color.White;
+            this.booksTab.Controls.Add(this.materialLabel9);
+            this.booksTab.Controls.Add(this.materialDivider2);
             this.booksTab.Controls.Add(this.searchBooksAuthorComboBox);
             this.booksTab.Controls.Add(this.searchBooksISBNComboBox);
             this.booksTab.Controls.Add(this.searchBooksBookComboBox);
@@ -280,7 +330,7 @@
             this.searchBooksAuthorComboBox.Hint = "Author";
             this.searchBooksAuthorComboBox.IntegralHeight = false;
             this.searchBooksAuthorComboBox.ItemHeight = 43;
-            this.searchBooksAuthorComboBox.Location = new System.Drawing.Point(67, 205);
+            this.searchBooksAuthorComboBox.Location = new System.Drawing.Point(74, 198);
             this.searchBooksAuthorComboBox.MaxDropDownItems = 4;
             this.searchBooksAuthorComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.searchBooksAuthorComboBox.Name = "searchBooksAuthorComboBox";
@@ -303,7 +353,7 @@
             this.searchBooksISBNComboBox.Hint = "ISBN";
             this.searchBooksISBNComboBox.IntegralHeight = false;
             this.searchBooksISBNComboBox.ItemHeight = 43;
-            this.searchBooksISBNComboBox.Location = new System.Drawing.Point(67, 119);
+            this.searchBooksISBNComboBox.Location = new System.Drawing.Point(74, 112);
             this.searchBooksISBNComboBox.MaxDropDownItems = 4;
             this.searchBooksISBNComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.searchBooksISBNComboBox.Name = "searchBooksISBNComboBox";
@@ -326,7 +376,7 @@
             this.searchBooksBookComboBox.Hint = "Book";
             this.searchBooksBookComboBox.IntegralHeight = false;
             this.searchBooksBookComboBox.ItemHeight = 43;
-            this.searchBooksBookComboBox.Location = new System.Drawing.Point(67, 31);
+            this.searchBooksBookComboBox.Location = new System.Drawing.Point(74, 28);
             this.searchBooksBookComboBox.MaxDropDownItems = 4;
             this.searchBooksBookComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.searchBooksBookComboBox.Name = "searchBooksBookComboBox";
@@ -341,7 +391,7 @@
             this.saveBookToCSVButton.Depth = 0;
             this.saveBookToCSVButton.HighEmphasis = true;
             this.saveBookToCSVButton.Icon = null;
-            this.saveBookToCSVButton.Location = new System.Drawing.Point(1060, 146);
+            this.saveBookToCSVButton.Location = new System.Drawing.Point(1050, 249);
             this.saveBookToCSVButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.saveBookToCSVButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveBookToCSVButton.Name = "saveBookToCSVButton";
@@ -361,7 +411,7 @@
             this.updateBookButton.Depth = 0;
             this.updateBookButton.HighEmphasis = true;
             this.updateBookButton.Icon = null;
-            this.updateBookButton.Location = new System.Drawing.Point(833, 249);
+            this.updateBookButton.Location = new System.Drawing.Point(1050, 109);
             this.updateBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateBookButton.Name = "updateBookButton";
@@ -381,7 +431,7 @@
             this.deleteBookButton.Depth = 0;
             this.deleteBookButton.HighEmphasis = true;
             this.deleteBookButton.Icon = null;
-            this.deleteBookButton.Location = new System.Drawing.Point(602, 249);
+            this.deleteBookButton.Location = new System.Drawing.Point(1050, 182);
             this.deleteBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteBookButton.Name = "deleteBookButton";
@@ -401,7 +451,7 @@
             this.addBookButton.Depth = 0;
             this.addBookButton.HighEmphasis = true;
             this.addBookButton.Icon = null;
-            this.addBookButton.Location = new System.Drawing.Point(388, 249);
+            this.addBookButton.Location = new System.Drawing.Point(1050, 31);
             this.addBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addBookButton.Name = "addBookButton";
@@ -419,7 +469,7 @@
             this.booksDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.booksDataGrid.Location = new System.Drawing.Point(273, 31);
             this.booksDataGrid.Name = "booksDataGrid";
-            this.booksDataGrid.Size = new System.Drawing.Size(780, 164);
+            this.booksDataGrid.Size = new System.Drawing.Size(756, 187);
             this.booksDataGrid.TabIndex = 5;
             this.booksDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.booksDataGrid_CellClick);
             // 
@@ -430,7 +480,7 @@
             this.searchBookButton.Depth = 0;
             this.searchBookButton.HighEmphasis = true;
             this.searchBookButton.Icon = null;
-            this.searchBookButton.Location = new System.Drawing.Point(117, 422);
+            this.searchBookButton.Location = new System.Drawing.Point(131, 404);
             this.searchBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.searchBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.searchBookButton.Name = "searchBookButton";
@@ -448,7 +498,7 @@
             this.genreSearchCheckedListBox.AutoScroll = true;
             this.genreSearchCheckedListBox.BackColor = System.Drawing.Color.White;
             this.genreSearchCheckedListBox.Depth = 0;
-            this.genreSearchCheckedListBox.Location = new System.Drawing.Point(67, 292);
+            this.genreSearchCheckedListBox.Location = new System.Drawing.Point(74, 285);
             this.genreSearchCheckedListBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.genreSearchCheckedListBox.Name = "genreSearchCheckedListBox";
             this.genreSearchCheckedListBox.Size = new System.Drawing.Size(200, 100);
@@ -459,6 +509,8 @@
             // studentsTab
             // 
             this.studentsTab.BackColor = System.Drawing.Color.White;
+            this.studentsTab.Controls.Add(this.materialLabel10);
+            this.studentsTab.Controls.Add(this.materialDivider3);
             this.studentsTab.Controls.Add(this.resetStudentButton);
             this.studentsTab.Controls.Add(this.addStudentPhoneTextBox);
             this.studentsTab.Controls.Add(this.addStudentPasswordTextBox);
@@ -491,7 +543,7 @@
             this.resetStudentButton.Depth = 0;
             this.resetStudentButton.HighEmphasis = true;
             this.resetStudentButton.Icon = null;
-            this.resetStudentButton.Location = new System.Drawing.Point(1027, 329);
+            this.resetStudentButton.Location = new System.Drawing.Point(1050, 377);
             this.resetStudentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.resetStudentButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.resetStudentButton.Name = "resetStudentButton";
@@ -514,7 +566,7 @@
             this.addStudentPhoneTextBox.HideSelection = true;
             this.addStudentPhoneTextBox.Hint = "Students Phone Number";
             this.addStudentPhoneTextBox.LeadingIcon = null;
-            this.addStudentPhoneTextBox.Location = new System.Drawing.Point(753, 356);
+            this.addStudentPhoneTextBox.Location = new System.Drawing.Point(767, 413);
             this.addStudentPhoneTextBox.MaxLength = 32767;
             this.addStudentPhoneTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentPhoneTextBox.Name = "addStudentPhoneTextBox";
@@ -543,7 +595,7 @@
             this.addStudentPasswordTextBox.HideSelection = true;
             this.addStudentPasswordTextBox.Hint = "Students password";
             this.addStudentPasswordTextBox.LeadingIcon = null;
-            this.addStudentPasswordTextBox.Location = new System.Drawing.Point(753, 267);
+            this.addStudentPasswordTextBox.Location = new System.Drawing.Point(767, 324);
             this.addStudentPasswordTextBox.MaxLength = 32767;
             this.addStudentPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentPasswordTextBox.Name = "addStudentPasswordTextBox";
@@ -572,7 +624,7 @@
             this.addStudentEmailTextBox.HideSelection = true;
             this.addStudentEmailTextBox.Hint = "Students email";
             this.addStudentEmailTextBox.LeadingIcon = null;
-            this.addStudentEmailTextBox.Location = new System.Drawing.Point(753, 180);
+            this.addStudentEmailTextBox.Location = new System.Drawing.Point(767, 237);
             this.addStudentEmailTextBox.MaxLength = 32767;
             this.addStudentEmailTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentEmailTextBox.Name = "addStudentEmailTextBox";
@@ -601,7 +653,7 @@
             this.addStudentIndexNumberTextBox.HideSelection = true;
             this.addStudentIndexNumberTextBox.Hint = "Students Index Number";
             this.addStudentIndexNumberTextBox.LeadingIcon = null;
-            this.addStudentIndexNumberTextBox.Location = new System.Drawing.Point(478, 356);
+            this.addStudentIndexNumberTextBox.Location = new System.Drawing.Point(492, 413);
             this.addStudentIndexNumberTextBox.MaxLength = 32767;
             this.addStudentIndexNumberTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentIndexNumberTextBox.Name = "addStudentIndexNumberTextBox";
@@ -630,7 +682,7 @@
             this.addStudentLastNameTextBox.HideSelection = true;
             this.addStudentLastNameTextBox.Hint = "Users Last Name";
             this.addStudentLastNameTextBox.LeadingIcon = null;
-            this.addStudentLastNameTextBox.Location = new System.Drawing.Point(478, 267);
+            this.addStudentLastNameTextBox.Location = new System.Drawing.Point(492, 324);
             this.addStudentLastNameTextBox.MaxLength = 32767;
             this.addStudentLastNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentLastNameTextBox.Name = "addStudentLastNameTextBox";
@@ -659,7 +711,7 @@
             this.addStudentFirstNameTextBox.HideSelection = true;
             this.addStudentFirstNameTextBox.Hint = "Users First Name";
             this.addStudentFirstNameTextBox.LeadingIcon = null;
-            this.addStudentFirstNameTextBox.Location = new System.Drawing.Point(478, 180);
+            this.addStudentFirstNameTextBox.Location = new System.Drawing.Point(492, 237);
             this.addStudentFirstNameTextBox.MaxLength = 32767;
             this.addStudentFirstNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addStudentFirstNameTextBox.Name = "addStudentFirstNameTextBox";
@@ -685,7 +737,7 @@
             this.studentsSaveToCSV.Depth = 0;
             this.studentsSaveToCSV.HighEmphasis = true;
             this.studentsSaveToCSV.Icon = null;
-            this.studentsSaveToCSV.Location = new System.Drawing.Point(1027, 205);
+            this.studentsSaveToCSV.Location = new System.Drawing.Point(1050, 249);
             this.studentsSaveToCSV.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.studentsSaveToCSV.MouseState = MaterialSkin.MouseState.HOVER;
             this.studentsSaveToCSV.Name = "studentsSaveToCSV";
@@ -703,7 +755,7 @@
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(294, 189);
+            this.materialLabel5.Location = new System.Drawing.Point(308, 246);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(164, 19);
@@ -717,7 +769,7 @@
             this.addOrUpdateStudentButton.Depth = 0;
             this.addOrUpdateStudentButton.HighEmphasis = true;
             this.addOrUpdateStudentButton.Icon = null;
-            this.addOrUpdateStudentButton.Location = new System.Drawing.Point(1027, 267);
+            this.addOrUpdateStudentButton.Location = new System.Drawing.Point(1050, 315);
             this.addOrUpdateStudentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addOrUpdateStudentButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addOrUpdateStudentButton.Name = "addOrUpdateStudentButton";
@@ -737,7 +789,7 @@
             this.updateStudentButton.Depth = 0;
             this.updateStudentButton.HighEmphasis = true;
             this.updateStudentButton.Icon = null;
-            this.updateStudentButton.Location = new System.Drawing.Point(1027, 41);
+            this.updateStudentButton.Location = new System.Drawing.Point(1050, 31);
             this.updateStudentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateStudentButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateStudentButton.Name = "updateStudentButton";
@@ -757,7 +809,7 @@
             this.deleteStudentButton.Depth = 0;
             this.deleteStudentButton.HighEmphasis = true;
             this.deleteStudentButton.Icon = null;
-            this.deleteStudentButton.Location = new System.Drawing.Point(1027, 109);
+            this.deleteStudentButton.Location = new System.Drawing.Point(1050, 109);
             this.deleteStudentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteStudentButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteStudentButton.Name = "deleteStudentButton";
@@ -773,9 +825,9 @@
             // userDataGrid
             // 
             this.userDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.userDataGrid.Location = new System.Drawing.Point(297, 28);
+            this.userDataGrid.Location = new System.Drawing.Point(273, 31);
             this.userDataGrid.Name = "userDataGrid";
-            this.userDataGrid.Size = new System.Drawing.Size(695, 146);
+            this.userDataGrid.Size = new System.Drawing.Size(756, 187);
             this.userDataGrid.TabIndex = 19;
             this.userDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userDataGrid_CellClick);
             // 
@@ -871,6 +923,8 @@
             // rentalsTab
             // 
             this.rentalsTab.BackColor = System.Drawing.Color.White;
+            this.rentalsTab.Controls.Add(this.materialLabel11);
+            this.rentalsTab.Controls.Add(this.materialDivider4);
             this.rentalsTab.Controls.Add(this.activeRentalCheckBox);
             this.rentalsTab.Controls.Add(this.resetRentalButton);
             this.rentalsTab.Controls.Add(this.returnRentalButton);
@@ -901,7 +955,7 @@
             // 
             this.activeRentalCheckBox.AutoSize = true;
             this.activeRentalCheckBox.Depth = 0;
-            this.activeRentalCheckBox.Location = new System.Drawing.Point(259, 213);
+            this.activeRentalCheckBox.Location = new System.Drawing.Point(273, 221);
             this.activeRentalCheckBox.Margin = new System.Windows.Forms.Padding(0);
             this.activeRentalCheckBox.MouseLocation = new System.Drawing.Point(-1, -1);
             this.activeRentalCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
@@ -921,7 +975,7 @@
             this.resetRentalButton.Depth = 0;
             this.resetRentalButton.HighEmphasis = true;
             this.resetRentalButton.Icon = null;
-            this.resetRentalButton.Location = new System.Drawing.Point(917, 355);
+            this.resetRentalButton.Location = new System.Drawing.Point(1050, 377);
             this.resetRentalButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.resetRentalButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.resetRentalButton.Name = "resetRentalButton";
@@ -941,7 +995,7 @@
             this.returnRentalButton.Depth = 0;
             this.returnRentalButton.HighEmphasis = true;
             this.returnRentalButton.Icon = null;
-            this.returnRentalButton.Location = new System.Drawing.Point(1049, 18);
+            this.returnRentalButton.Location = new System.Drawing.Point(1050, 31);
             this.returnRentalButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.returnRentalButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.returnRentalButton.Name = "returnRentalButton";
@@ -959,7 +1013,7 @@
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(537, 222);
+            this.materialLabel4.Location = new System.Drawing.Point(537, 230);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(154, 19);
@@ -971,7 +1025,7 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(604, 439);
+            this.materialLabel3.Location = new System.Drawing.Point(604, 448);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(87, 19);
@@ -980,9 +1034,9 @@
             // 
             // rentalDatePicker
             // 
-            this.rentalDatePicker.Location = new System.Drawing.Point(711, 434);
+            this.rentalDatePicker.Location = new System.Drawing.Point(711, 448);
             this.rentalDatePicker.Name = "rentalDatePicker";
-            this.rentalDatePicker.Size = new System.Drawing.Size(225, 23);
+            this.rentalDatePicker.Size = new System.Drawing.Size(250, 23);
             this.rentalDatePicker.TabIndex = 20;
             // 
             // rentalBookNameTextBox
@@ -995,7 +1049,7 @@
             this.rentalBookNameTextBox.HideSelection = true;
             this.rentalBookNameTextBox.Hint = "Book";
             this.rentalBookNameTextBox.LeadingIcon = null;
-            this.rentalBookNameTextBox.Location = new System.Drawing.Point(711, 302);
+            this.rentalBookNameTextBox.Location = new System.Drawing.Point(711, 303);
             this.rentalBookNameTextBox.MaxLength = 32767;
             this.rentalBookNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalBookNameTextBox.Name = "rentalBookNameTextBox";
@@ -1007,7 +1061,7 @@
             this.rentalBookNameTextBox.SelectionLength = 0;
             this.rentalBookNameTextBox.SelectionStart = 0;
             this.rentalBookNameTextBox.ShortcutsEnabled = true;
-            this.rentalBookNameTextBox.Size = new System.Drawing.Size(167, 48);
+            this.rentalBookNameTextBox.Size = new System.Drawing.Size(250, 48);
             this.rentalBookNameTextBox.TabIndex = 19;
             this.rentalBookNameTextBox.TabStop = false;
             this.rentalBookNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1024,7 +1078,7 @@
             this.rentalBookIsbnTextBox.HideSelection = true;
             this.rentalBookIsbnTextBox.Hint = "ISBN";
             this.rentalBookIsbnTextBox.LeadingIcon = null;
-            this.rentalBookIsbnTextBox.Location = new System.Drawing.Point(711, 370);
+            this.rentalBookIsbnTextBox.Location = new System.Drawing.Point(711, 380);
             this.rentalBookIsbnTextBox.MaxLength = 32767;
             this.rentalBookIsbnTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalBookIsbnTextBox.Name = "rentalBookIsbnTextBox";
@@ -1036,7 +1090,7 @@
             this.rentalBookIsbnTextBox.SelectionLength = 0;
             this.rentalBookIsbnTextBox.SelectionStart = 0;
             this.rentalBookIsbnTextBox.ShortcutsEnabled = true;
-            this.rentalBookIsbnTextBox.Size = new System.Drawing.Size(167, 48);
+            this.rentalBookIsbnTextBox.Size = new System.Drawing.Size(250, 48);
             this.rentalBookIsbnTextBox.TabIndex = 18;
             this.rentalBookIsbnTextBox.TabStop = false;
             this.rentalBookIsbnTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1053,7 +1107,7 @@
             this.rentalUserIndexNumberTextBox.HideSelection = true;
             this.rentalUserIndexNumberTextBox.Hint = "User Index Number";
             this.rentalUserIndexNumberTextBox.LeadingIcon = null;
-            this.rentalUserIndexNumberTextBox.Location = new System.Drawing.Point(711, 222);
+            this.rentalUserIndexNumberTextBox.Location = new System.Drawing.Point(711, 227);
             this.rentalUserIndexNumberTextBox.MaxLength = 32767;
             this.rentalUserIndexNumberTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalUserIndexNumberTextBox.Name = "rentalUserIndexNumberTextBox";
@@ -1065,7 +1119,7 @@
             this.rentalUserIndexNumberTextBox.SelectionLength = 0;
             this.rentalUserIndexNumberTextBox.SelectionStart = 0;
             this.rentalUserIndexNumberTextBox.ShortcutsEnabled = true;
-            this.rentalUserIndexNumberTextBox.Size = new System.Drawing.Size(167, 48);
+            this.rentalUserIndexNumberTextBox.Size = new System.Drawing.Size(250, 48);
             this.rentalUserIndexNumberTextBox.TabIndex = 15;
             this.rentalUserIndexNumberTextBox.TabStop = false;
             this.rentalUserIndexNumberTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1087,7 +1141,7 @@
             this.rentalUserIndexNumberComboBox.Hint = "User Index Number";
             this.rentalUserIndexNumberComboBox.IntegralHeight = false;
             this.rentalUserIndexNumberComboBox.ItemHeight = 43;
-            this.rentalUserIndexNumberComboBox.Location = new System.Drawing.Point(55, 279);
+            this.rentalUserIndexNumberComboBox.Location = new System.Drawing.Point(74, 280);
             this.rentalUserIndexNumberComboBox.MaxDropDownItems = 4;
             this.rentalUserIndexNumberComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalUserIndexNumberComboBox.Name = "rentalUserIndexNumberComboBox";
@@ -1110,7 +1164,7 @@
             this.rentalUserLastNameComboBox.Hint = "User Last Name";
             this.rentalUserLastNameComboBox.IntegralHeight = false;
             this.rentalUserLastNameComboBox.ItemHeight = 43;
-            this.rentalUserLastNameComboBox.Location = new System.Drawing.Point(55, 192);
+            this.rentalUserLastNameComboBox.Location = new System.Drawing.Point(74, 193);
             this.rentalUserLastNameComboBox.MaxDropDownItems = 4;
             this.rentalUserLastNameComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalUserLastNameComboBox.Name = "rentalUserLastNameComboBox";
@@ -1133,7 +1187,7 @@
             this.rentalUserFirstNameComboBox.Hint = "User First Name";
             this.rentalUserFirstNameComboBox.IntegralHeight = false;
             this.rentalUserFirstNameComboBox.ItemHeight = 43;
-            this.rentalUserFirstNameComboBox.Location = new System.Drawing.Point(55, 105);
+            this.rentalUserFirstNameComboBox.Location = new System.Drawing.Point(74, 106);
             this.rentalUserFirstNameComboBox.MaxDropDownItems = 4;
             this.rentalUserFirstNameComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalUserFirstNameComboBox.Name = "rentalUserFirstNameComboBox";
@@ -1156,7 +1210,7 @@
             this.rentalBookComboBox.Hint = "Book";
             this.rentalBookComboBox.IntegralHeight = false;
             this.rentalBookComboBox.ItemHeight = 43;
-            this.rentalBookComboBox.Location = new System.Drawing.Point(55, 18);
+            this.rentalBookComboBox.Location = new System.Drawing.Point(74, 28);
             this.rentalBookComboBox.MaxDropDownItems = 4;
             this.rentalBookComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.rentalBookComboBox.Name = "rentalBookComboBox";
@@ -1171,7 +1225,7 @@
             this.saveRentalToCsvButton.Depth = 0;
             this.saveRentalToCsvButton.HighEmphasis = true;
             this.saveRentalToCsvButton.Icon = null;
-            this.saveRentalToCsvButton.Location = new System.Drawing.Point(917, 214);
+            this.saveRentalToCsvButton.Location = new System.Drawing.Point(1050, 249);
             this.saveRentalToCsvButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.saveRentalToCsvButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveRentalToCsvButton.Name = "saveRentalToCsvButton";
@@ -1191,7 +1245,7 @@
             this.updateRentalButton.Depth = 0;
             this.updateRentalButton.HighEmphasis = true;
             this.updateRentalButton.Icon = null;
-            this.updateRentalButton.Location = new System.Drawing.Point(1049, 83);
+            this.updateRentalButton.Location = new System.Drawing.Point(1050, 109);
             this.updateRentalButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateRentalButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateRentalButton.Name = "updateRentalButton";
@@ -1211,7 +1265,7 @@
             this.deleteRentalButton.Depth = 0;
             this.deleteRentalButton.HighEmphasis = true;
             this.deleteRentalButton.Icon = null;
-            this.deleteRentalButton.Location = new System.Drawing.Point(1049, 151);
+            this.deleteRentalButton.Location = new System.Drawing.Point(1050, 182);
             this.deleteRentalButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteRentalButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteRentalButton.Name = "deleteRentalButton";
@@ -1231,7 +1285,7 @@
             this.OKRentalButton.Depth = 0;
             this.OKRentalButton.HighEmphasis = true;
             this.OKRentalButton.Icon = null;
-            this.OKRentalButton.Location = new System.Drawing.Point(917, 302);
+            this.OKRentalButton.Location = new System.Drawing.Point(1050, 315);
             this.OKRentalButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.OKRentalButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.OKRentalButton.Name = "OKRentalButton";
@@ -1251,7 +1305,7 @@
             this.rentalSearchButton.Depth = 0;
             this.rentalSearchButton.HighEmphasis = true;
             this.rentalSearchButton.Icon = null;
-            this.rentalSearchButton.Location = new System.Drawing.Point(114, 370);
+            this.rentalSearchButton.Location = new System.Drawing.Point(133, 371);
             this.rentalSearchButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.rentalSearchButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.rentalSearchButton.Name = "rentalSearchButton";
@@ -1267,7 +1321,7 @@
             // rentalDataGrid
             // 
             this.rentalDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rentalDataGrid.Location = new System.Drawing.Point(273, 18);
+            this.rentalDataGrid.Location = new System.Drawing.Point(273, 31);
             this.rentalDataGrid.Name = "rentalDataGrid";
             this.rentalDataGrid.Size = new System.Drawing.Size(756, 187);
             this.rentalDataGrid.TabIndex = 0;
@@ -1276,6 +1330,8 @@
             // administrationTab
             // 
             this.administrationTab.BackColor = System.Drawing.Color.White;
+            this.administrationTab.Controls.Add(this.materialLabel13);
+            this.administrationTab.Controls.Add(this.materialDivider6);
             this.administrationTab.Controls.Add(this.addEmployedPhoneTextBox);
             this.administrationTab.Controls.Add(this.addEmployedPasswordTextBox);
             this.administrationTab.Controls.Add(this.addEmployedEmailTextBox);
@@ -1310,7 +1366,7 @@
             this.addEmployedPhoneTextBox.HideSelection = true;
             this.addEmployedPhoneTextBox.Hint = "Employed Phone Number";
             this.addEmployedPhoneTextBox.LeadingIcon = null;
-            this.addEmployedPhoneTextBox.Location = new System.Drawing.Point(801, 274);
+            this.addEmployedPhoneTextBox.Location = new System.Drawing.Point(758, 318);
             this.addEmployedPhoneTextBox.MaxLength = 32767;
             this.addEmployedPhoneTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addEmployedPhoneTextBox.Name = "addEmployedPhoneTextBox";
@@ -1339,7 +1395,7 @@
             this.addEmployedPasswordTextBox.HideSelection = true;
             this.addEmployedPasswordTextBox.Hint = "Employed password";
             this.addEmployedPasswordTextBox.LeadingIcon = null;
-            this.addEmployedPasswordTextBox.Location = new System.Drawing.Point(801, 193);
+            this.addEmployedPasswordTextBox.Location = new System.Drawing.Point(758, 237);
             this.addEmployedPasswordTextBox.MaxLength = 32767;
             this.addEmployedPasswordTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addEmployedPasswordTextBox.Name = "addEmployedPasswordTextBox";
@@ -1368,7 +1424,7 @@
             this.addEmployedEmailTextBox.HideSelection = true;
             this.addEmployedEmailTextBox.Hint = "Employed email";
             this.addEmployedEmailTextBox.LeadingIcon = null;
-            this.addEmployedEmailTextBox.Location = new System.Drawing.Point(535, 356);
+            this.addEmployedEmailTextBox.Location = new System.Drawing.Point(492, 400);
             this.addEmployedEmailTextBox.MaxLength = 32767;
             this.addEmployedEmailTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addEmployedEmailTextBox.Name = "addEmployedEmailTextBox";
@@ -1397,7 +1453,7 @@
             this.addEmployeeLastNameTextBox.HideSelection = true;
             this.addEmployeeLastNameTextBox.Hint = "Employed Last Name";
             this.addEmployeeLastNameTextBox.LeadingIcon = null;
-            this.addEmployeeLastNameTextBox.Location = new System.Drawing.Point(535, 274);
+            this.addEmployeeLastNameTextBox.Location = new System.Drawing.Point(492, 318);
             this.addEmployeeLastNameTextBox.MaxLength = 32767;
             this.addEmployeeLastNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addEmployeeLastNameTextBox.Name = "addEmployeeLastNameTextBox";
@@ -1426,7 +1482,7 @@
             this.addEmployeeFirstNameTextBox.HideSelection = true;
             this.addEmployeeFirstNameTextBox.Hint = "Employed First Name";
             this.addEmployeeFirstNameTextBox.LeadingIcon = null;
-            this.addEmployeeFirstNameTextBox.Location = new System.Drawing.Point(535, 193);
+            this.addEmployeeFirstNameTextBox.Location = new System.Drawing.Point(492, 237);
             this.addEmployeeFirstNameTextBox.MaxLength = 32767;
             this.addEmployeeFirstNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.addEmployeeFirstNameTextBox.Name = "addEmployeeFirstNameTextBox";
@@ -1450,7 +1506,7 @@
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel6.Location = new System.Drawing.Point(351, 203);
+            this.materialLabel6.Location = new System.Drawing.Point(308, 246);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(178, 19);
@@ -1464,7 +1520,7 @@
             this.resetEmployeeButton.Depth = 0;
             this.resetEmployeeButton.HighEmphasis = true;
             this.resetEmployeeButton.Icon = null;
-            this.resetEmployeeButton.Location = new System.Drawing.Point(1066, 314);
+            this.resetEmployeeButton.Location = new System.Drawing.Point(1050, 377);
             this.resetEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.resetEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.resetEmployeeButton.Name = "resetEmployeeButton";
@@ -1484,7 +1540,7 @@
             this.employeeSaveToCSVBUtton.Depth = 0;
             this.employeeSaveToCSVBUtton.HighEmphasis = true;
             this.employeeSaveToCSVBUtton.Icon = null;
-            this.employeeSaveToCSVBUtton.Location = new System.Drawing.Point(1067, 193);
+            this.employeeSaveToCSVBUtton.Location = new System.Drawing.Point(1050, 249);
             this.employeeSaveToCSVBUtton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.employeeSaveToCSVBUtton.MouseState = MaterialSkin.MouseState.HOVER;
             this.employeeSaveToCSVBUtton.Name = "employeeSaveToCSVBUtton";
@@ -1504,7 +1560,7 @@
             this.addUpdateEmployeeButton.Depth = 0;
             this.addUpdateEmployeeButton.HighEmphasis = true;
             this.addUpdateEmployeeButton.Icon = null;
-            this.addUpdateEmployeeButton.Location = new System.Drawing.Point(1067, 252);
+            this.addUpdateEmployeeButton.Location = new System.Drawing.Point(1050, 315);
             this.addUpdateEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addUpdateEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addUpdateEmployeeButton.Name = "addUpdateEmployeeButton";
@@ -1524,14 +1580,14 @@
             this.deleteEmployeeButton.Depth = 0;
             this.deleteEmployeeButton.HighEmphasis = true;
             this.deleteEmployeeButton.Icon = null;
-            this.deleteEmployeeButton.Location = new System.Drawing.Point(1067, 100);
+            this.deleteEmployeeButton.Location = new System.Drawing.Point(1050, 109);
             this.deleteEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteEmployeeButton.Name = "deleteEmployeeButton";
             this.deleteEmployeeButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.deleteEmployeeButton.Size = new System.Drawing.Size(73, 36);
+            this.deleteEmployeeButton.Size = new System.Drawing.Size(152, 36);
             this.deleteEmployeeButton.TabIndex = 24;
-            this.deleteEmployeeButton.Text = "DELETE";
+            this.deleteEmployeeButton.Text = "DELETE EMPLOYER";
             this.deleteEmployeeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.deleteEmployeeButton.UseAccentColor = false;
             this.deleteEmployeeButton.UseVisualStyleBackColor = true;
@@ -1544,14 +1600,14 @@
             this.updateEmployeeButton.Depth = 0;
             this.updateEmployeeButton.HighEmphasis = true;
             this.updateEmployeeButton.Icon = null;
-            this.updateEmployeeButton.Location = new System.Drawing.Point(1067, 42);
+            this.updateEmployeeButton.Location = new System.Drawing.Point(1050, 31);
             this.updateEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateEmployeeButton.Name = "updateEmployeeButton";
             this.updateEmployeeButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.updateEmployeeButton.Size = new System.Drawing.Size(77, 36);
+            this.updateEmployeeButton.Size = new System.Drawing.Size(156, 36);
             this.updateEmployeeButton.TabIndex = 23;
-            this.updateEmployeeButton.Text = "UPDATE";
+            this.updateEmployeeButton.Text = "UPDATE EMPLOYER";
             this.updateEmployeeButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.updateEmployeeButton.UseAccentColor = false;
             this.updateEmployeeButton.UseVisualStyleBackColor = true;
@@ -1564,7 +1620,7 @@
             this.employeeSearchButton.Depth = 0;
             this.employeeSearchButton.HighEmphasis = true;
             this.employeeSearchButton.Icon = null;
-            this.employeeSearchButton.Location = new System.Drawing.Point(103, 368);
+            this.employeeSearchButton.Location = new System.Drawing.Point(124, 368);
             this.employeeSearchButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.employeeSearchButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.employeeSearchButton.Name = "employeeSearchButton";
@@ -1592,11 +1648,11 @@
             this.searchEmployeePhoneComboBox.Hint = "Phone Number";
             this.searchEmployeePhoneComboBox.IntegralHeight = false;
             this.searchEmployeePhoneComboBox.ItemHeight = 43;
-            this.searchEmployeePhoneComboBox.Location = new System.Drawing.Point(71, 290);
+            this.searchEmployeePhoneComboBox.Location = new System.Drawing.Point(74, 289);
             this.searchEmployeePhoneComboBox.MaxDropDownItems = 4;
             this.searchEmployeePhoneComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.searchEmployeePhoneComboBox.Name = "searchEmployeePhoneComboBox";
-            this.searchEmployeePhoneComboBox.Size = new System.Drawing.Size(215, 49);
+            this.searchEmployeePhoneComboBox.Size = new System.Drawing.Size(188, 49);
             this.searchEmployeePhoneComboBox.StartIndex = 0;
             this.searchEmployeePhoneComboBox.TabIndex = 21;
             // 
@@ -1615,11 +1671,11 @@
             this.searchEmployeeEmailComboBox.Hint = "Email";
             this.searchEmployeeEmailComboBox.IntegralHeight = false;
             this.searchEmployeeEmailComboBox.ItemHeight = 43;
-            this.searchEmployeeEmailComboBox.Location = new System.Drawing.Point(71, 203);
+            this.searchEmployeeEmailComboBox.Location = new System.Drawing.Point(74, 202);
             this.searchEmployeeEmailComboBox.MaxDropDownItems = 4;
             this.searchEmployeeEmailComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.searchEmployeeEmailComboBox.Name = "searchEmployeeEmailComboBox";
-            this.searchEmployeeEmailComboBox.Size = new System.Drawing.Size(215, 49);
+            this.searchEmployeeEmailComboBox.Size = new System.Drawing.Size(188, 49);
             this.searchEmployeeEmailComboBox.StartIndex = 0;
             this.searchEmployeeEmailComboBox.TabIndex = 20;
             // 
@@ -1638,11 +1694,11 @@
             this.searchEmployeeLastNameComboBox.Hint = "Last Name";
             this.searchEmployeeLastNameComboBox.IntegralHeight = false;
             this.searchEmployeeLastNameComboBox.ItemHeight = 43;
-            this.searchEmployeeLastNameComboBox.Location = new System.Drawing.Point(71, 116);
+            this.searchEmployeeLastNameComboBox.Location = new System.Drawing.Point(74, 115);
             this.searchEmployeeLastNameComboBox.MaxDropDownItems = 4;
             this.searchEmployeeLastNameComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.searchEmployeeLastNameComboBox.Name = "searchEmployeeLastNameComboBox";
-            this.searchEmployeeLastNameComboBox.Size = new System.Drawing.Size(215, 49);
+            this.searchEmployeeLastNameComboBox.Size = new System.Drawing.Size(188, 49);
             this.searchEmployeeLastNameComboBox.StartIndex = 0;
             this.searchEmployeeLastNameComboBox.TabIndex = 19;
             // 
@@ -1661,55 +1717,303 @@
             this.searchEmployeeFirstNameComboBox.Hint = "First Name";
             this.searchEmployeeFirstNameComboBox.IntegralHeight = false;
             this.searchEmployeeFirstNameComboBox.ItemHeight = 43;
-            this.searchEmployeeFirstNameComboBox.Location = new System.Drawing.Point(71, 29);
+            this.searchEmployeeFirstNameComboBox.Location = new System.Drawing.Point(74, 28);
             this.searchEmployeeFirstNameComboBox.MaxDropDownItems = 4;
             this.searchEmployeeFirstNameComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.searchEmployeeFirstNameComboBox.Name = "searchEmployeeFirstNameComboBox";
-            this.searchEmployeeFirstNameComboBox.Size = new System.Drawing.Size(215, 49);
+            this.searchEmployeeFirstNameComboBox.Size = new System.Drawing.Size(188, 49);
             this.searchEmployeeFirstNameComboBox.StartIndex = 0;
             this.searchEmployeeFirstNameComboBox.TabIndex = 18;
             // 
             // employeeDataGrid
             // 
             this.employeeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeDataGrid.Location = new System.Drawing.Point(328, 29);
+            this.employeeDataGrid.Location = new System.Drawing.Point(273, 31);
             this.employeeDataGrid.Name = "employeeDataGrid";
-            this.employeeDataGrid.Size = new System.Drawing.Size(697, 148);
+            this.employeeDataGrid.Size = new System.Drawing.Size(756, 187);
             this.employeeDataGrid.TabIndex = 0;
             this.employeeDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employedDataGrid_CellClick);
             // 
-            // materialLabel7
+            // reservationTab
             // 
-            this.materialLabel7.AutoSize = true;
-            this.materialLabel7.Depth = 0;
-            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel7.Location = new System.Drawing.Point(93, 471);
-            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(694, 19);
-            this.materialLabel7.TabIndex = 33;
-            this.materialLabel7.Text = "All wish books is a table that presents all the books that students have requeste" +
-    "d to be purchased. ";
+            this.reservationTab.BackColor = System.Drawing.Color.White;
+            this.reservationTab.Controls.Add(this.materialLabel12);
+            this.reservationTab.Controls.Add(this.materialDivider5);
+            this.reservationTab.Controls.Add(this.materialButton1);
+            this.reservationTab.Controls.Add(this.reservationUserIndexNumberComboBox);
+            this.reservationTab.Controls.Add(this.reservationUserLastNameCOmboBox);
+            this.reservationTab.Controls.Add(this.reservatonUserFirstNameComboBox);
+            this.reservationTab.Controls.Add(this.reservationBookComboBox);
+            this.reservationTab.Controls.Add(this.reservationSearchButton);
+            this.reservationTab.Controls.Add(this.reservationDataGrid);
+            this.reservationTab.Location = new System.Drawing.Point(4, 25);
+            this.reservationTab.Name = "reservationTab";
+            this.reservationTab.Size = new System.Drawing.Size(1492, 771);
+            this.reservationTab.TabIndex = 5;
+            this.reservationTab.Text = "RESERVATION";
             // 
-            // materialLabel8
+            // reservationDataGrid
             // 
-            this.materialLabel8.AutoSize = true;
-            this.materialLabel8.Depth = 0;
-            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel8.Location = new System.Drawing.Point(93, 490);
-            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(612, 19);
-            this.materialLabel8.TabIndex = 34;
-            this.materialLabel8.Text = "Soon expire rentals prepresents all rentals that expire in 5 days or have already" +
-    " expired.";
+            this.reservationDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reservationDataGrid.Location = new System.Drawing.Point(273, 31);
+            this.reservationDataGrid.Name = "reservationDataGrid";
+            this.reservationDataGrid.Size = new System.Drawing.Size(756, 187);
+            this.reservationDataGrid.TabIndex = 0;
+            // 
+            // reservationUserIndexNumberComboBox
+            // 
+            this.reservationUserIndexNumberComboBox.AutoResize = false;
+            this.reservationUserIndexNumberComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.reservationUserIndexNumberComboBox.Depth = 0;
+            this.reservationUserIndexNumberComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.reservationUserIndexNumberComboBox.DropDownHeight = 174;
+            this.reservationUserIndexNumberComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.reservationUserIndexNumberComboBox.DropDownWidth = 121;
+            this.reservationUserIndexNumberComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.reservationUserIndexNumberComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.reservationUserIndexNumberComboBox.FormattingEnabled = true;
+            this.reservationUserIndexNumberComboBox.Hint = "User Index Number";
+            this.reservationUserIndexNumberComboBox.IntegralHeight = false;
+            this.reservationUserIndexNumberComboBox.ItemHeight = 43;
+            this.reservationUserIndexNumberComboBox.Location = new System.Drawing.Point(74, 271);
+            this.reservationUserIndexNumberComboBox.MaxDropDownItems = 4;
+            this.reservationUserIndexNumberComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.reservationUserIndexNumberComboBox.Name = "reservationUserIndexNumberComboBox";
+            this.reservationUserIndexNumberComboBox.Size = new System.Drawing.Size(188, 49);
+            this.reservationUserIndexNumberComboBox.StartIndex = 0;
+            this.reservationUserIndexNumberComboBox.TabIndex = 19;
+            // 
+            // reservationUserLastNameCOmboBox
+            // 
+            this.reservationUserLastNameCOmboBox.AutoResize = false;
+            this.reservationUserLastNameCOmboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.reservationUserLastNameCOmboBox.Depth = 0;
+            this.reservationUserLastNameCOmboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.reservationUserLastNameCOmboBox.DropDownHeight = 174;
+            this.reservationUserLastNameCOmboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.reservationUserLastNameCOmboBox.DropDownWidth = 121;
+            this.reservationUserLastNameCOmboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.reservationUserLastNameCOmboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.reservationUserLastNameCOmboBox.FormattingEnabled = true;
+            this.reservationUserLastNameCOmboBox.Hint = "User Last Name";
+            this.reservationUserLastNameCOmboBox.IntegralHeight = false;
+            this.reservationUserLastNameCOmboBox.ItemHeight = 43;
+            this.reservationUserLastNameCOmboBox.Location = new System.Drawing.Point(74, 188);
+            this.reservationUserLastNameCOmboBox.MaxDropDownItems = 4;
+            this.reservationUserLastNameCOmboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.reservationUserLastNameCOmboBox.Name = "reservationUserLastNameCOmboBox";
+            this.reservationUserLastNameCOmboBox.Size = new System.Drawing.Size(188, 49);
+            this.reservationUserLastNameCOmboBox.StartIndex = 0;
+            this.reservationUserLastNameCOmboBox.TabIndex = 18;
+            // 
+            // reservatonUserFirstNameComboBox
+            // 
+            this.reservatonUserFirstNameComboBox.AutoResize = false;
+            this.reservatonUserFirstNameComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.reservatonUserFirstNameComboBox.Depth = 0;
+            this.reservatonUserFirstNameComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.reservatonUserFirstNameComboBox.DropDownHeight = 174;
+            this.reservatonUserFirstNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.reservatonUserFirstNameComboBox.DropDownWidth = 121;
+            this.reservatonUserFirstNameComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.reservatonUserFirstNameComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.reservatonUserFirstNameComboBox.FormattingEnabled = true;
+            this.reservatonUserFirstNameComboBox.Hint = "User First Name";
+            this.reservatonUserFirstNameComboBox.IntegralHeight = false;
+            this.reservatonUserFirstNameComboBox.ItemHeight = 43;
+            this.reservatonUserFirstNameComboBox.Location = new System.Drawing.Point(74, 106);
+            this.reservatonUserFirstNameComboBox.MaxDropDownItems = 4;
+            this.reservatonUserFirstNameComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.reservatonUserFirstNameComboBox.Name = "reservatonUserFirstNameComboBox";
+            this.reservatonUserFirstNameComboBox.Size = new System.Drawing.Size(188, 49);
+            this.reservatonUserFirstNameComboBox.StartIndex = 0;
+            this.reservatonUserFirstNameComboBox.TabIndex = 17;
+            // 
+            // reservationBookComboBox
+            // 
+            this.reservationBookComboBox.AutoResize = false;
+            this.reservationBookComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.reservationBookComboBox.Depth = 0;
+            this.reservationBookComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.reservationBookComboBox.DropDownHeight = 174;
+            this.reservationBookComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.reservationBookComboBox.DropDownWidth = 121;
+            this.reservationBookComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.reservationBookComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.reservationBookComboBox.FormattingEnabled = true;
+            this.reservationBookComboBox.Hint = "Book";
+            this.reservationBookComboBox.IntegralHeight = false;
+            this.reservationBookComboBox.ItemHeight = 43;
+            this.reservationBookComboBox.Location = new System.Drawing.Point(74, 28);
+            this.reservationBookComboBox.MaxDropDownItems = 4;
+            this.reservationBookComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.reservationBookComboBox.Name = "reservationBookComboBox";
+            this.reservationBookComboBox.Size = new System.Drawing.Size(188, 49);
+            this.reservationBookComboBox.StartIndex = 0;
+            this.reservationBookComboBox.TabIndex = 16;
+            // 
+            // reservationSearchButton
+            // 
+            this.reservationSearchButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reservationSearchButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.reservationSearchButton.Depth = 0;
+            this.reservationSearchButton.HighEmphasis = true;
+            this.reservationSearchButton.Icon = null;
+            this.reservationSearchButton.Location = new System.Drawing.Point(128, 351);
+            this.reservationSearchButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.reservationSearchButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.reservationSearchButton.Name = "reservationSearchButton";
+            this.reservationSearchButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.reservationSearchButton.Size = new System.Drawing.Size(78, 36);
+            this.reservationSearchButton.TabIndex = 15;
+            this.reservationSearchButton.Text = "SEARCH";
+            this.reservationSearchButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.reservationSearchButton.UseAccentColor = false;
+            this.reservationSearchButton.UseVisualStyleBackColor = true;
+            this.reservationSearchButton.Click += new System.EventHandler(this.reservationSearchButton_Click);
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(1050, 249);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(112, 36);
+            this.materialButton1.TabIndex = 20;
+            this.materialButton1.Text = "SAVE TO CSV";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            // 
+            // materialDivider2
+            // 
+            this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider2.Depth = 0;
+            this.materialDivider2.Location = new System.Drawing.Point(96, 483);
+            this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider2.Name = "materialDivider2";
+            this.materialDivider2.Size = new System.Drawing.Size(1150, 1);
+            this.materialDivider2.TabIndex = 33;
+            this.materialDivider2.Click += new System.EventHandler(this.materialDivider2_Click);
+            // 
+            // materialLabel9
+            // 
+            this.materialLabel9.AutoSize = true;
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel9.Location = new System.Drawing.Point(93, 496);
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Size = new System.Drawing.Size(1008, 19);
+            this.materialLabel9.TabIndex = 34;
+            this.materialLabel9.Text = "Books dashboard displays all books and provides the ability to search for books. " +
+    "You can also add a new book, edit an existing one, or delete it.";
+            this.materialLabel9.Click += new System.EventHandler(this.materialLabel9_Click);
+            // 
+            // materialLabel10
+            // 
+            this.materialLabel10.AutoSize = true;
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel10.Location = new System.Drawing.Point(93, 496);
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            this.materialLabel10.Size = new System.Drawing.Size(1085, 19);
+            this.materialLabel10.TabIndex = 36;
+            this.materialLabel10.Text = "Students dashboard shows all students and provides the ability to search students" +
+    ". You can also add a new student, modify an existing one, or delete one.";
+            // 
+            // materialDivider3
+            // 
+            this.materialDivider3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider3.Depth = 0;
+            this.materialDivider3.Location = new System.Drawing.Point(96, 483);
+            this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider3.Name = "materialDivider3";
+            this.materialDivider3.Size = new System.Drawing.Size(1150, 1);
+            this.materialDivider3.TabIndex = 35;
+            // 
+            // materialLabel11
+            // 
+            this.materialLabel11.AutoSize = true;
+            this.materialLabel11.Depth = 0;
+            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel11.Location = new System.Drawing.Point(93, 496);
+            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel11.Name = "materialLabel11";
+            this.materialLabel11.Size = new System.Drawing.Size(1022, 19);
+            this.materialLabel11.TabIndex = 38;
+            this.materialLabel11.Text = "Rentals dashboard displays all rents and provides the ability to search for rents" +
+    ". Also, you can add a new rent, change the existing one or delete it.";
+            // 
+            // materialDivider4
+            // 
+            this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider4.Depth = 0;
+            this.materialDivider4.Location = new System.Drawing.Point(96, 483);
+            this.materialDivider4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider4.Name = "materialDivider4";
+            this.materialDivider4.Size = new System.Drawing.Size(1150, 1);
+            this.materialDivider4.TabIndex = 37;
+            // 
+            // materialLabel12
+            // 
+            this.materialLabel12.AutoSize = true;
+            this.materialLabel12.Depth = 0;
+            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel12.Location = new System.Drawing.Point(93, 496);
+            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel12.Name = "materialLabel12";
+            this.materialLabel12.Size = new System.Drawing.Size(705, 19);
+            this.materialLabel12.TabIndex = 38;
+            this.materialLabel12.Text = "Reservations dashboard displays all reservations and provides the ability to sear" +
+    "ch for reservations. ";
+            // 
+            // materialDivider5
+            // 
+            this.materialDivider5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider5.Depth = 0;
+            this.materialDivider5.Location = new System.Drawing.Point(96, 483);
+            this.materialDivider5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider5.Name = "materialDivider5";
+            this.materialDivider5.Size = new System.Drawing.Size(1150, 1);
+            this.materialDivider5.TabIndex = 37;
+            // 
+            // materialLabel13
+            // 
+            this.materialLabel13.AutoSize = true;
+            this.materialLabel13.Depth = 0;
+            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel13.Location = new System.Drawing.Point(93, 496);
+            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel13.Name = "materialLabel13";
+            this.materialLabel13.Size = new System.Drawing.Size(1132, 19);
+            this.materialLabel13.TabIndex = 38;
+            this.materialLabel13.Text = "Employers dashboard shows all employers and provides the ability to search employ" +
+    "ers. You can also add a new employer, modify an existing one, or delete one.";
+            // 
+            // materialDivider6
+            // 
+            this.materialDivider6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider6.Depth = 0;
+            this.materialDivider6.Location = new System.Drawing.Point(96, 483);
+            this.materialDivider6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider6.Name = "materialDivider6";
+            this.materialDivider6.Size = new System.Drawing.Size(1150, 1);
+            this.materialDivider6.TabIndex = 37;
             // 
             // AdminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1233, 600);
+            this.ClientSize = new System.Drawing.Size(1249, 639);
             this.Controls.Add(this.menu);
             this.DrawerAutoHide = false;
             this.DrawerIsOpen = true;
@@ -1740,6 +2044,9 @@
             this.administrationTab.ResumeLayout(false);
             this.administrationTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).EndInit();
+            this.reservationTab.ResumeLayout(false);
+            this.reservationTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1824,5 +2131,23 @@
         public System.Windows.Forms.TabPage homeTab;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private System.Windows.Forms.TabPage reservationTab;
+        private System.Windows.Forms.DataGridView reservationDataGrid;
+        private MaterialSkin.Controls.MaterialComboBox reservationUserIndexNumberComboBox;
+        private MaterialSkin.Controls.MaterialComboBox reservationUserLastNameCOmboBox;
+        private MaterialSkin.Controls.MaterialComboBox reservatonUserFirstNameComboBox;
+        private MaterialSkin.Controls.MaterialComboBox reservationBookComboBox;
+        private MaterialSkin.Controls.MaterialButton reservationSearchButton;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialDivider materialDivider2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel9;
+        private MaterialSkin.Controls.MaterialLabel materialLabel10;
+        private MaterialSkin.Controls.MaterialDivider materialDivider3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel11;
+        private MaterialSkin.Controls.MaterialDivider materialDivider4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel12;
+        private MaterialSkin.Controls.MaterialDivider materialDivider5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel13;
+        private MaterialSkin.Controls.MaterialDivider materialDivider6;
     }
 }

@@ -26,11 +26,14 @@ namespace Library.Presentation
             Helpers.DataGridManager.InitializeWishBookDataGrid(wishBookDataGrid);
             Helpers.DataGridManager.InitializeExpireSoonRentalsDataGrid(expireSoonRentalsDataGrid);
             Helpers.DataGridManager.InitializeAllRentalsDataGrid(rentalDataGrid);
+            Helpers.DataGridManager.InitializeAllReservationsDataGrid(reservationDataGrid);
             Helpers.DataGridManager.InitializeAllEmployedDataGrid(employeeDataGrid);
             Helpers.ComboBoxManager.SetValuesToBooksComboBox(rentalBookComboBox);
+            Helpers.ComboBoxManager.SetValuesToBooksComboBox(reservationBookComboBox);
             Helpers.ComboBoxManager.SetValuesToBooksComboBox(searchBooksBookComboBox);
             Helpers.ComboBoxManager.SetValuesToAuthorComboBox(searchBooksAuthorComboBox);
             Helpers.ComboBoxManager.SetValuesToISBNComboBox(searchBooksISBNComboBox);
+            Helpers.ComboBoxManager.SetValuesToUsersComboBox(reservatonUserFirstNameComboBox, reservationUserLastNameCOmboBox, reservationUserIndexNumberComboBox);
             Helpers.ComboBoxManager.SetValuesToUsersComboBox(rentalUserFirstNameComboBox, rentalUserLastNameComboBox, rentalUserIndexNumberComboBox);
             Helpers.ComboBoxManager.SetValuesToUsersComboBox(userSearchFirstNameComboBox, userSearchLastNameComboBox, userSearchIndexNumberComboBox);
             Helpers.ComboBoxManager.SetValuesToEmployeeComboBox(searchEmployeeFirstNameComboBox, searchEmployeeLastNameComboBox, searchEmployeeEmailComboBox, searchEmployeePhoneComboBox);
@@ -38,7 +41,9 @@ namespace Library.Presentation
             Helpers.ComboBoxManager.AddEmptyValueToSearchComboBox(searchBooksBookComboBox, searchBooksAuthorComboBox,
                 searchBooksISBNComboBox, rentalBookComboBox, rentalUserFirstNameComboBox,
                 rentalUserLastNameComboBox, rentalUserIndexNumberComboBox, userSearchFirstNameComboBox,
-                userSearchLastNameComboBox, userSearchIndexNumberComboBox, searchEmployeeFirstNameComboBox,
+                userSearchLastNameComboBox, userSearchIndexNumberComboBox, reservationBookComboBox,
+                reservationUserLastNameCOmboBox, reservatonUserFirstNameComboBox, reservationUserIndexNumberComboBox,
+                searchEmployeeFirstNameComboBox,
                 searchEmployeeLastNameComboBox, searchEmployeeEmailComboBox, searchEmployeePhoneComboBox);
         }
 
@@ -535,6 +540,32 @@ namespace Library.Presentation
                 MaterialMessageBox.Show("Employee was deleted");
                 select_validation_employee = false;
             }
+        }
+
+        private void reservationSearchButton_Click(object sender, EventArgs e)
+        {
+            var searchBookName = string.IsNullOrEmpty(reservationBookComboBox.Text) ? null : reservationBookComboBox.Text;
+            var searchUserFirstName = string.IsNullOrEmpty(reservatonUserFirstNameComboBox.Text) ? null : reservatonUserFirstNameComboBox.Text;
+            var searchUserLastName = string.IsNullOrEmpty(reservationUserLastNameCOmboBox.Text) ? null : reservationUserLastNameCOmboBox.Text;
+            var searchUserIndexNumber = string.IsNullOrEmpty(reservationUserIndexNumberComboBox.Text) ? null : reservationUserIndexNumberComboBox.Text;
+            var searchReservations = Bussiness.Reservation.GetSearchedReservations(searchBookName,searchUserFirstName, searchUserLastName, searchUserIndexNumber);
+            Helpers.DataGridManager.InitializeSearchReservationsDataGrid(reservationDataGrid, searchReservations);
+            
+        }
+
+        private void menu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialDivider2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
