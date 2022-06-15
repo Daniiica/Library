@@ -72,6 +72,7 @@ namespace Library.Presentation
             {
                 Bussiness.WishBooks.ApproveWishBook(bookID);
                 MaterialMessageBox.Show("Wish book was approved");
+                Helpers.DataGridManager.InitializeWishBookDataGrid(wishBookDataGrid);
             }
         }
 
@@ -103,7 +104,6 @@ namespace Library.Presentation
         {
             bookID = 0;
             Helpers.FormManager.OpenBookForm(bookID);
-            this.Hide();
             //Helpers.DataGridManager.InitializeAllBookDataGrid(booksDataGrid);
         }
 
@@ -117,7 +117,6 @@ namespace Library.Presentation
             {
                 Helpers.FormManager.OpenBookForm(bookID);
             }
-            this.Hide();
             //Helpers.DataGridManager.InitializeAllBookDataGrid(booksDataGrid);
         }
 
@@ -551,21 +550,6 @@ namespace Library.Presentation
             var searchReservations = Bussiness.Reservation.GetSearchedReservations(searchBookName,searchUserFirstName, searchUserLastName, searchUserIndexNumber);
             Helpers.DataGridManager.InitializeSearchReservationsDataGrid(reservationDataGrid, searchReservations);
             
-        }
-
-        private void menu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialDivider2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

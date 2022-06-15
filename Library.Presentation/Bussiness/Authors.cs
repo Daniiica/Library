@@ -30,7 +30,7 @@ namespace Library.Presentation.Bussiness
             var author = _unitOfWork.AuthorRepository.GetByID(authorID);
             return author;
         }
-        public static void UpdateAuthor(int authorID, string name, string country, string biography, DateTime dateOfBirth, DateTime dateOfDeath)
+        public static void UpdateAuthor(int authorID, string name, string country, string biography, DateTime dateOfBirth, DateTime? dateOfDeath)
         {
             UnitOfWork _unitOfWork = new UnitOfWork();
             var author = GetAuthorById(authorID);
@@ -42,7 +42,7 @@ namespace Library.Presentation.Bussiness
             _unitOfWork.AuthorRepository.Update(author);
             _unitOfWork.Save();
         }
-        public static void AddAuthor(string name, string country, string biography, DateTime dateOfBirth, DateTime dateOfDeath)
+        public static void AddAuthor(string name, string country, string biography, DateTime dateOfBirth, DateTime? dateOfDeath)
         {
             UnitOfWork _unitOfWork = new UnitOfWork();
             Author author = new Author{

@@ -29,6 +29,8 @@ namespace Library.Presentation
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookForm));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.BookTab = new System.Windows.Forms.TabPage();
             this.DescriptionMultiLineBox = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
@@ -42,6 +44,7 @@ namespace Library.Presentation
             this.AuthorComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.AmountTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.AuthorTab = new System.Windows.Forms.TabPage();
+            this.disableDateOfDeathAuthorRadioButton = new MaterialSkin.Controls.MaterialRadioButton();
             this.resetAuthorButton = new MaterialSkin.Controls.MaterialButton();
             this.UpdateAuthorButton = new MaterialSkin.Controls.MaterialButton();
             this.DeleteAuthorButton = new MaterialSkin.Controls.MaterialButton();
@@ -54,6 +57,7 @@ namespace Library.Presentation
             this.BiographyMultiLineTextBox = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.CountryTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.AuthorNameTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.bookIconTabControl = new System.Windows.Forms.ImageList(this.components);
             this.materialTabControl1.SuspendLayout();
             this.BookTab.SuspendLayout();
             this.AuthorTab.SuspendLayout();
@@ -66,6 +70,7 @@ namespace Library.Presentation
             this.materialTabControl1.Controls.Add(this.AuthorTab);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.materialTabControl1.ImageList = this.bookIconTabControl;
             this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Multiline = true;
@@ -89,10 +94,11 @@ namespace Library.Presentation
             this.BookTab.Controls.Add(this.AmountTextBox);
             this.BookTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BookTab.ForeColor = System.Drawing.Color.Transparent;
-            this.BookTab.Location = new System.Drawing.Point(4, 22);
+            this.BookTab.ImageKey = "bookBook.png";
+            this.BookTab.Location = new System.Drawing.Point(4, 23);
             this.BookTab.Name = "BookTab";
             this.BookTab.Padding = new System.Windows.Forms.Padding(3);
-            this.BookTab.Size = new System.Drawing.Size(791, 357);
+            this.BookTab.Size = new System.Drawing.Size(791, 356);
             this.BookTab.TabIndex = 0;
             this.BookTab.Text = "BOOK";
             // 
@@ -105,7 +111,7 @@ namespace Library.Presentation
             this.DescriptionMultiLineBox.Depth = 0;
             this.DescriptionMultiLineBox.HideSelection = true;
             this.DescriptionMultiLineBox.Hint = "Description";
-            this.DescriptionMultiLineBox.Location = new System.Drawing.Point(81, 174);
+            this.DescriptionMultiLineBox.Location = new System.Drawing.Point(68, 174);
             this.DescriptionMultiLineBox.MaxLength = 32767;
             this.DescriptionMultiLineBox.MouseState = MaterialSkin.MouseState.OUT;
             this.DescriptionMultiLineBox.Name = "DescriptionMultiLineBox";
@@ -130,7 +136,7 @@ namespace Library.Presentation
             this.bookNameTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.bookNameTextBox.Hint = "Book";
             this.bookNameTextBox.LeadingIcon = null;
-            this.bookNameTextBox.Location = new System.Drawing.Point(81, 19);
+            this.bookNameTextBox.Location = new System.Drawing.Point(68, 19);
             this.bookNameTextBox.MaxLength = 50;
             this.bookNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.bookNameTextBox.Multiline = false;
@@ -155,7 +161,7 @@ namespace Library.Presentation
             this.LanguageComboBox.Hint = "Language";
             this.LanguageComboBox.IntegralHeight = false;
             this.LanguageComboBox.ItemHeight = 43;
-            this.LanguageComboBox.Location = new System.Drawing.Point(519, 17);
+            this.LanguageComboBox.Location = new System.Drawing.Point(506, 17);
             this.LanguageComboBox.MaxDropDownItems = 4;
             this.LanguageComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.LanguageComboBox.Name = "LanguageComboBox";
@@ -170,7 +176,7 @@ namespace Library.Presentation
             this.cancelButton.Depth = 0;
             this.cancelButton.HighEmphasis = true;
             this.cancelButton.Icon = null;
-            this.cancelButton.Location = new System.Drawing.Point(612, 252);
+            this.cancelButton.Location = new System.Drawing.Point(599, 252);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.cancelButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.cancelButton.Name = "cancelButton";
@@ -190,7 +196,7 @@ namespace Library.Presentation
             this.OKBookButton.Depth = 0;
             this.OKBookButton.HighEmphasis = true;
             this.OKBookButton.Icon = null;
-            this.OKBookButton.Location = new System.Drawing.Point(612, 188);
+            this.OKBookButton.Location = new System.Drawing.Point(599, 188);
             this.OKBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.OKBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.OKBookButton.Name = "OKBookButton";
@@ -218,7 +224,7 @@ namespace Library.Presentation
             this.PublisherComboBox.Hint = "Publisher";
             this.PublisherComboBox.IntegralHeight = false;
             this.PublisherComboBox.ItemHeight = 43;
-            this.PublisherComboBox.Location = new System.Drawing.Point(296, 86);
+            this.PublisherComboBox.Location = new System.Drawing.Point(283, 86);
             this.PublisherComboBox.MaxDropDownItems = 4;
             this.PublisherComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.PublisherComboBox.Name = "PublisherComboBox";
@@ -231,7 +237,7 @@ namespace Library.Presentation
             this.GenreCheckBox.AutoScroll = true;
             this.GenreCheckBox.BackColor = System.Drawing.Color.White;
             this.GenreCheckBox.Depth = 0;
-            this.GenreCheckBox.Location = new System.Drawing.Point(368, 188);
+            this.GenreCheckBox.Location = new System.Drawing.Point(355, 188);
             this.GenreCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
             this.GenreCheckBox.Name = "GenreCheckBox";
             this.GenreCheckBox.Size = new System.Drawing.Size(200, 100);
@@ -247,7 +253,7 @@ namespace Library.Presentation
             this.ISBNTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ISBNTextBox.Hint = "ISBN";
             this.ISBNTextBox.LeadingIcon = null;
-            this.ISBNTextBox.Location = new System.Drawing.Point(296, 18);
+            this.ISBNTextBox.Location = new System.Drawing.Point(283, 18);
             this.ISBNTextBox.MaxLength = 50;
             this.ISBNTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.ISBNTextBox.Multiline = false;
@@ -272,7 +278,7 @@ namespace Library.Presentation
             this.AuthorComboBox.Hint = "Author";
             this.AuthorComboBox.IntegralHeight = false;
             this.AuthorComboBox.ItemHeight = 43;
-            this.AuthorComboBox.Location = new System.Drawing.Point(81, 86);
+            this.AuthorComboBox.Location = new System.Drawing.Point(68, 86);
             this.AuthorComboBox.MaxDropDownItems = 4;
             this.AuthorComboBox.MouseState = MaterialSkin.MouseState.OUT;
             this.AuthorComboBox.Name = "AuthorComboBox";
@@ -288,7 +294,7 @@ namespace Library.Presentation
             this.AmountTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.AmountTextBox.Hint = "Amount";
             this.AmountTextBox.LeadingIcon = null;
-            this.AmountTextBox.Location = new System.Drawing.Point(519, 87);
+            this.AmountTextBox.Location = new System.Drawing.Point(506, 87);
             this.AmountTextBox.MaxLength = 50;
             this.AmountTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.AmountTextBox.Multiline = false;
@@ -301,6 +307,7 @@ namespace Library.Presentation
             // AuthorTab
             // 
             this.AuthorTab.BackColor = System.Drawing.Color.White;
+            this.AuthorTab.Controls.Add(this.disableDateOfDeathAuthorRadioButton);
             this.AuthorTab.Controls.Add(this.resetAuthorButton);
             this.AuthorTab.Controls.Add(this.UpdateAuthorButton);
             this.AuthorTab.Controls.Add(this.DeleteAuthorButton);
@@ -314,12 +321,30 @@ namespace Library.Presentation
             this.AuthorTab.Controls.Add(this.CountryTextBox);
             this.AuthorTab.Controls.Add(this.AuthorNameTextBox);
             this.AuthorTab.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AuthorTab.Location = new System.Drawing.Point(4, 22);
+            this.AuthorTab.ImageKey = "bookAuthor.png";
+            this.AuthorTab.Location = new System.Drawing.Point(4, 23);
             this.AuthorTab.Name = "AuthorTab";
             this.AuthorTab.Padding = new System.Windows.Forms.Padding(3);
-            this.AuthorTab.Size = new System.Drawing.Size(791, 357);
+            this.AuthorTab.Size = new System.Drawing.Size(791, 356);
             this.AuthorTab.TabIndex = 1;
             this.AuthorTab.Text = "AUTHOR";
+            // 
+            // disableDateOfDeathAuthorRadioButton
+            // 
+            this.disableDateOfDeathAuthorRadioButton.AutoSize = true;
+            this.disableDateOfDeathAuthorRadioButton.Depth = 0;
+            this.disableDateOfDeathAuthorRadioButton.Location = new System.Drawing.Point(16, 312);
+            this.disableDateOfDeathAuthorRadioButton.Margin = new System.Windows.Forms.Padding(0);
+            this.disableDateOfDeathAuthorRadioButton.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.disableDateOfDeathAuthorRadioButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.disableDateOfDeathAuthorRadioButton.Name = "disableDateOfDeathAuthorRadioButton";
+            this.disableDateOfDeathAuthorRadioButton.Ripple = true;
+            this.disableDateOfDeathAuthorRadioButton.Size = new System.Drawing.Size(190, 37);
+            this.disableDateOfDeathAuthorRadioButton.TabIndex = 29;
+            this.disableDateOfDeathAuthorRadioButton.TabStop = true;
+            this.disableDateOfDeathAuthorRadioButton.Text = "Disable date of death.";
+            this.disableDateOfDeathAuthorRadioButton.UseVisualStyleBackColor = true;
+            this.disableDateOfDeathAuthorRadioButton.CheckedChanged += new System.EventHandler(this.disableDateOfDeathAuthorRadioButton_CheckedChanged);
             // 
             // resetAuthorButton
             // 
@@ -328,7 +353,7 @@ namespace Library.Presentation
             this.resetAuthorButton.Depth = 0;
             this.resetAuthorButton.HighEmphasis = true;
             this.resetAuthorButton.Icon = null;
-            this.resetAuthorButton.Location = new System.Drawing.Point(680, 290);
+            this.resetAuthorButton.Location = new System.Drawing.Point(601, 274);
             this.resetAuthorButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.resetAuthorButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.resetAuthorButton.Name = "resetAuthorButton";
@@ -348,7 +373,7 @@ namespace Library.Presentation
             this.UpdateAuthorButton.Depth = 0;
             this.UpdateAuthorButton.HighEmphasis = true;
             this.UpdateAuthorButton.Icon = null;
-            this.UpdateAuthorButton.Location = new System.Drawing.Point(671, 81);
+            this.UpdateAuthorButton.Location = new System.Drawing.Point(593, 91);
             this.UpdateAuthorButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.UpdateAuthorButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.UpdateAuthorButton.Name = "UpdateAuthorButton";
@@ -368,7 +393,7 @@ namespace Library.Presentation
             this.DeleteAuthorButton.Depth = 0;
             this.DeleteAuthorButton.HighEmphasis = true;
             this.DeleteAuthorButton.Icon = null;
-            this.DeleteAuthorButton.Location = new System.Drawing.Point(671, 9);
+            this.DeleteAuthorButton.Location = new System.Drawing.Point(593, 19);
             this.DeleteAuthorButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeleteAuthorButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteAuthorButton.Name = "DeleteAuthorButton";
@@ -386,7 +411,7 @@ namespace Library.Presentation
             this.AuthorsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AuthorsDataGrid.Location = new System.Drawing.Point(16, 3);
             this.AuthorsDataGrid.Name = "AuthorsDataGrid";
-            this.AuthorsDataGrid.Size = new System.Drawing.Size(623, 135);
+            this.AuthorsDataGrid.Size = new System.Drawing.Size(544, 135);
             this.AuthorsDataGrid.TabIndex = 25;
             this.AuthorsDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AuthorsDataGrid_CellClick);
             // 
@@ -397,7 +422,7 @@ namespace Library.Presentation
             this.OKAuthorButton.Depth = 0;
             this.OKAuthorButton.HighEmphasis = true;
             this.OKAuthorButton.Icon = null;
-            this.OKAuthorButton.Location = new System.Drawing.Point(515, 290);
+            this.OKAuthorButton.Location = new System.Drawing.Point(458, 273);
             this.OKAuthorButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.OKAuthorButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.OKAuthorButton.Name = "OKAuthorButton";
@@ -436,14 +461,14 @@ namespace Library.Presentation
             // 
             // DateOfDeathPicker
             // 
-            this.DateOfDeathPicker.Location = new System.Drawing.Point(166, 290);
+            this.DateOfDeathPicker.Location = new System.Drawing.Point(156, 289);
             this.DateOfDeathPicker.Name = "DateOfDeathPicker";
             this.DateOfDeathPicker.Size = new System.Drawing.Size(200, 20);
             this.DateOfDeathPicker.TabIndex = 21;
             // 
             // DateOfBirthPicker
             // 
-            this.DateOfBirthPicker.Location = new System.Drawing.Point(166, 228);
+            this.DateOfBirthPicker.Location = new System.Drawing.Point(156, 232);
             this.DateOfBirthPicker.Name = "DateOfBirthPicker";
             this.DateOfBirthPicker.Size = new System.Drawing.Size(200, 20);
             this.DateOfBirthPicker.TabIndex = 20;
@@ -457,7 +482,7 @@ namespace Library.Presentation
             this.BiographyMultiLineTextBox.Depth = 0;
             this.BiographyMultiLineTextBox.HideSelection = true;
             this.BiographyMultiLineTextBox.Hint = "Biography";
-            this.BiographyMultiLineTextBox.Location = new System.Drawing.Point(515, 156);
+            this.BiographyMultiLineTextBox.Location = new System.Drawing.Point(458, 156);
             this.BiographyMultiLineTextBox.MaxLength = 32767;
             this.BiographyMultiLineTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.BiographyMultiLineTextBox.Name = "BiographyMultiLineTextBox";
@@ -468,7 +493,7 @@ namespace Library.Presentation
             this.BiographyMultiLineTextBox.SelectionLength = 0;
             this.BiographyMultiLineTextBox.SelectionStart = 0;
             this.BiographyMultiLineTextBox.ShortcutsEnabled = true;
-            this.BiographyMultiLineTextBox.Size = new System.Drawing.Size(250, 100);
+            this.BiographyMultiLineTextBox.Size = new System.Drawing.Size(212, 92);
             this.BiographyMultiLineTextBox.TabIndex = 19;
             this.BiographyMultiLineTextBox.TabStop = false;
             this.BiographyMultiLineTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -482,7 +507,7 @@ namespace Library.Presentation
             this.CountryTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.CountryTextBox.Hint = "Country";
             this.CountryTextBox.LeadingIcon = null;
-            this.CountryTextBox.Location = new System.Drawing.Point(256, 156);
+            this.CountryTextBox.Location = new System.Drawing.Point(238, 156);
             this.CountryTextBox.MaxLength = 50;
             this.CountryTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.CountryTextBox.Multiline = false;
@@ -500,7 +525,7 @@ namespace Library.Presentation
             this.AuthorNameTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.AuthorNameTextBox.Hint = "Name";
             this.AuthorNameTextBox.LeadingIcon = null;
-            this.AuthorNameTextBox.Location = new System.Drawing.Point(27, 156);
+            this.AuthorNameTextBox.Location = new System.Drawing.Point(16, 156);
             this.AuthorNameTextBox.MaxLength = 50;
             this.AuthorNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.AuthorNameTextBox.Multiline = false;
@@ -509,6 +534,13 @@ namespace Library.Presentation
             this.AuthorNameTextBox.TabIndex = 16;
             this.AuthorNameTextBox.Text = "";
             this.AuthorNameTextBox.TrailingIcon = null;
+            // 
+            // bookIconTabControl
+            // 
+            this.bookIconTabControl.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("bookIconTabControl.ImageStream")));
+            this.bookIconTabControl.TransparentColor = System.Drawing.Color.Transparent;
+            this.bookIconTabControl.Images.SetKeyName(0, "bookBook.png");
+            this.bookIconTabControl.Images.SetKeyName(1, "bookAuthor.png");
             // 
             // BookForm
             // 
@@ -558,5 +590,7 @@ namespace Library.Presentation
         private MaterialSkin.Controls.MaterialButton DeleteAuthorButton;
         private System.Windows.Forms.DataGridView AuthorsDataGrid;
         private MaterialSkin.Controls.MaterialButton resetAuthorButton;
+        private MaterialSkin.Controls.MaterialRadioButton disableDateOfDeathAuthorRadioButton;
+        private System.Windows.Forms.ImageList bookIconTabControl;
     }
 }

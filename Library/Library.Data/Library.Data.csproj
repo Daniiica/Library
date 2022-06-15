@@ -80,9 +80,9 @@
     <Compile Include="Domain\Role.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Domain\WishBook.cs" />
-    <Compile Include="Migrations\202206131752366_Initial_Migration.cs" />
-    <Compile Include="Migrations\202206131752366_Initial_Migration.designer.cs">
-      <DependentUpon>202206131752366_Initial_Migration.cs</DependentUpon>
+    <Compile Include="Migrations\202206141626177_Initial_Migration.cs" />
+    <Compile Include="Migrations\202206141626177_Initial_Migration.designer.cs">
+      <DependentUpon>202206141626177_Initial_Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,8 +92,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206131752366_Initial_Migration.resx">
-      <DependentUpon>202206131752366_Initial_Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206141626177_Initial_Migration.resx">
+      <DependentUpon>202206141626177_Initial_Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

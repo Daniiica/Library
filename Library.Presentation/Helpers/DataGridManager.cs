@@ -1,6 +1,7 @@
 ﻿using Library.Presentation.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Library.Presentation.Helpers
@@ -69,6 +70,9 @@ namespace Library.Presentation.Helpers
         public static void InitializeMyReservationDataGrid(DataGridView myReservationDataGrid)
         {
             myReservationDataGrid.DataSource = Bussiness.Reservation.MyReservationList();
+            myReservationDataGrid.Columns["UserFirstName"].Visible = false;
+            myReservationDataGrid.Columns["UserLastName"].Visible = false; 
+            myReservationDataGrid.Columns["UserIndexNumber"].Visible = false; 
             myReservationDataGrid.Columns["ReservationsID"].Visible = false;
             myReservationDataGrid.Columns["BookID"].Visible = false;
             myReservationDataGrid.Columns["UserID"].Visible = false;
@@ -123,11 +127,15 @@ namespace Library.Presentation.Helpers
         public static void InitializeOnlyMyActiveRentalsDataGrid(DataGridView myRentalsDataGrid)
         {
             var rentals = Bussiness.Rentals.OnlyActiveRentals();
-            foreach(var item in rentals)
+            var deleteRentals = new List<RentalsModel>(rentals);
+            if (rentals.Count != 0)
             {
-                if(item.User.UserID != Program.Current.User.UserID)
+                foreach (var item in deleteRentals)
                 {
-                    rentals.Remove(item);
+                    if (item.User.UserID != Program.Current.User.UserID)
+                    {
+                        rentals.Remove(item);
+                    }
                 }
             }
             myRentalsDataGrid.DataSource = rentals;
@@ -202,6 +210,17 @@ namespace Library.Presentation.Helpers
         public static void InitializeExpireSoonRentalsDataGrid(DataGridView expireSoonRentalsDataGrid)
         {
             expireSoonRentalsDataGrid.DataSource = Bussiness.Rentals.ExpireSoonRentals();
+         /*   foreach(DataGridViewRow row in expireSoonRentalsDataGrid.Rows)
+            {
+                if(row.Cells[6].Value.ToString(). >= DateTime.Now)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                }
+                else
+                {
+                    row.DefaultCellStyle.BackColor = Color.Yellow;
+                }
+            } */
             expireSoonRentalsDataGrid.Columns["BookID"].Visible = false;
             expireSoonRentalsDataGrid.Columns["User"].Visible = false;
             expireSoonRentalsDataGrid.Columns["RentalsID"].Visible = false;

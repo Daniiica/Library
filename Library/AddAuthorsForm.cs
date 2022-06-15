@@ -39,7 +39,7 @@ namespace Library
             var country = CountryTextBox.Text;
             var biography = BiographyTextBox.Text;
             var dateOfBirth = DateOfBirthPicker.Value;
-            var dateOfDeath = DateOfDeathPicker.Value;
+            var dateOfDeath = DateOfDeathPicker.Enabled == true ? DateOfDeathPicker.Value : (DateTime?)null;
             if (_author == null)
             {
                 if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(country))
@@ -54,16 +54,15 @@ namespace Library
                         CountryValidation.Text = "Country is required";
                     }
                 }
+                //DateTime date = new DateTime(dateOfDeath.Day, dateOfDeath.Month, dateOfDeath.Year);
                 Author autorAdd = new Author { Name = name, Country = country, Biography = biography, DateOfBirth = dateOfBirth, DateOfDeath = dateOfDeath };
                 Author exist_author = _unitOfWork.AuthorRepository.Get(a =>
                 a.Name == name &&
                 a.Country == country &&
                 a.DateOfBirth.Day == dateOfBirth.Day &&
                 a.DateOfBirth.Month == dateOfBirth.Month &&
-                a.DateOfBirth.Year == dateOfBirth.Year &&
-                a.DateOfDeath.Day == dateOfDeath.Day &&
-                a.DateOfDeath.Month == dateOfDeath.Month &&
-                a.DateOfDeath.Year == dateOfDeath.Year).FirstOrDefault();
+                a.DateOfBirth.Year == dateOfBirth.Year).FirstOrDefault();
+               // a.DateOfDeath == date).FirstOrDefault();
                 if (exist_author != null)
                 {
                     MessageBox.Show("Author already exists!");
@@ -94,15 +93,6 @@ namespace Library
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-        }
-
-
-        private void AddAuthorsForm_Load(object sender, EventArgs e)
-        {
-            Graphics surface = CreateGraphics();
-            Pen pen1 = new Pen(Color.Black, 5);
-            surface.DrawLine(pen1, 10, 15, 100, 15);
-
         }
     }
 }

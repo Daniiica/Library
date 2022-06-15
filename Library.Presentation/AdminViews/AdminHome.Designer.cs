@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menu = new MaterialSkin.Controls.MaterialTabControl();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHome));
+            this.adminMenu = new MaterialSkin.Controls.MaterialTabControl();
             this.homeTab = new System.Windows.Forms.TabPage();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
@@ -40,6 +42,8 @@
             this.expireSoonRentalsDataGrid = new System.Windows.Forms.DataGridView();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.booksTab = new System.Windows.Forms.TabPage();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             this.searchBooksAuthorComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.searchBooksISBNComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.searchBooksBookComboBox = new MaterialSkin.Controls.MaterialComboBox();
@@ -51,6 +55,8 @@
             this.searchBookButton = new MaterialSkin.Controls.MaterialButton();
             this.genreSearchCheckedListBox = new MaterialSkin.Controls.MaterialCheckedListBox();
             this.studentsTab = new System.Windows.Forms.TabPage();
+            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
             this.resetStudentButton = new MaterialSkin.Controls.MaterialButton();
             this.addStudentPhoneTextBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.addStudentPasswordTextBox = new MaterialSkin.Controls.MaterialTextBox2();
@@ -69,6 +75,8 @@
             this.userSearchLastNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.userSearchFirstNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.rentalsTab = new System.Windows.Forms.TabPage();
+            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider4 = new MaterialSkin.Controls.MaterialDivider();
             this.activeRentalCheckBox = new MaterialSkin.Controls.MaterialCheckbox();
             this.resetRentalButton = new MaterialSkin.Controls.MaterialButton();
             this.returnRentalButton = new MaterialSkin.Controls.MaterialButton();
@@ -88,7 +96,19 @@
             this.OKRentalButton = new MaterialSkin.Controls.MaterialButton();
             this.rentalSearchButton = new MaterialSkin.Controls.MaterialButton();
             this.rentalDataGrid = new System.Windows.Forms.DataGridView();
+            this.reservationTab = new System.Windows.Forms.TabPage();
+            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider5 = new MaterialSkin.Controls.MaterialDivider();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.reservationUserIndexNumberComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.reservationUserLastNameCOmboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.reservatonUserFirstNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.reservationBookComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.reservationSearchButton = new MaterialSkin.Controls.MaterialButton();
+            this.reservationDataGrid = new System.Windows.Forms.DataGridView();
             this.administrationTab = new System.Windows.Forms.TabPage();
+            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialDivider6 = new MaterialSkin.Controls.MaterialDivider();
             this.addEmployedPhoneTextBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.addEmployedPasswordTextBox = new MaterialSkin.Controls.MaterialTextBox2();
             this.addEmployedEmailTextBox = new MaterialSkin.Controls.MaterialTextBox2();
@@ -106,25 +126,8 @@
             this.searchEmployeeLastNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.searchEmployeeFirstNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.employeeDataGrid = new System.Windows.Forms.DataGridView();
-            this.reservationTab = new System.Windows.Forms.TabPage();
-            this.reservationDataGrid = new System.Windows.Forms.DataGridView();
-            this.reservationUserIndexNumberComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            this.reservationUserLastNameCOmboBox = new MaterialSkin.Controls.MaterialComboBox();
-            this.reservatonUserFirstNameComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            this.reservationBookComboBox = new MaterialSkin.Controls.MaterialComboBox();
-            this.reservationSearchButton = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialDivider4 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialDivider5 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialDivider6 = new MaterialSkin.Controls.MaterialDivider();
-            this.menu.SuspendLayout();
+            this.adminIconTabControl = new System.Windows.Forms.ImageList(this.components);
+            this.adminMenu.SuspendLayout();
             this.homeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wishBookDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expireSoonRentalsDataGrid)).BeginInit();
@@ -134,29 +137,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.userDataGrid)).BeginInit();
             this.rentalsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentalDataGrid)).BeginInit();
-            this.administrationTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).BeginInit();
             this.reservationTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).BeginInit();
+            this.administrationTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // menu
+            // adminMenu
             // 
-            this.menu.Controls.Add(this.homeTab);
-            this.menu.Controls.Add(this.booksTab);
-            this.menu.Controls.Add(this.studentsTab);
-            this.menu.Controls.Add(this.rentalsTab);
-            this.menu.Controls.Add(this.reservationTab);
-            this.menu.Controls.Add(this.administrationTab);
-            this.menu.Depth = 0;
-            this.menu.Location = new System.Drawing.Point(0, 64);
-            this.menu.MouseState = MaterialSkin.MouseState.HOVER;
-            this.menu.Multiline = true;
-            this.menu.Name = "menu";
-            this.menu.SelectedIndex = 0;
-            this.menu.Size = new System.Drawing.Size(1500, 800);
-            this.menu.TabIndex = 0;
-            this.menu.SelectedIndexChanged += new System.EventHandler(this.menu_SelectedIndexChanged);
+            this.adminMenu.Controls.Add(this.homeTab);
+            this.adminMenu.Controls.Add(this.booksTab);
+            this.adminMenu.Controls.Add(this.studentsTab);
+            this.adminMenu.Controls.Add(this.rentalsTab);
+            this.adminMenu.Controls.Add(this.reservationTab);
+            this.adminMenu.Controls.Add(this.administrationTab);
+            this.adminMenu.Depth = 0;
+            this.adminMenu.ImageList = this.adminIconTabControl;
+            this.adminMenu.Location = new System.Drawing.Point(0, 64);
+            this.adminMenu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.adminMenu.Multiline = true;
+            this.adminMenu.Name = "adminMenu";
+            this.adminMenu.SelectedIndex = 0;
+            this.adminMenu.Size = new System.Drawing.Size(1500, 800);
+            this.adminMenu.TabIndex = 0;
             // 
             // homeTab
             // 
@@ -170,6 +173,7 @@
             this.homeTab.Controls.Add(this.materialLabel2);
             this.homeTab.Controls.Add(this.expireSoonRentalsDataGrid);
             this.homeTab.Controls.Add(this.materialLabel1);
+            this.homeTab.ImageKey = "adminHome.png";
             this.homeTab.Location = new System.Drawing.Point(4, 25);
             this.homeTab.Name = "homeTab";
             this.homeTab.Padding = new System.Windows.Forms.Padding(3);
@@ -220,7 +224,7 @@
             this.ApproveButton.Depth = 0;
             this.ApproveButton.HighEmphasis = true;
             this.ApproveButton.Icon = null;
-            this.ApproveButton.Location = new System.Drawing.Point(1050, 31);
+            this.ApproveButton.Location = new System.Drawing.Point(1000, 31);
             this.ApproveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ApproveButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ApproveButton.Name = "ApproveButton";
@@ -236,9 +240,9 @@
             // wishBookDataGrid
             // 
             this.wishBookDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.wishBookDataGrid.Location = new System.Drawing.Point(273, 31);
+            this.wishBookDataGrid.Location = new System.Drawing.Point(96, 31);
             this.wishBookDataGrid.Name = "wishBookDataGrid";
-            this.wishBookDataGrid.Size = new System.Drawing.Size(756, 187);
+            this.wishBookDataGrid.Size = new System.Drawing.Size(836, 187);
             this.wishBookDataGrid.TabIndex = 0;
             this.wishBookDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.wishBookDataGrid_CellClick);
             // 
@@ -249,7 +253,7 @@
             this.DeleteButton.Depth = 0;
             this.DeleteButton.HighEmphasis = true;
             this.DeleteButton.Icon = null;
-            this.DeleteButton.Location = new System.Drawing.Point(1050, 109);
+            this.DeleteButton.Location = new System.Drawing.Point(1000, 109);
             this.DeleteButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.DeleteButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteButton.Name = "DeleteButton";
@@ -267,7 +271,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(113, 231);
+            this.materialLabel2.Location = new System.Drawing.Point(93, 252);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(136, 19);
@@ -277,16 +281,16 @@
             // expireSoonRentalsDataGrid
             // 
             this.expireSoonRentalsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.expireSoonRentalsDataGrid.Location = new System.Drawing.Point(273, 231);
+            this.expireSoonRentalsDataGrid.Location = new System.Drawing.Point(96, 274);
             this.expireSoonRentalsDataGrid.Name = "expireSoonRentalsDataGrid";
-            this.expireSoonRentalsDataGrid.Size = new System.Drawing.Size(756, 187);
+            this.expireSoonRentalsDataGrid.Size = new System.Drawing.Size(836, 187);
             this.expireSoonRentalsDataGrid.TabIndex = 1;
             // 
             // materialLabel1
             // 
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(146, 31);
+            this.materialLabel1.Location = new System.Drawing.Point(93, 9);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(103, 19);
@@ -308,12 +312,36 @@
             this.booksTab.Controls.Add(this.booksDataGrid);
             this.booksTab.Controls.Add(this.searchBookButton);
             this.booksTab.Controls.Add(this.genreSearchCheckedListBox);
+            this.booksTab.ImageKey = "adminBooks.png";
             this.booksTab.Location = new System.Drawing.Point(4, 25);
             this.booksTab.Name = "booksTab";
             this.booksTab.Padding = new System.Windows.Forms.Padding(3);
             this.booksTab.Size = new System.Drawing.Size(1492, 771);
             this.booksTab.TabIndex = 1;
             this.booksTab.Text = "BOOKS";
+            // 
+            // materialLabel9
+            // 
+            this.materialLabel9.AutoSize = true;
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel9.Location = new System.Drawing.Point(93, 496);
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Size = new System.Drawing.Size(1008, 19);
+            this.materialLabel9.TabIndex = 34;
+            this.materialLabel9.Text = "Books dashboard displays all books and provides the ability to search for books. " +
+    "You can also add a new book, edit an existing one, or delete it.";
+            // 
+            // materialDivider2
+            // 
+            this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider2.Depth = 0;
+            this.materialDivider2.Location = new System.Drawing.Point(96, 483);
+            this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider2.Name = "materialDivider2";
+            this.materialDivider2.Size = new System.Drawing.Size(1150, 1);
+            this.materialDivider2.TabIndex = 33;
             // 
             // searchBooksAuthorComboBox
             // 
@@ -391,7 +419,7 @@
             this.saveBookToCSVButton.Depth = 0;
             this.saveBookToCSVButton.HighEmphasis = true;
             this.saveBookToCSVButton.Icon = null;
-            this.saveBookToCSVButton.Location = new System.Drawing.Point(1050, 249);
+            this.saveBookToCSVButton.Location = new System.Drawing.Point(1118, 249);
             this.saveBookToCSVButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.saveBookToCSVButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveBookToCSVButton.Name = "saveBookToCSVButton";
@@ -411,7 +439,7 @@
             this.updateBookButton.Depth = 0;
             this.updateBookButton.HighEmphasis = true;
             this.updateBookButton.Icon = null;
-            this.updateBookButton.Location = new System.Drawing.Point(1050, 109);
+            this.updateBookButton.Location = new System.Drawing.Point(1118, 109);
             this.updateBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateBookButton.Name = "updateBookButton";
@@ -431,7 +459,7 @@
             this.deleteBookButton.Depth = 0;
             this.deleteBookButton.HighEmphasis = true;
             this.deleteBookButton.Icon = null;
-            this.deleteBookButton.Location = new System.Drawing.Point(1050, 182);
+            this.deleteBookButton.Location = new System.Drawing.Point(1118, 182);
             this.deleteBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteBookButton.Name = "deleteBookButton";
@@ -451,7 +479,7 @@
             this.addBookButton.Depth = 0;
             this.addBookButton.HighEmphasis = true;
             this.addBookButton.Icon = null;
-            this.addBookButton.Location = new System.Drawing.Point(1050, 31);
+            this.addBookButton.Location = new System.Drawing.Point(1118, 31);
             this.addBookButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addBookButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.addBookButton.Name = "addBookButton";
@@ -469,7 +497,7 @@
             this.booksDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.booksDataGrid.Location = new System.Drawing.Point(273, 31);
             this.booksDataGrid.Name = "booksDataGrid";
-            this.booksDataGrid.Size = new System.Drawing.Size(756, 187);
+            this.booksDataGrid.Size = new System.Drawing.Size(822, 187);
             this.booksDataGrid.TabIndex = 5;
             this.booksDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.booksDataGrid_CellClick);
             // 
@@ -529,12 +557,36 @@
             this.studentsTab.Controls.Add(this.userSearchLastNameComboBox);
             this.studentsTab.Controls.Add(this.userSearchFirstNameComboBox);
             this.studentsTab.ForeColor = System.Drawing.Color.Black;
+            this.studentsTab.ImageKey = "adminStudent.png";
             this.studentsTab.Location = new System.Drawing.Point(4, 25);
             this.studentsTab.Name = "studentsTab";
             this.studentsTab.Padding = new System.Windows.Forms.Padding(3);
             this.studentsTab.Size = new System.Drawing.Size(1492, 771);
             this.studentsTab.TabIndex = 2;
             this.studentsTab.Text = "STUDENTS";
+            // 
+            // materialLabel10
+            // 
+            this.materialLabel10.AutoSize = true;
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel10.Location = new System.Drawing.Point(93, 496);
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            this.materialLabel10.Size = new System.Drawing.Size(1085, 19);
+            this.materialLabel10.TabIndex = 36;
+            this.materialLabel10.Text = "Students dashboard shows all students and provides the ability to search students" +
+    ". You can also add a new student, modify an existing one, or delete one.";
+            // 
+            // materialDivider3
+            // 
+            this.materialDivider3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider3.Depth = 0;
+            this.materialDivider3.Location = new System.Drawing.Point(96, 483);
+            this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider3.Name = "materialDivider3";
+            this.materialDivider3.Size = new System.Drawing.Size(1150, 1);
+            this.materialDivider3.TabIndex = 35;
             // 
             // resetStudentButton
             // 
@@ -789,7 +841,7 @@
             this.updateStudentButton.Depth = 0;
             this.updateStudentButton.HighEmphasis = true;
             this.updateStudentButton.Icon = null;
-            this.updateStudentButton.Location = new System.Drawing.Point(1050, 31);
+            this.updateStudentButton.Location = new System.Drawing.Point(969, 31);
             this.updateStudentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateStudentButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateStudentButton.Name = "updateStudentButton";
@@ -809,7 +861,7 @@
             this.deleteStudentButton.Depth = 0;
             this.deleteStudentButton.HighEmphasis = true;
             this.deleteStudentButton.Icon = null;
-            this.deleteStudentButton.Location = new System.Drawing.Point(1050, 109);
+            this.deleteStudentButton.Location = new System.Drawing.Point(969, 109);
             this.deleteStudentButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteStudentButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteStudentButton.Name = "deleteStudentButton";
@@ -827,7 +879,7 @@
             this.userDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userDataGrid.Location = new System.Drawing.Point(273, 31);
             this.userDataGrid.Name = "userDataGrid";
-            this.userDataGrid.Size = new System.Drawing.Size(756, 187);
+            this.userDataGrid.Size = new System.Drawing.Size(640, 187);
             this.userDataGrid.TabIndex = 19;
             this.userDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userDataGrid_CellClick);
             // 
@@ -944,12 +996,36 @@
             this.rentalsTab.Controls.Add(this.OKRentalButton);
             this.rentalsTab.Controls.Add(this.rentalSearchButton);
             this.rentalsTab.Controls.Add(this.rentalDataGrid);
+            this.rentalsTab.ImageKey = "adminRental.png";
             this.rentalsTab.Location = new System.Drawing.Point(4, 25);
             this.rentalsTab.Name = "rentalsTab";
             this.rentalsTab.Padding = new System.Windows.Forms.Padding(3);
             this.rentalsTab.Size = new System.Drawing.Size(1492, 771);
             this.rentalsTab.TabIndex = 3;
             this.rentalsTab.Text = "RENTALS";
+            // 
+            // materialLabel11
+            // 
+            this.materialLabel11.AutoSize = true;
+            this.materialLabel11.Depth = 0;
+            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel11.Location = new System.Drawing.Point(93, 496);
+            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel11.Name = "materialLabel11";
+            this.materialLabel11.Size = new System.Drawing.Size(1022, 19);
+            this.materialLabel11.TabIndex = 38;
+            this.materialLabel11.Text = "Rentals dashboard displays all rents and provides the ability to search for rents" +
+    ". Also, you can add a new rent, change the existing one or delete it.";
+            // 
+            // materialDivider4
+            // 
+            this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider4.Depth = 0;
+            this.materialDivider4.Location = new System.Drawing.Point(96, 483);
+            this.materialDivider4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider4.Name = "materialDivider4";
+            this.materialDivider4.Size = new System.Drawing.Size(1150, 1);
+            this.materialDivider4.TabIndex = 37;
             // 
             // activeRentalCheckBox
             // 
@@ -995,7 +1071,7 @@
             this.returnRentalButton.Depth = 0;
             this.returnRentalButton.HighEmphasis = true;
             this.returnRentalButton.Icon = null;
-            this.returnRentalButton.Location = new System.Drawing.Point(1050, 31);
+            this.returnRentalButton.Location = new System.Drawing.Point(1104, 28);
             this.returnRentalButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.returnRentalButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.returnRentalButton.Name = "returnRentalButton";
@@ -1245,7 +1321,7 @@
             this.updateRentalButton.Depth = 0;
             this.updateRentalButton.HighEmphasis = true;
             this.updateRentalButton.Icon = null;
-            this.updateRentalButton.Location = new System.Drawing.Point(1050, 109);
+            this.updateRentalButton.Location = new System.Drawing.Point(1104, 106);
             this.updateRentalButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateRentalButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateRentalButton.Name = "updateRentalButton";
@@ -1265,7 +1341,7 @@
             this.deleteRentalButton.Depth = 0;
             this.deleteRentalButton.HighEmphasis = true;
             this.deleteRentalButton.Icon = null;
-            this.deleteRentalButton.Location = new System.Drawing.Point(1050, 182);
+            this.deleteRentalButton.Location = new System.Drawing.Point(1104, 179);
             this.deleteRentalButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteRentalButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteRentalButton.Name = "deleteRentalButton";
@@ -1323,9 +1399,190 @@
             this.rentalDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rentalDataGrid.Location = new System.Drawing.Point(273, 31);
             this.rentalDataGrid.Name = "rentalDataGrid";
-            this.rentalDataGrid.Size = new System.Drawing.Size(756, 187);
+            this.rentalDataGrid.Size = new System.Drawing.Size(824, 187);
             this.rentalDataGrid.TabIndex = 0;
             this.rentalDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rentalDataGrid_CellClick);
+            // 
+            // reservationTab
+            // 
+            this.reservationTab.BackColor = System.Drawing.Color.White;
+            this.reservationTab.Controls.Add(this.materialLabel12);
+            this.reservationTab.Controls.Add(this.materialDivider5);
+            this.reservationTab.Controls.Add(this.materialButton1);
+            this.reservationTab.Controls.Add(this.reservationUserIndexNumberComboBox);
+            this.reservationTab.Controls.Add(this.reservationUserLastNameCOmboBox);
+            this.reservationTab.Controls.Add(this.reservatonUserFirstNameComboBox);
+            this.reservationTab.Controls.Add(this.reservationBookComboBox);
+            this.reservationTab.Controls.Add(this.reservationSearchButton);
+            this.reservationTab.Controls.Add(this.reservationDataGrid);
+            this.reservationTab.ImageKey = "adminReservation.png";
+            this.reservationTab.Location = new System.Drawing.Point(4, 25);
+            this.reservationTab.Name = "reservationTab";
+            this.reservationTab.Size = new System.Drawing.Size(1492, 771);
+            this.reservationTab.TabIndex = 5;
+            this.reservationTab.Text = "RESERVATION";
+            // 
+            // materialLabel12
+            // 
+            this.materialLabel12.AutoSize = true;
+            this.materialLabel12.Depth = 0;
+            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel12.Location = new System.Drawing.Point(93, 496);
+            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel12.Name = "materialLabel12";
+            this.materialLabel12.Size = new System.Drawing.Size(705, 19);
+            this.materialLabel12.TabIndex = 38;
+            this.materialLabel12.Text = "Reservations dashboard displays all reservations and provides the ability to sear" +
+    "ch for reservations. ";
+            // 
+            // materialDivider5
+            // 
+            this.materialDivider5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider5.Depth = 0;
+            this.materialDivider5.Location = new System.Drawing.Point(96, 483);
+            this.materialDivider5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider5.Name = "materialDivider5";
+            this.materialDivider5.Size = new System.Drawing.Size(1150, 1);
+            this.materialDivider5.TabIndex = 37;
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(1050, 249);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(112, 36);
+            this.materialButton1.TabIndex = 20;
+            this.materialButton1.Text = "SAVE TO CSV";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            // 
+            // reservationUserIndexNumberComboBox
+            // 
+            this.reservationUserIndexNumberComboBox.AutoResize = false;
+            this.reservationUserIndexNumberComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.reservationUserIndexNumberComboBox.Depth = 0;
+            this.reservationUserIndexNumberComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.reservationUserIndexNumberComboBox.DropDownHeight = 174;
+            this.reservationUserIndexNumberComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.reservationUserIndexNumberComboBox.DropDownWidth = 121;
+            this.reservationUserIndexNumberComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.reservationUserIndexNumberComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.reservationUserIndexNumberComboBox.FormattingEnabled = true;
+            this.reservationUserIndexNumberComboBox.Hint = "User Index Number";
+            this.reservationUserIndexNumberComboBox.IntegralHeight = false;
+            this.reservationUserIndexNumberComboBox.ItemHeight = 43;
+            this.reservationUserIndexNumberComboBox.Location = new System.Drawing.Point(74, 271);
+            this.reservationUserIndexNumberComboBox.MaxDropDownItems = 4;
+            this.reservationUserIndexNumberComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.reservationUserIndexNumberComboBox.Name = "reservationUserIndexNumberComboBox";
+            this.reservationUserIndexNumberComboBox.Size = new System.Drawing.Size(188, 49);
+            this.reservationUserIndexNumberComboBox.StartIndex = 0;
+            this.reservationUserIndexNumberComboBox.TabIndex = 19;
+            // 
+            // reservationUserLastNameCOmboBox
+            // 
+            this.reservationUserLastNameCOmboBox.AutoResize = false;
+            this.reservationUserLastNameCOmboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.reservationUserLastNameCOmboBox.Depth = 0;
+            this.reservationUserLastNameCOmboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.reservationUserLastNameCOmboBox.DropDownHeight = 174;
+            this.reservationUserLastNameCOmboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.reservationUserLastNameCOmboBox.DropDownWidth = 121;
+            this.reservationUserLastNameCOmboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.reservationUserLastNameCOmboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.reservationUserLastNameCOmboBox.FormattingEnabled = true;
+            this.reservationUserLastNameCOmboBox.Hint = "User Last Name";
+            this.reservationUserLastNameCOmboBox.IntegralHeight = false;
+            this.reservationUserLastNameCOmboBox.ItemHeight = 43;
+            this.reservationUserLastNameCOmboBox.Location = new System.Drawing.Point(74, 188);
+            this.reservationUserLastNameCOmboBox.MaxDropDownItems = 4;
+            this.reservationUserLastNameCOmboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.reservationUserLastNameCOmboBox.Name = "reservationUserLastNameCOmboBox";
+            this.reservationUserLastNameCOmboBox.Size = new System.Drawing.Size(188, 49);
+            this.reservationUserLastNameCOmboBox.StartIndex = 0;
+            this.reservationUserLastNameCOmboBox.TabIndex = 18;
+            // 
+            // reservatonUserFirstNameComboBox
+            // 
+            this.reservatonUserFirstNameComboBox.AutoResize = false;
+            this.reservatonUserFirstNameComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.reservatonUserFirstNameComboBox.Depth = 0;
+            this.reservatonUserFirstNameComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.reservatonUserFirstNameComboBox.DropDownHeight = 174;
+            this.reservatonUserFirstNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.reservatonUserFirstNameComboBox.DropDownWidth = 121;
+            this.reservatonUserFirstNameComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.reservatonUserFirstNameComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.reservatonUserFirstNameComboBox.FormattingEnabled = true;
+            this.reservatonUserFirstNameComboBox.Hint = "User First Name";
+            this.reservatonUserFirstNameComboBox.IntegralHeight = false;
+            this.reservatonUserFirstNameComboBox.ItemHeight = 43;
+            this.reservatonUserFirstNameComboBox.Location = new System.Drawing.Point(74, 106);
+            this.reservatonUserFirstNameComboBox.MaxDropDownItems = 4;
+            this.reservatonUserFirstNameComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.reservatonUserFirstNameComboBox.Name = "reservatonUserFirstNameComboBox";
+            this.reservatonUserFirstNameComboBox.Size = new System.Drawing.Size(188, 49);
+            this.reservatonUserFirstNameComboBox.StartIndex = 0;
+            this.reservatonUserFirstNameComboBox.TabIndex = 17;
+            // 
+            // reservationBookComboBox
+            // 
+            this.reservationBookComboBox.AutoResize = false;
+            this.reservationBookComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.reservationBookComboBox.Depth = 0;
+            this.reservationBookComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.reservationBookComboBox.DropDownHeight = 174;
+            this.reservationBookComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.reservationBookComboBox.DropDownWidth = 121;
+            this.reservationBookComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.reservationBookComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.reservationBookComboBox.FormattingEnabled = true;
+            this.reservationBookComboBox.Hint = "Book";
+            this.reservationBookComboBox.IntegralHeight = false;
+            this.reservationBookComboBox.ItemHeight = 43;
+            this.reservationBookComboBox.Location = new System.Drawing.Point(74, 28);
+            this.reservationBookComboBox.MaxDropDownItems = 4;
+            this.reservationBookComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.reservationBookComboBox.Name = "reservationBookComboBox";
+            this.reservationBookComboBox.Size = new System.Drawing.Size(188, 49);
+            this.reservationBookComboBox.StartIndex = 0;
+            this.reservationBookComboBox.TabIndex = 16;
+            // 
+            // reservationSearchButton
+            // 
+            this.reservationSearchButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reservationSearchButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.reservationSearchButton.Depth = 0;
+            this.reservationSearchButton.HighEmphasis = true;
+            this.reservationSearchButton.Icon = null;
+            this.reservationSearchButton.Location = new System.Drawing.Point(128, 351);
+            this.reservationSearchButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.reservationSearchButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.reservationSearchButton.Name = "reservationSearchButton";
+            this.reservationSearchButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.reservationSearchButton.Size = new System.Drawing.Size(78, 36);
+            this.reservationSearchButton.TabIndex = 15;
+            this.reservationSearchButton.Text = "SEARCH";
+            this.reservationSearchButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.reservationSearchButton.UseAccentColor = false;
+            this.reservationSearchButton.UseVisualStyleBackColor = true;
+            this.reservationSearchButton.Click += new System.EventHandler(this.reservationSearchButton_Click);
+            // 
+            // reservationDataGrid
+            // 
+            this.reservationDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reservationDataGrid.Location = new System.Drawing.Point(273, 31);
+            this.reservationDataGrid.Name = "reservationDataGrid";
+            this.reservationDataGrid.Size = new System.Drawing.Size(924, 187);
+            this.reservationDataGrid.TabIndex = 0;
             // 
             // administrationTab
             // 
@@ -1349,12 +1606,36 @@
             this.administrationTab.Controls.Add(this.searchEmployeeLastNameComboBox);
             this.administrationTab.Controls.Add(this.searchEmployeeFirstNameComboBox);
             this.administrationTab.Controls.Add(this.employeeDataGrid);
+            this.administrationTab.ImageKey = "adminEmployee.png";
             this.administrationTab.Location = new System.Drawing.Point(4, 25);
             this.administrationTab.Name = "administrationTab";
             this.administrationTab.Padding = new System.Windows.Forms.Padding(3);
             this.administrationTab.Size = new System.Drawing.Size(1492, 771);
             this.administrationTab.TabIndex = 4;
             this.administrationTab.Text = "ADMINISTRATION";
+            // 
+            // materialLabel13
+            // 
+            this.materialLabel13.AutoSize = true;
+            this.materialLabel13.Depth = 0;
+            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel13.Location = new System.Drawing.Point(93, 496);
+            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel13.Name = "materialLabel13";
+            this.materialLabel13.Size = new System.Drawing.Size(1132, 19);
+            this.materialLabel13.TabIndex = 38;
+            this.materialLabel13.Text = "Employers dashboard shows all employers and provides the ability to search employ" +
+    "ers. You can also add a new employer, modify an existing one, or delete one.";
+            // 
+            // materialDivider6
+            // 
+            this.materialDivider6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider6.Depth = 0;
+            this.materialDivider6.Location = new System.Drawing.Point(96, 483);
+            this.materialDivider6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider6.Name = "materialDivider6";
+            this.materialDivider6.Size = new System.Drawing.Size(1150, 1);
+            this.materialDivider6.TabIndex = 37;
             // 
             // addEmployedPhoneTextBox
             // 
@@ -1580,7 +1861,7 @@
             this.deleteEmployeeButton.Depth = 0;
             this.deleteEmployeeButton.HighEmphasis = true;
             this.deleteEmployeeButton.Icon = null;
-            this.deleteEmployeeButton.Location = new System.Drawing.Point(1050, 109);
+            this.deleteEmployeeButton.Location = new System.Drawing.Point(877, 109);
             this.deleteEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteEmployeeButton.Name = "deleteEmployeeButton";
@@ -1600,7 +1881,7 @@
             this.updateEmployeeButton.Depth = 0;
             this.updateEmployeeButton.HighEmphasis = true;
             this.updateEmployeeButton.Icon = null;
-            this.updateEmployeeButton.Location = new System.Drawing.Point(1050, 31);
+            this.updateEmployeeButton.Location = new System.Drawing.Point(877, 31);
             this.updateEmployeeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.updateEmployeeButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.updateEmployeeButton.Name = "updateEmployeeButton";
@@ -1730,295 +2011,32 @@
             this.employeeDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeeDataGrid.Location = new System.Drawing.Point(273, 31);
             this.employeeDataGrid.Name = "employeeDataGrid";
-            this.employeeDataGrid.Size = new System.Drawing.Size(756, 187);
+            this.employeeDataGrid.Size = new System.Drawing.Size(543, 187);
             this.employeeDataGrid.TabIndex = 0;
             this.employeeDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employedDataGrid_CellClick);
             // 
-            // reservationTab
+            // adminIconTabControl
             // 
-            this.reservationTab.BackColor = System.Drawing.Color.White;
-            this.reservationTab.Controls.Add(this.materialLabel12);
-            this.reservationTab.Controls.Add(this.materialDivider5);
-            this.reservationTab.Controls.Add(this.materialButton1);
-            this.reservationTab.Controls.Add(this.reservationUserIndexNumberComboBox);
-            this.reservationTab.Controls.Add(this.reservationUserLastNameCOmboBox);
-            this.reservationTab.Controls.Add(this.reservatonUserFirstNameComboBox);
-            this.reservationTab.Controls.Add(this.reservationBookComboBox);
-            this.reservationTab.Controls.Add(this.reservationSearchButton);
-            this.reservationTab.Controls.Add(this.reservationDataGrid);
-            this.reservationTab.Location = new System.Drawing.Point(4, 25);
-            this.reservationTab.Name = "reservationTab";
-            this.reservationTab.Size = new System.Drawing.Size(1492, 771);
-            this.reservationTab.TabIndex = 5;
-            this.reservationTab.Text = "RESERVATION";
-            // 
-            // reservationDataGrid
-            // 
-            this.reservationDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reservationDataGrid.Location = new System.Drawing.Point(273, 31);
-            this.reservationDataGrid.Name = "reservationDataGrid";
-            this.reservationDataGrid.Size = new System.Drawing.Size(756, 187);
-            this.reservationDataGrid.TabIndex = 0;
-            // 
-            // reservationUserIndexNumberComboBox
-            // 
-            this.reservationUserIndexNumberComboBox.AutoResize = false;
-            this.reservationUserIndexNumberComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.reservationUserIndexNumberComboBox.Depth = 0;
-            this.reservationUserIndexNumberComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.reservationUserIndexNumberComboBox.DropDownHeight = 174;
-            this.reservationUserIndexNumberComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.reservationUserIndexNumberComboBox.DropDownWidth = 121;
-            this.reservationUserIndexNumberComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.reservationUserIndexNumberComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.reservationUserIndexNumberComboBox.FormattingEnabled = true;
-            this.reservationUserIndexNumberComboBox.Hint = "User Index Number";
-            this.reservationUserIndexNumberComboBox.IntegralHeight = false;
-            this.reservationUserIndexNumberComboBox.ItemHeight = 43;
-            this.reservationUserIndexNumberComboBox.Location = new System.Drawing.Point(74, 271);
-            this.reservationUserIndexNumberComboBox.MaxDropDownItems = 4;
-            this.reservationUserIndexNumberComboBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.reservationUserIndexNumberComboBox.Name = "reservationUserIndexNumberComboBox";
-            this.reservationUserIndexNumberComboBox.Size = new System.Drawing.Size(188, 49);
-            this.reservationUserIndexNumberComboBox.StartIndex = 0;
-            this.reservationUserIndexNumberComboBox.TabIndex = 19;
-            // 
-            // reservationUserLastNameCOmboBox
-            // 
-            this.reservationUserLastNameCOmboBox.AutoResize = false;
-            this.reservationUserLastNameCOmboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.reservationUserLastNameCOmboBox.Depth = 0;
-            this.reservationUserLastNameCOmboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.reservationUserLastNameCOmboBox.DropDownHeight = 174;
-            this.reservationUserLastNameCOmboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.reservationUserLastNameCOmboBox.DropDownWidth = 121;
-            this.reservationUserLastNameCOmboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.reservationUserLastNameCOmboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.reservationUserLastNameCOmboBox.FormattingEnabled = true;
-            this.reservationUserLastNameCOmboBox.Hint = "User Last Name";
-            this.reservationUserLastNameCOmboBox.IntegralHeight = false;
-            this.reservationUserLastNameCOmboBox.ItemHeight = 43;
-            this.reservationUserLastNameCOmboBox.Location = new System.Drawing.Point(74, 188);
-            this.reservationUserLastNameCOmboBox.MaxDropDownItems = 4;
-            this.reservationUserLastNameCOmboBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.reservationUserLastNameCOmboBox.Name = "reservationUserLastNameCOmboBox";
-            this.reservationUserLastNameCOmboBox.Size = new System.Drawing.Size(188, 49);
-            this.reservationUserLastNameCOmboBox.StartIndex = 0;
-            this.reservationUserLastNameCOmboBox.TabIndex = 18;
-            // 
-            // reservatonUserFirstNameComboBox
-            // 
-            this.reservatonUserFirstNameComboBox.AutoResize = false;
-            this.reservatonUserFirstNameComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.reservatonUserFirstNameComboBox.Depth = 0;
-            this.reservatonUserFirstNameComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.reservatonUserFirstNameComboBox.DropDownHeight = 174;
-            this.reservatonUserFirstNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.reservatonUserFirstNameComboBox.DropDownWidth = 121;
-            this.reservatonUserFirstNameComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.reservatonUserFirstNameComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.reservatonUserFirstNameComboBox.FormattingEnabled = true;
-            this.reservatonUserFirstNameComboBox.Hint = "User First Name";
-            this.reservatonUserFirstNameComboBox.IntegralHeight = false;
-            this.reservatonUserFirstNameComboBox.ItemHeight = 43;
-            this.reservatonUserFirstNameComboBox.Location = new System.Drawing.Point(74, 106);
-            this.reservatonUserFirstNameComboBox.MaxDropDownItems = 4;
-            this.reservatonUserFirstNameComboBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.reservatonUserFirstNameComboBox.Name = "reservatonUserFirstNameComboBox";
-            this.reservatonUserFirstNameComboBox.Size = new System.Drawing.Size(188, 49);
-            this.reservatonUserFirstNameComboBox.StartIndex = 0;
-            this.reservatonUserFirstNameComboBox.TabIndex = 17;
-            // 
-            // reservationBookComboBox
-            // 
-            this.reservationBookComboBox.AutoResize = false;
-            this.reservationBookComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.reservationBookComboBox.Depth = 0;
-            this.reservationBookComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.reservationBookComboBox.DropDownHeight = 174;
-            this.reservationBookComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.reservationBookComboBox.DropDownWidth = 121;
-            this.reservationBookComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.reservationBookComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.reservationBookComboBox.FormattingEnabled = true;
-            this.reservationBookComboBox.Hint = "Book";
-            this.reservationBookComboBox.IntegralHeight = false;
-            this.reservationBookComboBox.ItemHeight = 43;
-            this.reservationBookComboBox.Location = new System.Drawing.Point(74, 28);
-            this.reservationBookComboBox.MaxDropDownItems = 4;
-            this.reservationBookComboBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.reservationBookComboBox.Name = "reservationBookComboBox";
-            this.reservationBookComboBox.Size = new System.Drawing.Size(188, 49);
-            this.reservationBookComboBox.StartIndex = 0;
-            this.reservationBookComboBox.TabIndex = 16;
-            // 
-            // reservationSearchButton
-            // 
-            this.reservationSearchButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.reservationSearchButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.reservationSearchButton.Depth = 0;
-            this.reservationSearchButton.HighEmphasis = true;
-            this.reservationSearchButton.Icon = null;
-            this.reservationSearchButton.Location = new System.Drawing.Point(128, 351);
-            this.reservationSearchButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.reservationSearchButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.reservationSearchButton.Name = "reservationSearchButton";
-            this.reservationSearchButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.reservationSearchButton.Size = new System.Drawing.Size(78, 36);
-            this.reservationSearchButton.TabIndex = 15;
-            this.reservationSearchButton.Text = "SEARCH";
-            this.reservationSearchButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.reservationSearchButton.UseAccentColor = false;
-            this.reservationSearchButton.UseVisualStyleBackColor = true;
-            this.reservationSearchButton.Click += new System.EventHandler(this.reservationSearchButton_Click);
-            // 
-            // materialButton1
-            // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(1050, 249);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(112, 36);
-            this.materialButton1.TabIndex = 20;
-            this.materialButton1.Text = "SAVE TO CSV";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            // 
-            // materialDivider2
-            // 
-            this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider2.Depth = 0;
-            this.materialDivider2.Location = new System.Drawing.Point(96, 483);
-            this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider2.Name = "materialDivider2";
-            this.materialDivider2.Size = new System.Drawing.Size(1150, 1);
-            this.materialDivider2.TabIndex = 33;
-            this.materialDivider2.Click += new System.EventHandler(this.materialDivider2_Click);
-            // 
-            // materialLabel9
-            // 
-            this.materialLabel9.AutoSize = true;
-            this.materialLabel9.Depth = 0;
-            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel9.Location = new System.Drawing.Point(93, 496);
-            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(1008, 19);
-            this.materialLabel9.TabIndex = 34;
-            this.materialLabel9.Text = "Books dashboard displays all books and provides the ability to search for books. " +
-    "You can also add a new book, edit an existing one, or delete it.";
-            this.materialLabel9.Click += new System.EventHandler(this.materialLabel9_Click);
-            // 
-            // materialLabel10
-            // 
-            this.materialLabel10.AutoSize = true;
-            this.materialLabel10.Depth = 0;
-            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel10.Location = new System.Drawing.Point(93, 496);
-            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(1085, 19);
-            this.materialLabel10.TabIndex = 36;
-            this.materialLabel10.Text = "Students dashboard shows all students and provides the ability to search students" +
-    ". You can also add a new student, modify an existing one, or delete one.";
-            // 
-            // materialDivider3
-            // 
-            this.materialDivider3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider3.Depth = 0;
-            this.materialDivider3.Location = new System.Drawing.Point(96, 483);
-            this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider3.Name = "materialDivider3";
-            this.materialDivider3.Size = new System.Drawing.Size(1150, 1);
-            this.materialDivider3.TabIndex = 35;
-            // 
-            // materialLabel11
-            // 
-            this.materialLabel11.AutoSize = true;
-            this.materialLabel11.Depth = 0;
-            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel11.Location = new System.Drawing.Point(93, 496);
-            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(1022, 19);
-            this.materialLabel11.TabIndex = 38;
-            this.materialLabel11.Text = "Rentals dashboard displays all rents and provides the ability to search for rents" +
-    ". Also, you can add a new rent, change the existing one or delete it.";
-            // 
-            // materialDivider4
-            // 
-            this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider4.Depth = 0;
-            this.materialDivider4.Location = new System.Drawing.Point(96, 483);
-            this.materialDivider4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider4.Name = "materialDivider4";
-            this.materialDivider4.Size = new System.Drawing.Size(1150, 1);
-            this.materialDivider4.TabIndex = 37;
-            // 
-            // materialLabel12
-            // 
-            this.materialLabel12.AutoSize = true;
-            this.materialLabel12.Depth = 0;
-            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel12.Location = new System.Drawing.Point(93, 496);
-            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel12.Name = "materialLabel12";
-            this.materialLabel12.Size = new System.Drawing.Size(705, 19);
-            this.materialLabel12.TabIndex = 38;
-            this.materialLabel12.Text = "Reservations dashboard displays all reservations and provides the ability to sear" +
-    "ch for reservations. ";
-            // 
-            // materialDivider5
-            // 
-            this.materialDivider5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider5.Depth = 0;
-            this.materialDivider5.Location = new System.Drawing.Point(96, 483);
-            this.materialDivider5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider5.Name = "materialDivider5";
-            this.materialDivider5.Size = new System.Drawing.Size(1150, 1);
-            this.materialDivider5.TabIndex = 37;
-            // 
-            // materialLabel13
-            // 
-            this.materialLabel13.AutoSize = true;
-            this.materialLabel13.Depth = 0;
-            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel13.Location = new System.Drawing.Point(93, 496);
-            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel13.Name = "materialLabel13";
-            this.materialLabel13.Size = new System.Drawing.Size(1132, 19);
-            this.materialLabel13.TabIndex = 38;
-            this.materialLabel13.Text = "Employers dashboard shows all employers and provides the ability to search employ" +
-    "ers. You can also add a new employer, modify an existing one, or delete one.";
-            // 
-            // materialDivider6
-            // 
-            this.materialDivider6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider6.Depth = 0;
-            this.materialDivider6.Location = new System.Drawing.Point(96, 483);
-            this.materialDivider6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider6.Name = "materialDivider6";
-            this.materialDivider6.Size = new System.Drawing.Size(1150, 1);
-            this.materialDivider6.TabIndex = 37;
+            this.adminIconTabControl.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("adminIconTabControl.ImageStream")));
+            this.adminIconTabControl.TransparentColor = System.Drawing.Color.Transparent;
+            this.adminIconTabControl.Images.SetKeyName(0, "adminHome.png");
+            this.adminIconTabControl.Images.SetKeyName(1, "adminRental.png");
+            this.adminIconTabControl.Images.SetKeyName(2, "adminReservation.png");
+            this.adminIconTabControl.Images.SetKeyName(3, "adminBooks.png");
+            this.adminIconTabControl.Images.SetKeyName(4, "adminStudent.png");
+            this.adminIconTabControl.Images.SetKeyName(5, "adminEmployee.png");
             // 
             // AdminHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1249, 639);
-            this.Controls.Add(this.menu);
+            this.ClientSize = new System.Drawing.Size(1300, 600);
+            this.Controls.Add(this.adminMenu);
             this.DrawerAutoHide = false;
             this.DrawerIsOpen = true;
             this.DrawerShowIconsWhenHidden = true;
-            this.DrawerTabControl = this.menu;
+            this.DrawerTabControl = this.adminMenu;
             this.DrawerWidth = 250;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -2027,7 +2045,7 @@
             this.Padding = new System.Windows.Forms.Padding(0, 64, 4, 4);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LIBRARY";
-            this.menu.ResumeLayout(false);
+            this.adminMenu.ResumeLayout(false);
             this.homeTab.ResumeLayout(false);
             this.homeTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wishBookDataGrid)).EndInit();
@@ -2041,19 +2059,19 @@
             this.rentalsTab.ResumeLayout(false);
             this.rentalsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rentalDataGrid)).EndInit();
-            this.administrationTab.ResumeLayout(false);
-            this.administrationTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).EndInit();
             this.reservationTab.ResumeLayout(false);
             this.reservationTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reservationDataGrid)).EndInit();
+            this.administrationTab.ResumeLayout(false);
+            this.administrationTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTabControl menu;
+        private MaterialSkin.Controls.MaterialTabControl adminMenu;
         private System.Windows.Forms.TabPage booksTab;
         private System.Windows.Forms.TabPage studentsTab;
         private System.Windows.Forms.TabPage rentalsTab;
@@ -2149,5 +2167,6 @@
         private MaterialSkin.Controls.MaterialDivider materialDivider5;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
         private MaterialSkin.Controls.MaterialDivider materialDivider6;
+        private System.Windows.Forms.ImageList adminIconTabControl;
     }
 }

@@ -54,7 +54,15 @@ namespace Library.Presentation
             CountryTextBox.Text = author.Country;
             BiographyMultiLineTextBox.Text = author.Biography;
             DateOfBirthPicker.Value = author.DateOfBirth;
-            DateOfDeathPicker.Value = author.DateOfDeath;
+            if(author.DateOfDeath == null)
+            {
+                DateOfDeathPicker.Enabled = false;
+            }
+            else
+            {
+                DateTime date = Convert.ToDateTime(author.DateOfDeath); 
+                DateOfDeathPicker.Value = date;
+            }
         }
 
         private void OKBookButton_Click(object sender, EventArgs e)
@@ -147,11 +155,12 @@ namespace Library.Presentation
                 MaterialMessageBox.Show("Please enter all data");
                 return;
             }
-            if (DateOfBirthPicker.Value > DateOfDeathPicker.Value)
+            if (DateOfBirthPicker.Value > DateOfDeathPicker.Value && DateOfDeathPicker.Enabled == true)
             {
                 MaterialMessageBox.Show("Please select valid Date of Birth and Date Of Death");
                 return;
             }
+            var authorDeathDate = DateOfDeathPicker.Enabled == false ? (DateTime?) null : DateOfDeathPicker.Value;
             if (authorID != 0)
             {
                 Bussiness.Authors.UpdateAuthor(authorID,
@@ -159,7 +168,7 @@ namespace Library.Presentation
                     CountryTextBox.Text,
                     BiographyMultiLineTextBox.Text,
                     DateOfBirthPicker.Value,
-                    DateOfDeathPicker.Value);
+                    authorDeathDate);
                 MaterialMessageBox.Show("Author updated");
                 Helpers.DataGridManager.InitializeAuthorsDataGrid(AuthorsDataGrid);
                 update_author = false;
@@ -171,7 +180,7 @@ namespace Library.Presentation
                     CountryTextBox.Text,
                     BiographyMultiLineTextBox.Text,
                     DateOfBirthPicker.Value,
-                    DateOfDeathPicker.Value);
+                    authorDeathDate);
                 MaterialMessageBox.Show("Author added");
                 Helpers.DataGridManager.InitializeAuthorsDataGrid(AuthorsDataGrid);
             }
@@ -189,8 +198,19 @@ namespace Library.Presentation
 
         private void cancelButton_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
             Helpers.FormManager.OpenAdminHomeForm();
+        }
+
+        private void disableDateOfDeathAuthorRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if(disableDateOfDeathAuthorRadioButton.Checked)
+            {
+                DateOfDeathPicker.Enabled = false;
+            }
+            else
+            {
+                DateOfDeathPicker.Enabled = true;
+            }
         }
     }
 }

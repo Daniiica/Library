@@ -98,7 +98,7 @@ namespace Library.Presentation.Bussiness
                 engine.WriteFile(path, rentals);
                 MaterialMessageBox.Show("File was saved");
             }
-            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            else
             {
                 MaterialMessageBox.Show("Problem with saving file.");
             }

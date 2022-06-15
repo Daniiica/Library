@@ -126,7 +126,7 @@ namespace Library.Presentation.Bussiness
                 engine.WriteFile(path, students);
                 MaterialMessageBox.Show("File was saved.");
             }
-            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            else
             {
                 MaterialMessageBox.Show("Problem with saving file.");
             }
@@ -144,7 +144,7 @@ namespace Library.Presentation.Bussiness
             user.Phone = phone;
 
             _unitOfWork.Save();
-
+            MaterialMessageBox.Show("Successful changed");
         }
 
         public static List<UserModel> GetSearchedStudents(string searchUserFirstName, string searchUserLastName, string searchUserIndexNumber)
@@ -353,7 +353,7 @@ namespace Library.Presentation.Bussiness
                 engine.WriteFile(path, employees);
                 MaterialMessageBox.Show("File was saved.");
             }
-            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            else
             {
                 MaterialMessageBox.Show("Problem with saving file.");
             }

@@ -227,7 +227,7 @@ namespace Library
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddAuthorsForm";
             this.Text = "Add_Author";
-            this.Load += new System.EventHandler(this.AddAuthorsForm_Load);
+           // this.Load += new System.EventHandler(this.AddAuthorsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

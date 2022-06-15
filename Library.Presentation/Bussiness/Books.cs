@@ -162,7 +162,7 @@ namespace Library.Presentation.Bussiness
             MessageBox.Show("Succesfull");
         }
 
-        internal static void SaveBooksToCsv(DataGridView booksDataGrid)
+        public static void SaveBooksToCsv(DataGridView booksDataGrid)
         {
             var books = (from row in booksDataGrid.Rows.OfType<DataGridViewRow>()
                          select new BookModel()
@@ -188,8 +188,8 @@ namespace Library.Presentation.Bussiness
                 //  FilterIndex = 2,
                 RestoreDirectory = true
             };
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            var dialog = saveFileDialog1.ShowDialog();
+            if (dialog == DialogResult.OK)
             {
                 path = saveFileDialog1.FileName;
                 var engine = new FileHelperEngine<BookModel>();
@@ -197,7 +197,7 @@ namespace Library.Presentation.Bussiness
                 engine.WriteFile(path, books);
                 MaterialMessageBox.Show("File was saved.");
             }
-            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            else
             {
                 MaterialMessageBox.Show("Problem with saving file.");
             }

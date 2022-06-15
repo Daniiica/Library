@@ -96,10 +96,10 @@
             this.rentalsTab.Controls.Add(this.onlyActiveMyRentalsCheckBox);
             this.rentalsTab.Controls.Add(this.myRentalsDataGrid);
             this.rentalsTab.ImageKey = "userRental.png";
-            this.rentalsTab.Location = new System.Drawing.Point(4, 25);
+            this.rentalsTab.Location = new System.Drawing.Point(4, 31);
             this.rentalsTab.Name = "rentalsTab";
             this.rentalsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.rentalsTab.Size = new System.Drawing.Size(1224, 498);
+            this.rentalsTab.Size = new System.Drawing.Size(1224, 476);
             this.rentalsTab.TabIndex = 3;
             this.rentalsTab.Text = "RENTALS";
             this.rentalsTab.Click += new System.EventHandler(this.rentalsTab_Click);
@@ -166,10 +166,10 @@
             this.homeTab.Controls.Add(this.assessmentTextBox);
             this.homeTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeTab.ImageKey = "userHome.png";
-            this.homeTab.Location = new System.Drawing.Point(4, 25);
+            this.homeTab.Location = new System.Drawing.Point(4, 31);
             this.homeTab.Name = "homeTab";
             this.homeTab.Padding = new System.Windows.Forms.Padding(3);
-            this.homeTab.Size = new System.Drawing.Size(1224, 537);
+            this.homeTab.Size = new System.Drawing.Size(1224, 515);
             this.homeTab.TabIndex = 0;
             this.homeTab.Text = "HOME";
             // 
@@ -315,7 +315,7 @@
             this.userMenu.Multiline = true;
             this.userMenu.Name = "userMenu";
             this.userMenu.SelectedIndex = 0;
-            this.userMenu.Size = new System.Drawing.Size(1232, 566);
+            this.userMenu.Size = new System.Drawing.Size(1232, 550);
             this.userMenu.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.userMenu.TabIndex = 0;
             // 
@@ -333,9 +333,9 @@
             this.profileTab.Controls.Add(this.FirstNameTextBox);
             this.profileTab.ForeColor = System.Drawing.SystemColors.ControlText;
             this.profileTab.ImageKey = "userProfile.png";
-            this.profileTab.Location = new System.Drawing.Point(4, 25);
+            this.profileTab.Location = new System.Drawing.Point(4, 31);
             this.profileTab.Name = "profileTab";
-            this.profileTab.Size = new System.Drawing.Size(1224, 498);
+            this.profileTab.Size = new System.Drawing.Size(1224, 476);
             this.profileTab.TabIndex = 4;
             this.profileTab.Text = "PROFILE";
             // 
@@ -365,9 +365,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Library.Presentation.Properties.Resources.books_933293_960_720;
-            this.pictureBox1.Location = new System.Drawing.Point(497, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(497, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(379, 460);
+            this.pictureBox1.Size = new System.Drawing.Size(469, 560);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -499,9 +499,9 @@
             this.addWishBookTab.Controls.Add(this.wishISBNTextBox);
             this.addWishBookTab.Controls.Add(this.wishBookTextBox);
             this.addWishBookTab.ImageKey = "userWishbook.png";
-            this.addWishBookTab.Location = new System.Drawing.Point(4, 25);
+            this.addWishBookTab.Location = new System.Drawing.Point(4, 31);
             this.addWishBookTab.Name = "addWishBookTab";
-            this.addWishBookTab.Size = new System.Drawing.Size(1224, 498);
+            this.addWishBookTab.Size = new System.Drawing.Size(1224, 476);
             this.addWishBookTab.TabIndex = 5;
             this.addWishBookTab.Text = "WISH BOOK";
             // 
@@ -548,7 +548,6 @@
             this.wishBookDataGrid.Name = "wishBookDataGrid";
             this.wishBookDataGrid.Size = new System.Drawing.Size(562, 195);
             this.wishBookDataGrid.TabIndex = 4;
-            this.wishBookDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.wishBookDataGrid_CellContentClick);
             // 
             // addWishBookButton
             // 
@@ -635,10 +634,10 @@
             this.myReservationTab.Controls.Add(this.AddReservationButton);
             this.myReservationTab.Controls.Add(this.saveToCsvReservation);
             this.myReservationTab.Controls.Add(this.myReservationDataGrid);
-            this.myReservationTab.ImageKey = "435-4357804_108-x-108-icon-transparent-cartoons-hd-png.png";
-            this.myReservationTab.Location = new System.Drawing.Point(4, 25);
+            this.myReservationTab.ImageKey = "userReservation.png";
+            this.myReservationTab.Location = new System.Drawing.Point(4, 31);
             this.myReservationTab.Name = "myReservationTab";
-            this.myReservationTab.Size = new System.Drawing.Size(1224, 498);
+            this.myReservationTab.Size = new System.Drawing.Size(1224, 476);
             this.myReservationTab.TabIndex = 6;
             this.myReservationTab.Text = "RESERVATION";
             // 
@@ -752,16 +751,16 @@
             this.userIconTabControl.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("userIconTabControl.ImageStream")));
             this.userIconTabControl.TransparentColor = System.Drawing.Color.Transparent;
             this.userIconTabControl.Images.SetKeyName(0, "userHome.png");
-            this.userIconTabControl.Images.SetKeyName(1, "userProfile.png");
-            this.userIconTabControl.Images.SetKeyName(2, "userRental.png");
+            this.userIconTabControl.Images.SetKeyName(1, "userRental.png");
+            this.userIconTabControl.Images.SetKeyName(2, "userProfile.png");
             this.userIconTabControl.Images.SetKeyName(3, "userWishbook.png");
-            this.userIconTabControl.Images.SetKeyName(4, "435-4357804_108-x-108-icon-transparent-cartoons-hd-png.png");
+            this.userIconTabControl.Images.SetKeyName(4, "userReservation.png");
             // 
             // UserHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 634);
+            this.ClientSize = new System.Drawing.Size(992, 618);
             this.Controls.Add(this.userMenu);
             this.DrawerAutoHide = false;
             this.DrawerIsOpen = true;

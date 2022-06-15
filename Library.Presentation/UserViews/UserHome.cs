@@ -10,8 +10,8 @@ namespace Library.Presentation
 {
     public partial class UserHome : MaterialForm
     {
-            int bookID;
-            bool select_validation = false;
+        int bookID;
+        bool select_validation = false;
 
         public UserHome()
         {
@@ -43,41 +43,63 @@ namespace Library.Presentation
             {
                 MaterialMessageBox.Show("Error occured");
             }
+            Helpers.DataGridManager.InitializeTopRatingBooksDataGrid(topRatingBooksDataGrid);
         }
+        //User ---> Rentals
+        private void rentalsTab_Click(object sender, EventArgs e)
+        {
+            var books = Bussiness.Rentals.FindRentals(Program.Current.User);
+        }
+        private void onlyActiveMyRentalsCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (onlyActiveMyRentalsCheckBox.Checked)
+            {
+                Helpers.DataGridManager.InitializeOnlyMyActiveRentalsDataGrid(myRentalsDataGrid);
+            }
+            else
+            {
+                Helpers.DataGridManager.InitializeMyRentalsDataGrid(myRentalsDataGrid);
+            }
+        }
+        //User ---> Profile
         public void SetValueOnProfile()
         {
             FirstNameTextBox.Text = Program.Current.User.FirstName;
             LastNameTextBox.Text = Program.Current.User.LastName;
             EmailTextBox.Text = Program.Current.User.Email;
-            
+
             IndexNumberTextBox.Enabled = true;
             IndexNumberTextBox.Text = Program.Current.User.IndexNumber;
             IndexNumberTextBox.Enabled = false;
             PhoneTextBox.Text = Program.Current.User.Phone;
         }
-        private void rentalsTab_Click(object sender, EventArgs e)
-        {
-            var books = Bussiness.Rentals.FindRentals(Program.Current.User);
-        }
-        private void addWishBookButton_Click(object sender, EventArgs e)
-        {
-            var wishBook = wishBookTextBox.Text;
-            var wishBookAuthor = wishAuthorTextBox.Text;
-            var wishBookIsbn = Convert.ToInt32(wishISBNTextBox.Text);
-
-            Bussiness.WishBooks.AddBookToWishList(wishBook,wishBookAuthor,wishBookIsbn);
-            Helpers.DataGridManager.InitializeWishBookDataGrid(wishBookDataGrid);
-        }
         private void changeProfileButton_Click(object sender, EventArgs e)
         {
-            var firstName = FirstNameTextBox.Text;
-            var lastName = LastNameTextBox.Text;
-            var email = EmailTextBox.Text;
-            var phone = PhoneTextBox.Text;
+            var firstName = string.IsNullOrEmpty(FirstNameTextBox.Text) ? null : FirstNameTextBox.Text;
+            var lastName = string.IsNullOrEmpty(LastNameTextBox.Text) ? null : LastNameTextBox.Text;
+            var email = string.IsNullOrEmpty(EmailTextBox.Text) ? null : EmailTextBox.Text;
+            var phone = string.IsNullOrEmpty(PhoneTextBox.Text) ? null : PhoneTextBox.Text;
 
+            if (firstName == null || lastName == null || email == null || phone == null)
+            {
+                MaterialMessageBox.Show("Please enter all information.");
+                return;
+            }
             Bussiness.Users.ChangeProfile(firstName, lastName, email, phone);
-            
+
         }
+        //User ---> WishBook
+        
+        private void addWishBookButton_Click(object sender, EventArgs e)
+        {
+            var wishBook = string.IsNullOrEmpty(wishBookTextBox.Text) ? null : wishBookTextBox.Text;
+            var wishBookAuthor = string.IsNullOrEmpty(wishAuthorTextBox.Text) ? null : wishAuthorTextBox.Text;
+            var wishBookIsbn = string.IsNullOrEmpty(wishISBNTextBox.Text) ? null : wishISBNTextBox.Text;
+
+            Bussiness.WishBooks.AddBookToWishList(wishBook, wishBookAuthor, Convert.ToInt32(wishBookIsbn));
+            Helpers.DataGridManager.InitializeWishBookDataGrid(wishBookDataGrid);
+        }
+        //User ---> Reservation
         private void AddReservationButton_Click(object sender, EventArgs e)
         {
             if (select_validation == false)
@@ -104,29 +126,10 @@ namespace Library.Presentation
           
             select_validation = true;
         }
-
-
-        private void onlyActiveMyRentalsCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (onlyActiveMyRentalsCheckBox.Checked)
-            {
-                Helpers.DataGridManager.InitializeOnlyMyActiveRentalsDataGrid(myRentalsDataGrid);
-            }
-            else
-            {
-                Helpers.DataGridManager.InitializeMyRentalsDataGrid(myRentalsDataGrid);
-            }
-        }
-
-        private void wishBookDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void saveToCsvReservation_Click(object sender, EventArgs e)
         {
             Bussiness.Books.SaveBooksToCsv(BookDataGrid);
-            MaterialMessageBox.Show("File was saved");
+            
         }
     }
 }
