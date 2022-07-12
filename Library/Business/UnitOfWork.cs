@@ -34,7 +34,6 @@ namespace Library.Business
                 return usersRepository;
             }
         }
-
         public GenericRepository<Book> BookRepository
         {
             get
@@ -59,7 +58,6 @@ namespace Library.Business
                 return authorRepository;
             }
         }
-
         public GenericRepository<PublishingHouse> PublishingHouseRepository
         {
             get
@@ -160,9 +158,7 @@ namespace Library.Business
         {
             context.SaveChanges();
         }
-
         private bool disposed = false;
-
         protected virtual void Dispose(bool disposing)
         {
             if (!this.disposed)
@@ -174,7 +170,6 @@ namespace Library.Business
             }
             this.disposed = true;
         }
-
         public void Dispose()
         {
             Dispose(true);

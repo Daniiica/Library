@@ -54,13 +54,14 @@ namespace Library.Presentation
             CountryTextBox.Text = author.Country;
             BiographyMultiLineTextBox.Text = author.Biography;
             DateOfBirthPicker.Value = author.DateOfBirth;
-            if(author.DateOfDeath == null)
+            if (author.DateOfDeath == null)
             {
                 DateOfDeathPicker.Enabled = false;
+                disableDateOfDeathAuthorCheckBox.Checked = true;
             }
             else
             {
-                DateTime date = Convert.ToDateTime(author.DateOfDeath); 
+                DateTime date = Convert.ToDateTime(author.DateOfDeath);
                 DateOfDeathPicker.Value = date;
             }
         }
@@ -148,6 +149,7 @@ namespace Library.Presentation
 
         private void OKAuthorButton_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrEmpty(AuthorNameTextBox.Text) ||
                 string.IsNullOrEmpty(CountryTextBox.Text) ||
                 string.IsNullOrEmpty(BiographyMultiLineTextBox.Text))
@@ -160,7 +162,7 @@ namespace Library.Presentation
                 MaterialMessageBox.Show("Please select valid Date of Birth and Date Of Death");
                 return;
             }
-            var authorDeathDate = DateOfDeathPicker.Enabled == false ? (DateTime?) null : DateOfDeathPicker.Value;
+            var authorDeathDate = DateOfDeathPicker.Enabled == false ? (DateTime?)null : DateOfDeathPicker.Value;
             if (authorID != 0)
             {
                 Bussiness.Authors.UpdateAuthor(authorID,
@@ -194,16 +196,18 @@ namespace Library.Presentation
             BiographyMultiLineTextBox.Text = "";
             DateOfBirthPicker.Value = DateTime.UtcNow;
             DateOfDeathPicker.Value = DateTime.UtcNow;
+            disableDateOfDeathAuthorCheckBox.Checked = false;
         }
 
         private void cancelButton_Click_1(object sender, EventArgs e)
         {
-            Helpers.FormManager.OpenAdminHomeForm();
+            //Helpers.FormManager.OpenAdminHomeForm();
+            this.Hide();
         }
 
-        private void disableDateOfDeathAuthorRadioButton_CheckedChanged(object sender, EventArgs e)
+        private void disableDateOfDeathAuthorCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if(disableDateOfDeathAuthorRadioButton.Checked)
+            if (disableDateOfDeathAuthorCheckBox.Checked)
             {
                 DateOfDeathPicker.Enabled = false;
             }

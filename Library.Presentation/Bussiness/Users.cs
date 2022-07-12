@@ -192,7 +192,7 @@ namespace Library.Presentation.Bussiness
         public static void AddNewStudent(string studentFirstName, string studentLastName, string studentPassword, string studentPhoneNumber, string studentEmail, string studentIndexNumber)
         {
             UnitOfWork _unitOfWork = new UnitOfWork();
-            var existStudent = _unitOfWork.UserRepository.Get(u => u.IndexNumber == studentIndexNumber || u.Email == studentEmail || u.Phone == studentPhoneNumber).FirstOrDefault();
+            var existStudent = _unitOfWork.UserRepository.Get(u => (u.IndexNumber == studentIndexNumber || u.Email == studentEmail || u.Phone == studentPhoneNumber) && u.DeleteDateUtc == null).FirstOrDefault();
             if (existStudent != null)
             {
                 MaterialMessageBox.Show("Student already exist");
@@ -221,7 +221,7 @@ namespace Library.Presentation.Bussiness
 
             var student = _unitOfWork.UserRepository.Get(r => r.UserID == studentID).FirstOrDefault();
 
-            var existStudent = _unitOfWork.UserRepository.Get(u => u.UserID != studentID && ( u.IndexNumber == studentIndexNumber || u.Email == studentEmail || u.Phone == studentPhoneNumber)).FirstOrDefault();
+            var existStudent = _unitOfWork.UserRepository.Get(u => u.UserID != studentID && ( u.IndexNumber == studentIndexNumber || u.Email == studentEmail || u.Phone == studentPhoneNumber) && u.DeleteDateUtc == null).FirstOrDefault();
             if (existStudent != null)
             {
                 MaterialMessageBox.Show("Student already exist");
@@ -275,7 +275,7 @@ namespace Library.Presentation.Bussiness
         public static void AddNewEmployee(string employeeFirstName, string employeeLastName, string employeePassword, string employeePhoneNumber, string employeeEmail)
         {
             UnitOfWork _unitOfWork = new UnitOfWork();
-            var existEmployee = _unitOfWork.UserRepository.Get(u => u.Email == employeeEmail || u.Phone == employeePhoneNumber).FirstOrDefault();
+            var existEmployee = _unitOfWork.UserRepository.Get(u => (u.Email == employeeEmail || u.Phone == employeePhoneNumber) && u.DeleteDateUtc == null).FirstOrDefault();
             if (existEmployee != null)
             {
                 MaterialMessageBox.Show("Employee already exist");
@@ -303,7 +303,7 @@ namespace Library.Presentation.Bussiness
 
             var employee = _unitOfWork.UserRepository.Get(r => r.UserID == employeeID).FirstOrDefault();
 
-            var existEmployee = _unitOfWork.UserRepository.Get(u => u.UserID != employeeID && (u.Email == employeeEmail || u.Phone == employeePhoneNumber)).FirstOrDefault();
+            var existEmployee = _unitOfWork.UserRepository.Get(u => u.UserID != employeeID && u.DeleteDateUtc == null && (u.Email == employeeEmail || u.Phone == employeePhoneNumber)).FirstOrDefault();
             if (existEmployee != null)
             {
                 MaterialMessageBox.Show("Employee already exist");

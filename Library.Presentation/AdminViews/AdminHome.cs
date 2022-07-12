@@ -19,6 +19,10 @@ namespace Library.Presentation
         public AdminHome()
         {
             InitializeComponent();
+            if(Program.Current.User.Role == RoleTypes.Operation)
+            {
+                ((Control)this.administrationTab).Enabled = false;
+            }
 
             Helpers.DataGridManager.InitializeAllBookDataGrid(booksDataGrid);
             Helpers.CheckListManager.InitializeCheckListGenres(genreSearchCheckedListBox);
@@ -86,6 +90,7 @@ namespace Library.Presentation
             {
                 Bussiness.WishBooks.DeleteWishBook(bookID);
                 MaterialMessageBox.Show("Wish book was deleted");
+                Helpers.DataGridManager.InitializeWishBookDataGrid(wishBookDataGrid);
             }
         }
 
@@ -102,9 +107,8 @@ namespace Library.Presentation
 
         private void addBookButton_Click(object sender, EventArgs e)
         {
-            bookID = 0;
-            Helpers.FormManager.OpenBookForm(bookID);
-            //Helpers.DataGridManager.InitializeAllBookDataGrid(booksDataGrid);
+               bookID = 0;
+               Helpers.FormManager.OpenBookForm(bookID);
         }
 
         private void updateBookButton_Click(object sender, EventArgs e)

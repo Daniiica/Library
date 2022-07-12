@@ -226,7 +226,7 @@ namespace Library.Presentation.Bussiness
                     Publisher = i.First().Book.Publisher.Name,
                     Language = i.First().Book.Language.Caption,
                     Assessment = i.Sum(c => c.Assessment) / i.Count(),
-                }).ToList();
+                }).Take(5).ToList();
 
             return allRaitings;
         }

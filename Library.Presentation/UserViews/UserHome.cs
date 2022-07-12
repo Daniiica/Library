@@ -34,6 +34,11 @@ namespace Library.Presentation
             var book = bookAddRatingComboBox.Text;
             var isbn = Convert.ToInt32(ISBNAddRatingComboBox.Text);
             var rating = Convert.ToDecimal(assessmentTextBox.Text);
+            if(rating > 5)
+            {
+                MaterialMessageBox.Show("Rating must be in range (0 - 5)");
+                return;
+            }
             try
             {
                 Bussiness.Books.RateBook(book, isbn, Program.Current.User.UserID, rating); // message box kad snimam ili nesto nije dobro, i da to stavim na Book formu
@@ -41,7 +46,7 @@ namespace Library.Presentation
             }
             catch (Exception)
             {
-                MaterialMessageBox.Show("Error occured");
+                MaterialMessageBox.Show("Book and ISBN don't match!");
             }
             Helpers.DataGridManager.InitializeTopRatingBooksDataGrid(topRatingBooksDataGrid);
         }
@@ -97,7 +102,7 @@ namespace Library.Presentation
             var wishBookIsbn = string.IsNullOrEmpty(wishISBNTextBox.Text) ? null : wishISBNTextBox.Text;
 
             Bussiness.WishBooks.AddBookToWishList(wishBook, wishBookAuthor, Convert.ToInt32(wishBookIsbn));
-            Helpers.DataGridManager.InitializeWishBookDataGrid(wishBookDataGrid);
+            Helpers.DataGridManager.InitializeMyWishBookDataGrid(wishBookDataGrid);
         }
         //User ---> Reservation
         private void AddReservationButton_Click(object sender, EventArgs e)
@@ -118,6 +123,7 @@ namespace Library.Presentation
                         Bussiness.Reservation.AddReservation(bookID, dateTimeFrom, dateTimeTo);
                     }
                 }
+                Helpers.DataGridManager.InitializeMyReservationDataGrid(myReservationDataGrid);
             }
         }
         private void BookDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)

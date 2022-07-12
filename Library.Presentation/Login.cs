@@ -10,8 +10,8 @@ namespace Library.Presentation
         public Login()
         {
             InitializeComponent();
-            usernameTextBox.Text = "admin@gmail.com";
-            passwordTextbox.Text = "12";
+           // usernameTextBox.Text = "admin@gmail.com";
+           // passwordTextbox.Text = "12";
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -32,6 +32,11 @@ namespace Library.Presentation
                 {
                     this.Hide();
                     Helpers.FormManager.OpenUserHomeForm();
+                }
+                else if (Program.Current.User.Role == RoleTypes.Operation)
+                {
+                    this.Hide();
+                    Helpers.FormManager.OpenAdminHomeForm();
                 }
             }
             else

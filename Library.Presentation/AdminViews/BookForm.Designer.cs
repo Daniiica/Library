@@ -44,7 +44,6 @@ namespace Library.Presentation
             this.AuthorComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.AmountTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.AuthorTab = new System.Windows.Forms.TabPage();
-            this.disableDateOfDeathAuthorRadioButton = new MaterialSkin.Controls.MaterialRadioButton();
             this.resetAuthorButton = new MaterialSkin.Controls.MaterialButton();
             this.UpdateAuthorButton = new MaterialSkin.Controls.MaterialButton();
             this.DeleteAuthorButton = new MaterialSkin.Controls.MaterialButton();
@@ -58,6 +57,7 @@ namespace Library.Presentation
             this.CountryTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.AuthorNameTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.bookIconTabControl = new System.Windows.Forms.ImageList(this.components);
+            this.disableDateOfDeathAuthorCheckBox = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialTabControl1.SuspendLayout();
             this.BookTab.SuspendLayout();
             this.AuthorTab.SuspendLayout();
@@ -95,10 +95,10 @@ namespace Library.Presentation
             this.BookTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BookTab.ForeColor = System.Drawing.Color.Transparent;
             this.BookTab.ImageKey = "bookBook.png";
-            this.BookTab.Location = new System.Drawing.Point(4, 23);
+            this.BookTab.Location = new System.Drawing.Point(4, 31);
             this.BookTab.Name = "BookTab";
             this.BookTab.Padding = new System.Windows.Forms.Padding(3);
-            this.BookTab.Size = new System.Drawing.Size(791, 356);
+            this.BookTab.Size = new System.Drawing.Size(791, 348);
             this.BookTab.TabIndex = 0;
             this.BookTab.Text = "BOOK";
             // 
@@ -307,7 +307,7 @@ namespace Library.Presentation
             // AuthorTab
             // 
             this.AuthorTab.BackColor = System.Drawing.Color.White;
-            this.AuthorTab.Controls.Add(this.disableDateOfDeathAuthorRadioButton);
+            this.AuthorTab.Controls.Add(this.disableDateOfDeathAuthorCheckBox);
             this.AuthorTab.Controls.Add(this.resetAuthorButton);
             this.AuthorTab.Controls.Add(this.UpdateAuthorButton);
             this.AuthorTab.Controls.Add(this.DeleteAuthorButton);
@@ -322,29 +322,12 @@ namespace Library.Presentation
             this.AuthorTab.Controls.Add(this.AuthorNameTextBox);
             this.AuthorTab.ForeColor = System.Drawing.SystemColors.ControlText;
             this.AuthorTab.ImageKey = "bookAuthor.png";
-            this.AuthorTab.Location = new System.Drawing.Point(4, 23);
+            this.AuthorTab.Location = new System.Drawing.Point(4, 31);
             this.AuthorTab.Name = "AuthorTab";
             this.AuthorTab.Padding = new System.Windows.Forms.Padding(3);
-            this.AuthorTab.Size = new System.Drawing.Size(791, 356);
+            this.AuthorTab.Size = new System.Drawing.Size(791, 348);
             this.AuthorTab.TabIndex = 1;
             this.AuthorTab.Text = "AUTHOR";
-            // 
-            // disableDateOfDeathAuthorRadioButton
-            // 
-            this.disableDateOfDeathAuthorRadioButton.AutoSize = true;
-            this.disableDateOfDeathAuthorRadioButton.Depth = 0;
-            this.disableDateOfDeathAuthorRadioButton.Location = new System.Drawing.Point(16, 312);
-            this.disableDateOfDeathAuthorRadioButton.Margin = new System.Windows.Forms.Padding(0);
-            this.disableDateOfDeathAuthorRadioButton.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.disableDateOfDeathAuthorRadioButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.disableDateOfDeathAuthorRadioButton.Name = "disableDateOfDeathAuthorRadioButton";
-            this.disableDateOfDeathAuthorRadioButton.Ripple = true;
-            this.disableDateOfDeathAuthorRadioButton.Size = new System.Drawing.Size(190, 37);
-            this.disableDateOfDeathAuthorRadioButton.TabIndex = 29;
-            this.disableDateOfDeathAuthorRadioButton.TabStop = true;
-            this.disableDateOfDeathAuthorRadioButton.Text = "Disable date of death.";
-            this.disableDateOfDeathAuthorRadioButton.UseVisualStyleBackColor = true;
-            this.disableDateOfDeathAuthorRadioButton.CheckedChanged += new System.EventHandler(this.disableDateOfDeathAuthorRadioButton_CheckedChanged);
             // 
             // resetAuthorButton
             // 
@@ -542,6 +525,23 @@ namespace Library.Presentation
             this.bookIconTabControl.Images.SetKeyName(0, "bookBook.png");
             this.bookIconTabControl.Images.SetKeyName(1, "bookAuthor.png");
             // 
+            // disableDateOfDeathAuthorCheckBox
+            // 
+            this.disableDateOfDeathAuthorCheckBox.AutoSize = true;
+            this.disableDateOfDeathAuthorCheckBox.Depth = 0;
+            this.disableDateOfDeathAuthorCheckBox.Location = new System.Drawing.Point(16, 309);
+            this.disableDateOfDeathAuthorCheckBox.Margin = new System.Windows.Forms.Padding(0);
+            this.disableDateOfDeathAuthorCheckBox.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.disableDateOfDeathAuthorCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.disableDateOfDeathAuthorCheckBox.Name = "disableDateOfDeathAuthorCheckBox";
+            this.disableDateOfDeathAuthorCheckBox.ReadOnly = false;
+            this.disableDateOfDeathAuthorCheckBox.Ripple = true;
+            this.disableDateOfDeathAuthorCheckBox.Size = new System.Drawing.Size(192, 37);
+            this.disableDateOfDeathAuthorCheckBox.TabIndex = 29;
+            this.disableDateOfDeathAuthorCheckBox.Text = "Disable Date Of Death";
+            this.disableDateOfDeathAuthorCheckBox.UseVisualStyleBackColor = true;
+            this.disableDateOfDeathAuthorCheckBox.CheckedChanged += new System.EventHandler(this.disableDateOfDeathAuthorCheckBox_CheckedChanged);
+            // 
             // BookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -590,7 +590,7 @@ namespace Library.Presentation
         private MaterialSkin.Controls.MaterialButton DeleteAuthorButton;
         private System.Windows.Forms.DataGridView AuthorsDataGrid;
         private MaterialSkin.Controls.MaterialButton resetAuthorButton;
-        private MaterialSkin.Controls.MaterialRadioButton disableDateOfDeathAuthorRadioButton;
         private System.Windows.Forms.ImageList bookIconTabControl;
+        private MaterialSkin.Controls.MaterialCheckbox disableDateOfDeathAuthorCheckBox;
     }
 }

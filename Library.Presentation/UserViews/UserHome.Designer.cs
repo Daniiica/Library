@@ -99,7 +99,7 @@
             this.rentalsTab.Location = new System.Drawing.Point(4, 31);
             this.rentalsTab.Name = "rentalsTab";
             this.rentalsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.rentalsTab.Size = new System.Drawing.Size(1224, 476);
+            this.rentalsTab.Size = new System.Drawing.Size(1224, 632);
             this.rentalsTab.TabIndex = 3;
             this.rentalsTab.Text = "RENTALS";
             this.rentalsTab.Click += new System.EventHandler(this.rentalsTab_Click);
@@ -169,7 +169,7 @@
             this.homeTab.Location = new System.Drawing.Point(4, 31);
             this.homeTab.Name = "homeTab";
             this.homeTab.Padding = new System.Windows.Forms.Padding(3);
-            this.homeTab.Size = new System.Drawing.Size(1224, 515);
+            this.homeTab.Size = new System.Drawing.Size(1224, 671);
             this.homeTab.TabIndex = 0;
             this.homeTab.Text = "HOME";
             // 
@@ -315,7 +315,7 @@
             this.userMenu.Multiline = true;
             this.userMenu.Name = "userMenu";
             this.userMenu.SelectedIndex = 0;
-            this.userMenu.Size = new System.Drawing.Size(1232, 550);
+            this.userMenu.Size = new System.Drawing.Size(1232, 706);
             this.userMenu.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.userMenu.TabIndex = 0;
             // 
@@ -335,7 +335,7 @@
             this.profileTab.ImageKey = "userProfile.png";
             this.profileTab.Location = new System.Drawing.Point(4, 31);
             this.profileTab.Name = "profileTab";
-            this.profileTab.Size = new System.Drawing.Size(1224, 476);
+            this.profileTab.Size = new System.Drawing.Size(1224, 632);
             this.profileTab.TabIndex = 4;
             this.profileTab.Text = "PROFILE";
             // 
@@ -501,7 +501,7 @@
             this.addWishBookTab.ImageKey = "userWishbook.png";
             this.addWishBookTab.Location = new System.Drawing.Point(4, 31);
             this.addWishBookTab.Name = "addWishBookTab";
-            this.addWishBookTab.Size = new System.Drawing.Size(1224, 476);
+            this.addWishBookTab.Size = new System.Drawing.Size(1224, 632);
             this.addWishBookTab.TabIndex = 5;
             this.addWishBookTab.Text = "WISH BOOK";
             // 
@@ -637,7 +637,7 @@
             this.myReservationTab.ImageKey = "userReservation.png";
             this.myReservationTab.Location = new System.Drawing.Point(4, 31);
             this.myReservationTab.Name = "myReservationTab";
-            this.myReservationTab.Size = new System.Drawing.Size(1224, 476);
+            this.myReservationTab.Size = new System.Drawing.Size(1224, 671);
             this.myReservationTab.TabIndex = 6;
             this.myReservationTab.Text = "RESERVATION";
             // 
@@ -760,7 +760,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 618);
+            this.ClientSize = new System.Drawing.Size(1056, 774);
             this.Controls.Add(this.userMenu);
             this.DrawerAutoHide = false;
             this.DrawerIsOpen = true;
